@@ -533,5 +533,12 @@
         "image8Alt": "Di\u1ec5n gi\u1ea3 chia s\u1ebb trong s\u1ef1 ki\u1ec7n n\u1ed9i b\u1ed9"
       }
     }
+  },
+  "aboutPage": {
+    "hero": {
+      "title": "Hành trình công nghệ\nđược xây bởi con\nngười và giá trị thật",
+      "description": "Trong 17 năm, chúng tôi không ngừng đổi mới và xây dựng những giải pháp mang tính giải phóng, giúp các doanh nghiệp Việt và quốc tế vận hành vững vàng",
+      "imageAlt": "Đội ngũ Xipat đang trao đổi báo cáo"
+    }
   }
 }

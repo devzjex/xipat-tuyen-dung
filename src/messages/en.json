@@ -537,5 +537,12 @@
         "image8Alt": "Speaker sharing in an internal event"
       }
     }
+  },
+  "aboutPage": {
+    "hero": {
+      "title": "A technology journey\nbuilt by people and\nreal values.",
+      "description": "For 17 years, we have continuously innovated to build enabling solutions that help Vietnamese and global businesses operate with confidence.",
+      "imageAlt": "Xipat team reviewing reports"
+    }
   }
 }

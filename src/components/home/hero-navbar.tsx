@@ -129,9 +129,10 @@ function DesktopNav({ scrolled }: { scrolled: boolean }) {
   const t = useTranslations('home.nav');
   const locale = useLocale() as AppLocale;
   const homeHref = locale === 'en' ? '/en' : '/';
+  const aboutHref = locale === 'en' ? '/en/about' : '/about';
   const navItems = [
     { key: 'ecosystem', href: locale === 'en' ? '/en/ecosystem' : '/ecosystem' },
-    { key: 'about', href: `${homeHref}#about` },
+    { key: 'about', href: aboutHref },
     { key: 'culture', href: locale === 'en' ? '/en/culture' : '/culture' },
     { key: 'careers', href: `${homeHref}#careers` },
     { key: 'news', href: `${homeHref}#news` },
@@ -171,9 +172,10 @@ function MobileTabletMenu({
   const t = useTranslations('home.nav');
   const locale = useLocale() as AppLocale;
   const homeHref = locale === 'en' ? '/en' : '/';
+  const aboutHref = locale === 'en' ? '/en/about' : '/about';
   const navItems = [
     { key: 'ecosystem', href: locale === 'en' ? '/en/ecosystem' : '/ecosystem' },
-    { key: 'about', href: `${homeHref}#about` },
+    { key: 'about', href: aboutHref },
     { key: 'culture', href: `${homeHref}#culture` },
     { key: 'careers', href: `${homeHref}#careers` },
     { key: 'news', href: `${homeHref}#news` },
