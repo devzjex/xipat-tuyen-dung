@@ -1,0 +1,541 @@
+{
+  "home": {
+    "nav": {
+      "menu": "Menu",
+      "ecosystem": "Ecosystem",
+      "about": "About us",
+      "culture": "Culture",
+      "careers": "Careers",
+      "news": "News",
+      "contact": "Contact"
+    },
+    "hero": {
+      "title": "Build <accent>freedom</accent> so businesses can <accent>break through</accent>",
+      "description": "We create flexible, intelligent platforms that reduce complexity, empower teams, and open more room for businesses to grow.",
+      "cta": "Contact now"
+    },
+    "intro": {
+      "titleLine1": "Remove complexity, give time back,",
+      "titleLine2": "that is how technology",
+      "titleLine3": "serves prosperity.",
+      "description": "From a small journey 17 years ago, <brand>XIPAT</brand> has grown with thousands of merchants and become a trusted global e-commerce technology builder."
+    },
+    "about": {
+      "title": "We believe in the liberating power of <accent>technology</accent>",
+      "description1": "The <brand>XIPAT</brand> team builds technology from deep human understanding to support entrepreneurs, sellers, and e-commerce teams to grow with stability, flexibility, and confidence in global markets.",
+      "description2": "From small operational details to major leaps, Xipat stands with businesses to grow steadily, strongly, and meaningfully.",
+      "stats": [
+        {
+          "value": "10k+",
+          "label": "Core Value 01"
+        },
+        {
+          "value": "100k",
+          "label": "Core Value 02"
+        },
+        {
+          "value": "17+",
+          "label": "Core Value 03"
+        }
+      ]
+    },
+    "ecosystem": {
+      "cards": [
+        {
+          "title": "Omega\ntheme",
+          "body": "OmegaTheme delivers a compact toolkit for global sellers - from tracking and automation to conversion management - reducing complexity, optimizing operations, and scaling sustainably."
+        },
+        {
+          "title": "Game Zoka",
+          "body": "OmegaTheme delivers a compact toolkit for global sellers - from tracking and automation to conversion management - reducing complexity, optimizing operations, and scaling sustainably."
+        }
+      ]
+    },
+    "solutions": {
+      "title": "Different Solutions For A Constantly Changing World",
+      "items": [
+        {
+          "highlight": "Products",
+          "rest": "with high standards",
+          "body": "We focus on research and development of products with real value - meticulous in every detail, precise in every function, and strong enough to solve business problems end-to-end."
+        },
+        {
+          "highlight": "People",
+          "rest": "at the center of innovation",
+          "body": "XIPAT technology is built to empower: helping entrepreneurs and teams become more confident, proactive, and sustainable."
+        },
+        {
+          "highlight": "Flexibility",
+          "rest": "to adapt to change",
+          "body": "In a changing world, we continuously adjust and update quickly - so businesses have stable tools and stay ready for every next move."
+        }
+      ]
+    },
+    "culture": {
+      "title": "Culture at <accent>Xipat</accent>",
+      "values": [
+        {
+          "title": "Empathy",
+          "body": "Always think of others first, creating value for teammates, customers, and society."
+        },
+        {
+          "title": "Growth mindset",
+          "body": "Continuously learn and improve every day to develop ourselves and build a sustainable organization."
+        },
+        {
+          "title": "Healthy spirit",
+          "body": "Physical and mental health are the foundation for productive work and bigger ambitions."
+        },
+        {
+          "title": "Pursue the highest standards",
+          "body": "Set and uphold high standards in thinking, people, and quality of work."
+        }
+      ],
+      "accordion": [
+        {
+          "id": "01",
+          "title": "Xipat Internal Badminton Tournament 2025",
+          "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
+          "imageSrc": "/images/home/culture.png"
+        },
+        {
+          "id": "02",
+          "title": "Xipat celebrates 50 years of national reunification",
+          "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
+          "imageSrc": "/images/home/culture.png"
+        },
+        {
+          "id": "03",
+          "title": "Xipat Hackathon 2025",
+          "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
+          "imageSrc": "/images/home/culture.png"
+        },
+        {
+          "id": "04",
+          "title": "Q1 team building highlights",
+          "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
+          "imageSrc": "/images/home/culture.png"
+        }
+      ]
+    },
+    "news": {
+      "badge": "Blog",
+      "title": "Discover the <accent>latest news</accent> at Xipat",
+      "cards": [
+        {
+          "title": "Lorem ipsum dolor sit amet",
+          "date": "Dec 2025"
+        },
+        {
+          "title": "Lorem ipsum dolor sit amet",
+          "date": "Dec 2025"
+        },
+        {
+          "title": "Lorem ipsum dolor sit amet",
+          "date": "Dec 2025"
+        }
+      ],
+      "cardFallback": "Lorem ipsum dolor sit amet, consectetur adipiscing elit,"
+    }
+  },
+  "ecosystemPage": {
+    "hero": {
+      "title": "Application ecosystem for global eCommerce.",
+      "description": "OmegaTheme delivers a compact solution suite that helps sellers run operations more smoothly, optimize performance, and scale confidently across leading eCommerce platforms.",
+      "cta": "Omegatheme"
+    },
+    "operation": {
+      "imageAlt": "Xipat ECommerce",
+      "titlePrefix": "Run",
+      "titleAccent": "eCommerce",
+      "titleSuffix": "More Easily",
+      "brand": "OmegaTheme",
+      "descriptionBefore": "has grown into a team of",
+      "strongTeam": "150 global experts",
+      "descriptionMiddle": "building",
+      "strongApps": "28 apps",
+      "descriptionAfter": "and serving tens of thousands of customers across multiple platforms.",
+      "stats": [
+        {
+          "value": "10k+",
+          "label": "Core Value",
+          "index": "01"
+        },
+        {
+          "value": "100k",
+          "label": "Core Value",
+          "index": "01"
+        },
+        {
+          "value": "70%",
+          "label": "Core Value",
+          "index": "01"
+        }
+      ]
+    },
+    "solution": {
+      "headingLines": [
+        "Distinct Solutions",
+        "For a World That Is",
+        "Always Changing"
+      ],
+      "items": [
+        {
+          "title": "Deep eCommerce expertise",
+          "description": "Every OmegaTheme app is built from real merchant challenges. We understand where businesses struggle and build practical solutions that deliver measurable outcomes.",
+          "imageSrc": "/images/ecosystem/image-2.png",
+          "imageAlt": "Deep eCommerce expertise"
+        },
+        {
+          "title": "Dedicated support and partnership",
+          "description": "Our team supports you throughout operations and provides stage-by-stage guidance so you can make faster, better decisions.",
+          "imageSrc": "/images/ecosystem/image-2.png",
+          "imageAlt": "Dedicated support and partnership"
+        },
+        {
+          "title": "Operational optimization",
+          "description": "Standardize workflows and automate repetitive tasks to reduce operating cost, improve performance, and minimize system errors.",
+          "imageSrc": "/images/ecosystem/image-2.png",
+          "imageAlt": "Operational optimization"
+        },
+        {
+          "title": "Innovation based on real needs",
+          "description": "The product roadmap is shaped by real merchant feedback so every update stays close to actual business needs.",
+          "imageSrc": "/images/ecosystem/image-2.png",
+          "imageAlt": "Innovation based on real needs"
+        }
+      ]
+    },
+    "apps": {
+      "badge": "Omegatheme ecosystem",
+      "titleLine1": "eCommerce application ecosystem",
+      "titleAccent": "eCommerce",
+      "items": [
+        {
+          "name": "Synctrack",
+          "description": "A 4-app ecosystem that optimizes the post-purchase experience",
+          "imageSrc": "/images/logo.png",
+          "imageAlt": "Synctrack logo"
+        },
+        {
+          "name": "Blockify",
+          "description": "Enhances security to keep operations uninterrupted",
+          "imageSrc": "/images/logo.png",
+          "imageAlt": "Blockify logo"
+        },
+        {
+          "name": "Quotesnap",
+          "description": "Supports B2B operations with easier quoting and faster conversion",
+          "imageSrc": "/images/logo.png",
+          "imageAlt": "Quotesnap logo"
+        },
+        {
+          "name": "Consentik",
+          "description": "Helps merchants comply with global data regulations",
+          "imageSrc": "/images/logo.png",
+          "imageAlt": "Consentik logo"
+        },
+        {
+          "name": "Pareto",
+          "description": "Optimizes sales strategy and smart operations",
+          "imageSrc": "/images/logo.png",
+          "imageAlt": "Pareto logo"
+        },
+        {
+          "name": "TagFly",
+          "description": "Set up multi-channel tracking quickly and accurately",
+          "imageSrc": "/images/logo.png",
+          "imageAlt": "TagFly logo"
+        },
+        {
+          "name": "Trustify",
+          "description": "Manage customer reviews and improve conversion sustainably",
+          "imageSrc": "/images/logo.png",
+          "imageAlt": "Trustify logo"
+        }
+      ]
+    },
+    "partner": {
+      "title": "Partners",
+      "descriptionLine1": "We connect with partners who share the same quality standards",
+      "descriptionLine2": "and innovation mindset",
+      "discoverButton": "Discover",
+      "ctaLine1": "Ready to optimize operations and",
+      "ctaLine2Before": "grow",
+      "ctaLine2Accent": "stronger",
+      "ctaLine2After": "?",
+      "ctaDescriptionLine1": "Talk with the OmegaTheme team to get the most suitable solution",
+      "ctaDescriptionLine2": "for your business.",
+      "ctaButton": "Contact now",
+      "logos": [
+        {
+          "src": "/images/partner/partner-1.png",
+          "alt": "Waveless",
+          "width": 180,
+          "height": 56
+        },
+        {
+          "src": "/images/partner/partner-2.png",
+          "alt": "Volume",
+          "width": 174,
+          "height": 56
+        },
+        {
+          "src": "/images/partner/partner-3.png",
+          "alt": "Vertigo",
+          "width": 190,
+          "height": 56
+        },
+        {
+          "src": "/images/partner/partner-4.png",
+          "alt": "Penta",
+          "width": 170,
+          "height": 56
+        },
+        {
+          "src": "/images/partner/partner-5.png",
+          "alt": "Sitemark",
+          "width": 190,
+          "height": 56
+        },
+        {
+          "src": "/images/partner/partner-6.png",
+          "alt": "Ebooks",
+          "width": 170,
+          "height": 56
+        }
+      ]
+    }
+  },
+  "culturePage": {
+    "hero": {
+      "badge": "Xipat Culture",
+      "titleLine1": "Culture shapes a team",
+      "titleLine2": "that is strong and distinctive",
+      "description": "We build an environment where every individual is trusted, empowered to grow, and united to create long-term value for customers, teammates, and the community.",
+      "cta": "Explore activities"
+    },
+    "values": {
+      "badge": "Core Values",
+      "title": "The values that define how we work",
+      "items": [
+        {
+          "title": "Empathy",
+          "body": "We listen to understand real needs and act for the shared benefit of customers, teammates, and partners."
+        },
+        {
+          "title": "Growth mindset",
+          "body": "We continuously learn, experiment, and improve so each version of us is better than yesterday."
+        },
+        {
+          "title": "Healthy spirit",
+          "body": "We maintain physical and mental well-being to work sustainably, stay positive, and pursue bigger goals."
+        },
+        {
+          "title": "High standards",
+          "body": "We pursue quality in every detail with ownership, discipline, and commitment to the final result."
+        }
+      ]
+    },
+    "activities": {
+      "badge": "Internal Life",
+      "title": "Cultural activities at Xipat",
+      "items": [
+        {
+          "id": "01",
+          "title": "Xipat Internal Badminton Tournament 2025",
+          "body": "A fair-play spirit that strengthens cross-team connection and spreads positive energy beyond work hours.",
+          "imageSrc": "/images/home/culture.png"
+        },
+        {
+          "id": "02",
+          "title": "Xipat celebrates 50 years of reunification",
+          "body": "Meaningful activities helping teams connect with history while nurturing pride and gratitude.",
+          "imageSrc": "/images/home/culture.png"
+        },
+        {
+          "id": "03",
+          "title": "Xipat Hackathon 2025",
+          "body": "A space where new ideas are tested quickly to build practical solutions for products and operations.",
+          "imageSrc": "/images/home/culture.png"
+        },
+        {
+          "id": "04",
+          "title": "Q1 team building with strong emotions",
+          "body": "A bonding journey that deepens trust and strengthens teamwork for long-term goals.",
+          "imageSrc": "/images/home/culture.png"
+        }
+      ]
+    },
+    "cta": {
+      "titleLine1": "Do you want to grow your career",
+      "titleAccent": "with Xipat",
+      "titleLine2": "?",
+      "description": "We are always looking for teammates with a positive mindset and the courage to make a difference.",
+      "button": "Contact us"
+    },
+    "heroShowcase": {
+      "imageAlt": "Xipat culture team",
+      "titleLine1": "Xipat Culture",
+      "descriptionLine1": "A healthy, empathetic team that loves",
+      "descriptionLine2": "learning and continuous growth."
+    },
+    "peopleShowcase": {
+      "titleLine1": "XIPAT people innovate",
+      "titleLine2": "to do better every day.",
+      "descriptionLine1": "At XIPAT, everyone proactively seeks better solutions,",
+      "descriptionLine2": "nurtures quality in every detail, and builds products users can trust.",
+      "images": {
+        "image1Alt": "Culture activity moment 1",
+        "image2Alt": "Culture activity moment 2",
+        "image3Alt": "Culture activity moment 3",
+        "image4Alt": "Culture activity moment 4"
+      }
+    },
+    "cultureGuidedShowcase": {
+      "heading": "A workplace guided by clear and lived culture",
+      "items": [
+        {
+          "title": "Healthy spirit",
+          "description": "At XIPAT, we work with optimism, ownership, and steady discipline to keep strong momentum and spread positive energy together.",
+          "imageSrc": "/images/culture/image.png",
+          "imageAlt": "Xipat football team activity"
+        },
+        {
+          "title": "Empathy",
+          "description": "We listen first, understand context, and support one another so teams can move fast while staying kind and respectful.",
+          "imageSrc": "/images/culture/image.png",
+          "imageAlt": "Xipat football team activity"
+        },
+        {
+          "title": "Growth mindset",
+          "description": "We keep learning from experiments, feedback, and outcomes, then turn those lessons into practical improvements every week.",
+          "imageSrc": "/images/culture/image.png",
+          "imageAlt": "Xipat football team activity"
+        },
+        {
+          "title": "High standards",
+          "description": "From planning to delivery, we hold ourselves accountable for quality in details so every output is reliable and useful.",
+          "imageSrc": "/images/culture/image.png",
+          "imageAlt": "Xipat football team activity"
+        }
+      ]
+    },
+    "programs": {
+      "title": "Featured <accent>programs</accent>",
+      "highlights": [
+        {
+          "title": "Lorem ipsum dolor",
+          "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
+        },
+        {
+          "title": "Lorem ipsum dolor",
+          "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
+        },
+        {
+          "title": "Lorem ipsum dolor",
+          "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
+        },
+        {
+          "title": "Lorem ipsum dolor",
+          "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
+        }
+      ],
+      "accordion": [
+        {
+          "id": "01",
+          "title": "Internal activities",
+          "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
+          "imageSrc": "/images/home/culture.png"
+        },
+        {
+          "id": "02",
+          "title": "Internal training",
+          "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
+          "imageSrc": "/images/home/culture.png"
+        },
+        {
+          "id": "03",
+          "title": "CSR programs",
+          "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
+          "imageSrc": "/images/home/culture.png"
+        },
+        {
+          "id": "04",
+          "title": "Clubs",
+          "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
+          "imageSrc": "/images/home/culture.png"
+        }
+      ]
+    },
+    "news": {
+      "badge": "Blog",
+      "title": "Discover the latest news from Xipat",
+      "cards": [
+        {
+          "meta": "Lorem ipsum dolor sit amet",
+          "headline": "Lorem ipsum dolor sit amet, consectetur adipiscing elit,",
+          "date": "Dec 2025"
+        },
+        {
+          "meta": "Lorem ipsum dolor sit amet",
+          "headline": "Lorem ipsum dolor sit amet, consectetur adipiscing elit,",
+          "date": "Dec 2025"
+        },
+        {
+          "meta": "Lorem ipsum dolor sit amet",
+          "headline": "Lorem ipsum dolor sit amet, consectetur adipiscing elit,",
+          "date": "Dec 2025"
+        }
+      ]
+    },
+    "recruitment": {
+      "badge": "Recruitment",
+      "titlePrefix": "Open roles",
+      "titleAccent": "hiring now",
+      "titleSuffix": "at Xipat",
+      "description": "Join Xipat, work thoughtfully, and create meaningful value through every product.",
+      "contactButton": "Contact now",
+      "viewAllButton": "View all",
+      "cards": [
+        {
+          "title": "Senior Software Engineer | Frontend",
+          "salary": "Negotiable salary",
+          "description": "Collect authentic product reviews via email auto-flows, reward buyers with coupons when they leave reviews, and invite UGC via share-links or QR codes.",
+          "employment": "Full time",
+          "location": "Ha Noi",
+          "experience": "3+ years experience"
+        },
+        {
+          "title": "Junior Marketing | Partnership & Crossell",
+          "salary": "Negotiable salary",
+          "description": "Collect authentic product reviews via email auto-flows, reward buyers with coupons when they leave reviews, and invite UGC via share-links or QR codes.",
+          "employment": "Full time",
+          "location": "Ha Noi",
+          "experience": "3+ years experience"
+        },
+        {
+          "title": "Junior Marketing | Partnership & Crossell",
+          "salary": "Negotiable salary",
+          "description": "Collect authentic product reviews via email auto-flows, reward buyers with coupons when they leave reviews, and invite UGC via share-links or QR codes.",
+          "employment": "Full time",
+          "location": "Ha Noi",
+          "experience": "3+ years experience"
+        }
+      ]
+    },
+    "library": {
+      "title": "Image Library",
+      "images": {
+        "image1Alt": "Internal hands-on workshop moment",
+        "image2Alt": "Football activity at Xipat",
+        "image3Alt": "Team members during a training session",
+        "image4Alt": "Indoor club activity",
+        "image5Alt": "Workshop teamwork moment",
+        "image6Alt": "Team building snapshot",
+        "image7Alt": "Blood donation community program",
+        "image8Alt": "Speaker sharing in an internal event"
+      }
+    }
+  }
+}

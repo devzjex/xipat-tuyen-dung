@@ -1,0 +1,537 @@
+{
+  "home": {
+    "nav": {
+      "menu": "Menu",
+      "ecosystem": "Hệ sinh thái",
+      "about": "Về chúng tôi",
+      "culture": "Văn hóa",
+      "careers": "Tuyển dụng",
+      "news": "Tin tức",
+      "contact": "Liên hệ"
+    },
+    "hero": {
+      "title": "Kiến tạo <accent>tự do</accent> để doanh nghiệp <accent>bứt phá</accent>",
+      "description": "Chúng tôi tạo ra những nền tảng linh hoạt và thông minh để giảm tải phức tạp, giải phóng đội ngũ và mở không gian cho doanh nghiệp phát triển.",
+      "cta": "Liên hệ ngay"
+    },
+    "intro": {
+      "titleLine1": "Giải phóng phức tạp, trao lại",
+      "titleLine2": "thời gian đó là cách công nghệ",
+      "titleLine3": "phục vụ sự thịnh vượng.",
+      "description": "Từ một hành trình nhỏ 17 năm trước, <brand>XIPAT</brand> đã lớn lên cùng hàng nghìn nhà bán hàng và trở thành đơn vị tạo ra những sản phẩm thương mại điện tử được tin cậy toàn cầu."
+    },
+    "about": {
+      "title": "Chúng tôi tin vào sức mạnh giải phóng của <accent>công nghệ</accent>",
+      "description1": "Đội ngũ <brand>XIPAT</brand> tạo công nghệ từ sự thấu hiểu con người để tiếp sức cho các doanh nhân, nhà bán hàng và đội ngũ thương mại điện tử phát triển ổn định, linh hoạt và cạnh tranh tự tin trên thị trường toàn cầu.",
+      "description2": "Từ những chi tiết nhỏ trong vận hành đến những bước nhảy lớn, Xipat đồng hành cùng doanh nghiệp phát triển ổn định, vững vàng và có ý nghĩa.",
+      "stats": [
+        {
+          "value": "10k+",
+          "label": "Core Value 01"
+        },
+        {
+          "value": "100k",
+          "label": "Core Value 02"
+        },
+        {
+          "value": "17+",
+          "label": "Core Value 03"
+        }
+      ]
+    },
+    "ecosystem": {
+      "cards": [
+        {
+          "title": "Omega\ntheme",
+          "body": "OmegaTheme mang đến bộ công cụ tinh gọn cho nhà bán hàng toàn cầu - từ tracking, automation đến quản lý chuyển đổi - giúp giảm phức tạp, tối ưu vận hành và mở rộng quy mô một cách bền vững."
+        },
+        {
+          "title": "Game Zoka",
+          "body": "OmegaTheme mang đến bộ công cụ tinh gọn cho nhà bán hàng toàn cầu - từ tracking, automation đến quản lý chuyển đổi - giúp giảm phức tạp, tối ưu vận hành và mở rộng quy mô một cách bền vững."
+        }
+      ]
+    },
+    "solutions": {
+      "title": "Giải Pháp Khác Biệt Cho Một Thế Giới Luôn Thay Đổi",
+      "items": [
+        {
+          "highlight": "Sản phẩm",
+          "rest": "với tiêu chuẩn cao nhất",
+          "body": "Chúng tôi tập trung vào nghiên cứu và phát triển những sản phẩm thật sự có giá trị - tỉ mỉ trong từng chi tiết, chính xác trong từng chức năng và đủ mạnh để giải quyết trọn vẹn vấn đề của doanh nghiệp."
+        },
+        {
+          "highlight": "Con người",
+          "rest": "là trung tâm của mọi đổi mới",
+          "body": "Công nghệ của XIPAT được tạo ra để trao quyền: giúp doanh nhân và đội ngũ tự tin hơn, chủ động hơn và phát triển bền vững hơn."
+        },
+        {
+          "highlight": "Linh hoạt",
+          "rest": "để thích nghi với thay đổi",
+          "body": "Trong một thế giới biến động, chúng tôi luôn điều chỉnh nhanh và cập nhật liên tục - để doanh nghiệp có công cụ vận hành ổn định và sẵn sàng cho mọi bước tiến."
+        }
+      ]
+    },
+    "culture": {
+      "title": "Văn hóa tại <accent>Xipat</accent>",
+      "values": [
+        {
+          "title": "Thấu cảm",
+          "body": "Luôn nghĩ cho người khác trước khi hành động, tạo ra giá trị cho đồng đội, khách hàng và xã hội."
+        },
+        {
+          "title": "Cầu tiến",
+          "body": "Không ngừng học hỏi và tiến lên mỗi ngày để phát triển bản thân và xây dựng tổ chức bền vững."
+        },
+        {
+          "title": "Tươi khỏe",
+          "body": "Xem sức khỏe thể chất và tinh thần là nền tảng để làm việc hiệu quả và theo đuổi những mục tiêu lớn hơn."
+        },
+        {
+          "title": "Luôn theo đuổi những tiêu chuẩn tốt nhất",
+          "body": "Luôn đặt tiêu chuẩn tốt nhất trong tư duy, con người và chất lượng công việc."
+        }
+      ],
+      "accordion": [
+        {
+          "id": "01",
+          "title": "Giải cầu lông nội bộ Xipat 2025",
+          "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
+          "imageSrc": "/images/home/culture.png"
+        },
+        {
+          "id": "02",
+          "title": "Xipat chào mừng 50 năm giải phóng miền nam",
+          "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
+          "imageSrc": "/images/home/culture.png"
+        },
+        {
+          "id": "03",
+          "title": "Xipat Hackathon 2025",
+          "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
+          "imageSrc": "/images/home/culture.png"
+        },
+        {
+          "id": "04",
+          "title": "Team building Quý I bùng nổ cảm xúc",
+          "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
+          "imageSrc": "/images/home/culture.png"
+        }
+      ]
+    },
+    "news": {
+      "badge": "Blog",
+      "title": "Khám phá <accent>tin tức mới nhất</accent> tại Xipat",
+      "cards": [
+        {
+          "title": "Lorem ipsum dolor sit amet",
+          "date": "Dec 2025"
+        },
+        {
+          "title": "Lorem ipsum dolor sit amet",
+          "date": "Dec 2025"
+        },
+        {
+          "title": "Lorem ipsum dolor sit amet",
+          "date": "Dec 2025"
+        }
+      ],
+      "cardFallback": "Lorem ipsum dolor sit amet, consectetur adipiscing elit,"
+    }
+  },
+  "ecosystemPage": {
+    "hero": {
+      "title": "Hệ sinh thái ứng dụng cho thương mại điện tử toàn cầu.",
+      "description": "OmegaTheme cung cấp bộ giải pháp tinh gọn giúp nhà bán hàng vận hành nhẹ nhàng hơn, tối ưu hiệu quả và tự tin mở rộng trên các nền tảng eCommerce hàng đầu.",
+      "cta": "OmegaTheme"
+    },
+    "operation": {
+      "imageAlt": "Xipat ECommerce",
+      "titlePrefix": "Vận Hành",
+      "titleAccent": "ECommerce",
+      "titleSuffix": "Dễ Dàng Hơn",
+      "brand": "OmegaTheme",
+      "descriptionBefore": "Đã phát triển thành đội ngũ hơn",
+      "strongTeam": "150 chuyên gia toàn cầu",
+      "descriptionMiddle": "xây dựng",
+      "strongApps": "28 ứng dụng",
+      "descriptionAfter": "và phục vụ hơn hàng chục ngàn khách hàng trên nhiều nền tảng.",
+      "stats": [
+        {
+          "value": "10k+",
+          "label": "Core Value",
+          "index": "01"
+        },
+        {
+          "value": "100k",
+          "label": "Core Value",
+          "index": "01"
+        },
+        {
+          "value": "70%",
+          "label": "Core Value",
+          "index": "01"
+        }
+      ]
+    },
+    "solution": {
+      "headingLines": ["Giải Pháp Khác Biệt", "Cho Một Thế Giới Luôn", "Thay Đổi"],
+      "items": [
+        {
+          "title": "Kinh nghiệm sâu về eCommerce",
+          "description": "Mỗi ứng dụng của OmegaTheme được xây từ những bài toán thật của nhà bán hàng. Chúng tôi biết doanh nghiệp gặp khó ở đâu và xây giải pháp để xử lý triệt để, có kết quả đo được.",
+          "imageSrc": "/images/ecosystem/image-2.png",
+          "imageAlt": "Kinh nghiệm sâu về eCommerce"
+        },
+        {
+          "title": "Hỗ trợ tận tâm và đồng hành",
+          "description": "Đội ngũ đồng hành xuyên suốt quá trình vận hành, tư vấn theo từng giai đoạn phát triển để giúp bạn ra quyết định nhanh và đúng.",
+          "imageSrc": "/images/ecosystem/image-2.png",
+          "imageAlt": "Hỗ trợ tận tâm và đồng hành"
+        },
+        {
+          "title": "Tối ưu vận hành",
+          "description": "Chuẩn hóa quy trình và tự động hóa các tác vụ lặp lại để giảm chi phí vận hành, tăng hiệu suất và giảm sai sót trong hệ thống.",
+          "imageSrc": "/images/ecosystem/image-2.png",
+          "imageAlt": "Tối ưu vận hành"
+        },
+        {
+          "title": "Đổi mới dựa trên nhu cầu",
+          "description": "Lộ trình phát triển sản phẩm được xây trên phản hồi thực tế từ nhà bán hàng để các cập nhật luôn bám sát bài toán kinh doanh.",
+          "imageSrc": "/images/ecosystem/image-2.png",
+          "imageAlt": "Đổi mới dựa trên nhu cầu"
+        }
+      ]
+    },
+    "apps": {
+      "badge": "Hệ sinh thái OmegaTheme",
+      "titleLine1": "Hệ sinh thái ứng dụng",
+      "titleAccent": "eCommerce",
+      "items": [
+        {
+          "name": "Synctrack",
+          "description": "Hệ sinh thái 4 app tối ưu trải nghiệm sau mua cho người dùng",
+          "imageSrc": "/images/logo.png",
+          "imageAlt": "Synctrack logo"
+        },
+        {
+          "name": "Blockify",
+          "description": "Nâng cao bảo mật giúp vận hành không bị gián đoạn",
+          "imageSrc": "/images/logo.png",
+          "imageAlt": "Blockify logo"
+        },
+        {
+          "name": "Quotesnap",
+          "description": "Phục vụ vận hành B2B với các chức năng báo giá dễ dàng, chuyển đổi nhanh",
+          "imageSrc": "/images/logo.png",
+          "imageAlt": "Quotesnap logo"
+        },
+        {
+          "name": "Consentik",
+          "description": "Giúp nhà bán hàng tuân thủ quy định dữ liệu toàn cầu",
+          "imageSrc": "/images/logo.png",
+          "imageAlt": "Consentik logo"
+        },
+        {
+          "name": "Pareto",
+          "description": "Tối ưu chiến lược bán hàng và vận hành thông minh",
+          "imageSrc": "/images/logo.png",
+          "imageAlt": "Pareto logo"
+        },
+        {
+          "name": "TagFly",
+          "description": "Thiết lập theo dõi đa kênh, nhanh gọn và chính xác",
+          "imageSrc": "/images/logo.png",
+          "imageAlt": "TagFly logo"
+        },
+        {
+          "name": "Trustify",
+          "description": "Quản lý đánh giá của khách hàng, tăng chuyển đổi bền vững",
+          "imageSrc": "/images/logo.png",
+          "imageAlt": "Trustify logo"
+        }
+      ]
+    },
+    "partner": {
+      "title": "Đối tác",
+      "descriptionLine1": "Chúng tôi kết nối với những đối tác có cùng tiêu chuẩn chất lượng",
+      "descriptionLine2": "và tư duy đổi mới",
+      "discoverButton": "Khám phá",
+      "ctaLine1": "Sẵn sàng tối ưu vận hành và",
+      "ctaLine2Before": "phát triển",
+      "ctaLine2Accent": "mạnh mẽ",
+      "ctaLine2After": "hơn?",
+      "ctaDescriptionLine1": "Liên hệ với đội ngũ OmegaTheme để được tư vấn giải pháp phù hợp nhất",
+      "ctaDescriptionLine2": "cho doanh nghiệp của bạn.",
+      "ctaButton": "Liên hệ ngay",
+      "logos": [
+        {
+          "src": "/images/partner/partner-1.png",
+          "alt": "Waveless",
+          "width": 180,
+          "height": 56
+        },
+        {
+          "src": "/images/partner/partner-2.png",
+          "alt": "Volume",
+          "width": 174,
+          "height": 56
+        },
+        {
+          "src": "/images/partner/partner-3.png",
+          "alt": "Vertigo",
+          "width": 190,
+          "height": 56
+        },
+        {
+          "src": "/images/partner/partner-4.png",
+          "alt": "Penta",
+          "width": 170,
+          "height": 56
+        },
+        {
+          "src": "/images/partner/partner-5.png",
+          "alt": "Sitemark",
+          "width": 190,
+          "height": 56
+        },
+        {
+          "src": "/images/partner/partner-6.png",
+          "alt": "Ebooks",
+          "width": 170,
+          "height": 56
+        }
+      ]
+    }
+  },
+  "culturePage": {
+    "hero": {
+      "badge": "Văn hóa Xipat",
+      "titleLine1": "Văn hóa tạo nên đội ngũ",
+      "titleLine2": "vững mạnh và khác biệt",
+      "description": "Chúng tôi xây dựng một môi trường nơi mỗi cá nhân được tin tưởng, được phát triển và cùng nhau tạo ra giá trị dài hạn cho khách hàng, đồng đội và cộng đồng.",
+      "cta": "Khám phá hoạt động"
+    },
+    "values": {
+      "badge": "Giá trị cốt lõi",
+      "title": "Những giá trị định hình cách chúng tôi làm việc",
+      "items": [
+        {
+          "title": "Thấu cảm",
+          "body": "Lắng nghe để hiểu nhu cầu thật và hành động vì lợi ích chung của khách hàng, đồng đội và đối tác."
+        },
+        {
+          "title": "Cầu tiến",
+          "body": "Không ngừng học hỏi, thử nghiệm và cải tiến để mỗi phiên bản hôm nay tốt hơn ngày hôm qua."
+        },
+        {
+          "title": "Tươi khỏe",
+          "body": "Giữ thể chất và tinh thần khỏe mạnh để làm việc bền bỉ, tích cực và sẵn sàng cho mục tiêu lớn."
+        },
+        {
+          "title": "Tiêu chuẩn cao",
+          "body": "Theo đuổi chất lượng trong từng chi tiết với tinh thần trách nhiệm và cam kết đến cùng."
+        }
+      ]
+    },
+    "activities": {
+      "badge": "Đời sống nội bộ",
+      "title": "Hoạt động văn hóa tại Xipat",
+      "items": [
+        {
+          "id": "01",
+          "title": "Giải cầu lông nội bộ Xipat 2025",
+          "body": "Tinh thần thi đấu fair-play, kết nối liên phòng ban và lan tỏa năng lượng tích cực sau mỗi giờ làm việc.",
+          "imageSrc": "/images/home/culture.png"
+        },
+        {
+          "id": "02",
+          "title": "Xipat chào mừng 50 năm Giải phóng miền Nam",
+          "body": "Chuỗi hoạt động ý nghĩa giúp đội ngũ hiểu sâu hơn về lịch sử, nuôi dưỡng tinh thần tự hào và biết ơn.",
+          "imageSrc": "/images/home/culture.png"
+        },
+        {
+          "id": "03",
+          "title": "Xipat Hackathon 2025",
+          "body": "Nơi các ý tưởng mới được thử nghiệm nhanh để tạo ra giải pháp thực tiễn cho sản phẩm và vận hành.",
+          "imageSrc": "/images/home/culture.png"
+        },
+        {
+          "id": "04",
+          "title": "Team building Quý I – Bùng nổ cảm xúc",
+          "body": "Hành trình gắn kết đội ngũ, tăng thấu hiểu và xây dựng tinh thần đồng đội cho các mục tiêu dài hạn.",
+          "imageSrc": "/images/home/culture.png"
+        }
+      ]
+    },
+    "cta": {
+      "titleLine1": "Bạn muốn phát triển sự nghiệp",
+      "titleAccent": "cùng Xipat",
+      "titleLine2": "?",
+      "description": "Chúng tôi luôn tìm kiếm những người đồng đội có tư duy tích cực và tinh thần dám tạo khác biệt.",
+      "button": "Liên hệ với chúng tôi"
+    },
+    "heroShowcase": {
+      "imageAlt": "Đội ngũ văn hóa Xipat",
+      "titleLine1": "Văn hóa Xipat",
+      "descriptionLine1": "Một đội ngũ tươi khỏe, thấu cảm, ham",
+      "descriptionLine2": "học hỏi và luôn cầu tiến."
+    },
+    "peopleShowcase": {
+      "titleLine1": "Con người XIPAT sáng tạo",
+      "titleLine2": "để làm tốt hơn mỗi ngày.",
+      "descriptionLine1": "Tại XIPAT, mỗi người đều chủ động tìm giải pháp tốt hơn,",
+      "descriptionLine2": "nuôi dưỡng chất lượng trong từng chi tiết và tạo nên những sản phẩm đáng tin cậy.",
+      "images": {
+        "image1Alt": "Khoảnh khắc hoạt động văn hóa 1",
+        "image2Alt": "Khoảnh khắc hoạt động văn hóa 2",
+        "image3Alt": "Khoảnh khắc hoạt động văn hóa 3",
+        "image4Alt": "Khoảnh khắc hoạt động văn hóa 4"
+      }
+    },
+    "cultureGuidedShowcase": {
+      "heading": "M\u1ed9t m\u00f4i tr\u01b0\u1eddng \u0111\u01b0\u1ee3c d\u1eabn d\u1eaft b\u1edfi v\u0103n h\u00f3a r\u00f5 r\u00e0ng",
+      "items": [
+        {
+          "title": "T\u01b0\u01a1i kh\u1ecfe",
+          "description": "T\u1ea1i XIPAT, ch\u00fang t\u00f4i l\u00e0m vi\u1ec7c v\u1edbi tinh th\u1ea7n l\u1ea1c quan v\u00e0 ch\u1ee7 \u0111\u1ed9ng, t\u1ea1o n\u00ean m\u1ed9t m\u00f4i tr\u01b0\u1eddng nh\u1eb9 nh\u00e0ng nh\u01b0ng hi\u1ec7u qu\u1ea3. S\u1ef1 t\u01b0\u01a1i kh\u1ecfe gi\u00fap \u0111\u1ed9i ng\u0169 gi\u1eef nh\u1ecbp b\u1ec1n v\u1eefng v\u00e0 lan t\u1ecfa n\u0103ng l\u01b0\u1ee3ng t\u1ed1t \u0111\u1ebfn nhau.",
+          "imageSrc": "/images/culture/image.png",
+          "imageAlt": "\u0110\u1ed9i b\u00f3ng \u0111\u00e1 Xipat"
+        },
+        {
+          "title": "Th\u1ea5u c\u1ea3m",
+          "description": "Ch\u00fang t\u00f4i l\u1eafng nghe \u0111\u1ec3 hi\u1ec3u nhau v\u00e0 hi\u1ec3u kh\u00e1ch h\u00e0ng, t\u1eeb \u0111\u00f3 ph\u1ed1i h\u1ee3p m\u1ec1m d\u1ebbo h\u01a1n, h\u00e0nh \u0111\u1ed9ng \u0111\u00fang tr\u00e1ch nhi\u1ec7m h\u01a1n.",
+          "imageSrc": "/images/culture/image.png",
+          "imageAlt": "\u0110\u1ed9i b\u00f3ng \u0111\u00e1 Xipat"
+        },
+        {
+          "title": "Ham h\u1ecdc",
+          "description": "M\u1ed7i ng\u01b0\u1eddi ch\u1ee7 \u0111\u1ed9ng h\u1ecdc t\u1eeb th\u1ef1c t\u1ebf, th\u1eed nghi\u1ec7m nhanh v\u00e0 c\u1eadp nh\u1eadt li\u00ean t\u1ee5c \u0111\u1ec3 c\u00f4ng vi\u1ec7c m\u1ed7i ng\u00e0y t\u1ed1t h\u01a1n.",
+          "imageSrc": "/images/culture/image.png",
+          "imageAlt": "\u0110\u1ed9i b\u00f3ng \u0111\u00e1 Xipat"
+        },
+        {
+          "title": "C\u1ea7u ti\u1ebfn",
+          "description": "Tinh th\u1ea7n c\u1ea7u ti\u1ebfn gi\u00fap ch\u00fang t\u00f4i kh\u00f4ng th\u1ecfa hi\u1ec7p v\u1edbi phi\u00ean b\u1ea3n tr\u01b0\u1edbc, lu\u00f4n n\u00e2ng chu\u1ea9n ch\u1ea5t l\u01b0\u1ee3ng cho s\u1ea3n ph\u1ea9m v\u00e0 tr\u1ea3i nghi\u1ec7m.",
+          "imageSrc": "/images/culture/image.png",
+          "imageAlt": "\u0110\u1ed9i b\u00f3ng \u0111\u00e1 Xipat"
+        }
+      ]
+    },
+    "programs": {
+      "title": "C\u00e1c ch\u01b0\u01a1ng tr\u00ecnh <accent>n\u1ed5i b\u1eadt</accent>",
+      "highlights": [
+        {
+          "title": "Lorem ipsum dolor",
+          "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
+        },
+        {
+          "title": "Lorem ipsum dolor",
+          "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
+        },
+        {
+          "title": "Lorem ipsum dolor",
+          "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
+        },
+        {
+          "title": "Lorem ipsum dolor",
+          "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
+        }
+      ],
+      "accordion": [
+        {
+          "id": "01",
+          "title": "Ho\u1ea1t \u0111\u1ed9ng n\u1ed9i b\u1ed9",
+          "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
+          "imageSrc": "/images/home/culture.png"
+        },
+        {
+          "id": "02",
+          "title": "\u0110\u00e0o t\u1ea1o n\u1ed9i b\u1ed9",
+          "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
+          "imageSrc": "/images/home/culture.png"
+        },
+        {
+          "id": "03",
+          "title": "C\u00e1c ch\u01b0\u01a1ng tr\u00ecnh CSR",
+          "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
+          "imageSrc": "/images/home/culture.png"
+        },
+        {
+          "id": "04",
+          "title": "C\u00e2u l\u1ea1c b\u1ed9",
+          "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
+          "imageSrc": "/images/home/culture.png"
+        }
+      ]
+    },
+    "news": {
+      "badge": "Blog",
+      "title": "Kh\u00e1m ph\u00e1 tin t\u1ee9c m\u1edbi nh\u1ea5t t\u1eeb Xipat",
+      "cards": [
+        {
+          "meta": "Lorem ipsum dolor sit amet",
+          "headline": "Lorem ipsum dolor sit amet, consectetur adipiscing elit,",
+          "date": "Dec 2025"
+        },
+        {
+          "meta": "Lorem ipsum dolor sit amet",
+          "headline": "Lorem ipsum dolor sit amet, consectetur adipiscing elit,",
+          "date": "Dec 2025"
+        },
+        {
+          "meta": "Lorem ipsum dolor sit amet",
+          "headline": "Lorem ipsum dolor sit amet, consectetur adipiscing elit,",
+          "date": "Dec 2025"
+        }
+      ]
+    },
+    "recruitment": {
+      "badge": "Tuy\u1ec3n d\u1ee5ng",
+      "titlePrefix": "C\u00e1c v\u1ecb tr\u00ed",
+      "titleAccent": "\u0111ang tuy\u1ec3n",
+      "titleSuffix": "t\u1ea1i Xipat",
+      "description": "Gia nh\u1eadp Xipat, \u0111\u01b0\u1ee3c l\u00e0m vi\u1ec7c t\u1eed t\u1ebf v\u00e0 t\u1ea1o n\u00ean nh\u1eefng gi\u00e1 tr\u1ecb th\u1eadt qua t\u1eebng s\u1ea3n ph\u1ea9m.",
+      "contactButton": "Li\u00ean h\u1ec7 ngay",
+      "viewAllButton": "Xem t\u1ea5t c\u1ea3",
+      "cards": [
+        {
+          "title": "Senior Software Engineer | Frontend",
+          "salary": "L\u01b0\u01a1ng th\u1ecfa thu\u1eadn",
+          "description": "Collect authentic product reviews via email auto-flows, reward buyers with coupons when they leave reviews, and invite UGC via share-links or QR codes.",
+          "employment": "Full time",
+          "location": "H\u00e0 N\u1ed9i",
+          "experience": "T\u1eeb 3 n\u0103m kinh nghi\u1ec7m"
+        },
+        {
+          "title": "Junior Marketing | Partnership & Crossell",
+          "salary": "L\u01b0\u01a1ng th\u1ecfa thu\u1eadn",
+          "description": "Collect authentic product reviews via email auto-flows, reward buyers with coupons when they leave reviews, and invite UGC via share-links or QR codes.",
+          "employment": "Full time",
+          "location": "H\u00e0 N\u1ed9i",
+          "experience": "T\u1eeb 3 n\u0103m kinh nghi\u1ec7m"
+        },
+        {
+          "title": "Junior Marketing | Partnership & Crossell",
+          "salary": "L\u01b0\u01a1ng th\u1ecfa thu\u1eadn",
+          "description": "Collect authentic product reviews via email auto-flows, reward buyers with coupons when they leave reviews, and invite UGC via share-links or QR codes.",
+          "employment": "Full time",
+          "location": "H\u00e0 N\u1ed9i",
+          "experience": "T\u1eeb 3 n\u0103m kinh nghi\u1ec7m"
+        }
+      ]
+    },
+    "library": {
+      "title": "Th\u01b0 vi\u1ec7n h\u00ecnh \u1ea3nh",
+      "images": {
+        "image1Alt": "Kho\u1ea3nh kh\u1eafc th\u1ef1c h\u00e0nh n\u1ed9i b\u1ed9",
+        "image2Alt": "Ho\u1ea1t \u0111\u1ed9ng b\u00f3ng \u0111\u00e1 t\u1ea1i Xipat",
+        "image3Alt": "\u0110\u1ed9i ng\u0169 trong bu\u1ed5i \u0111\u00e0o t\u1ea1o",
+        "image4Alt": "Ho\u1ea1t \u0111\u1ed9ng c\u00e2u l\u1ea1c b\u1ed9 trong nh\u00e0",
+        "image5Alt": "Th\u1ef1c h\u00e0nh workshop \u0111\u1ed9i nh\u00f3m",
+        "image6Alt": "Kho\u1ea3nh kh\u1eafc team building",
+        "image7Alt": "Ch\u01b0\u01a1ng tr\u00ecnh hi\u1ebfn m\u00e1u nh\u00e2n \u0111\u1ea1o",
+        "image8Alt": "Di\u1ec5n gi\u1ea3 chia s\u1ebb trong s\u1ef1 ki\u1ec7n n\u1ed9i b\u1ed9"
+      }
+    }
+  }
+}
