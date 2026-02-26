@@ -1,8 +1,9 @@
-import { NextIntlClientProvider } from 'next-intl';
+import { hasLocale, NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { Geist, Geist_Mono } from 'next/font/google';
+import { notFound } from 'next/navigation';
 import '../globals.css';
-import type { AppLocale } from '@/i18n/routing';
+import { routing } from '@/i18n/routing';
 import { HeroNavbar } from '@/components/home/hero-navbar';
 
 const geistSans = Geist({
@@ -20,9 +21,13 @@ export default async function LocaleLayout({
   params,
 }: Readonly<{
   children: React.ReactNode;
-  params: Promise<{ locale: AppLocale }>;
+  params: Promise<{ locale: string }>;
 }>) {
   const [{ locale }, messages] = await Promise.all([params, getMessages()]);
+
+  if (!hasLocale(routing.locales, locale)) {
+    notFound();
+  }
 
   return (
     <html lang={locale} className="scroll-smooth" suppressHydrationWarning>
@@ -35,4 +40,3 @@ export default async function LocaleLayout({
     </html>
   );
 }
-

@@ -16,10 +16,6 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'strapi.omegatheme.com',
       },
-      {
-        protocol: 'https',
-        hostname: 'www.figma.com',
-      },
     ],
     formats: ['image/webp'],
   },

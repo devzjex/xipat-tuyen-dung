@@ -56,9 +56,9 @@ const peopleShowcaseImages: PeopleShowcaseImage[] = [
   },
 ];
 
-const blog1 = 'https://www.figma.com/api/mcp/asset/5fbcba25-ffa5-4eab-b48a-ecf2f9cbb761';
-const blog2 = 'https://www.figma.com/api/mcp/asset/330ad32c-35ca-484f-95f2-9a6ce197c531';
-const blog3 = 'https://www.figma.com/api/mcp/asset/d91c5cdb-1e48-442e-9c36-fa7425e04f43';
+const blog1 = '/images/culture/blog-1.png';
+const blog2 = '/images/culture/blog-2.png';
+const blog3 = '/images/culture/blog-3.png';
 
 export default async function CulturePage() {
   const t = await getTranslations('culturePage');

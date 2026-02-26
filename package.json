@@ -15,7 +15,7 @@
     "lint:fix": "eslint . --fix --ext .ts,.tsx",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "prepare": "husky install"
+    "prepare": "husky"
   },
   "dependencies": {
     "class-variance-authority": "^0.7.1",
