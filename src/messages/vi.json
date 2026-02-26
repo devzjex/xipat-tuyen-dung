@@ -136,6 +136,11 @@
         }
       ],
       "cardFallback": "Lorem ipsum dolor sit amet, consectetur adipiscing elit,"
+    },
+    "seo": {
+      "title": "Xipat | Công nghệ giúp doanh nghiệp bứt phá",
+      "description": "Xipat xây dựng nền tảng và giải pháp công nghệ giúp doanh nghiệp giảm phức tạp, tối ưu vận hành và tăng trưởng bền vững.",
+      "imageAlt": "Trang chủ Xipat"
     }
   },
   "ecosystemPage": {
@@ -174,7 +179,11 @@
       ]
     },
     "solution": {
-      "headingLines": ["Giải Pháp Khác Biệt", "Cho Một Thế Giới Luôn", "Thay Đổi"],
+      "headingLines": [
+        "Giải Pháp Khác Biệt",
+        "Cho Một Thế Giới Luôn",
+        "Thay Đổi"
+      ],
       "items": [
         {
           "title": "Kinh nghiệm sâu về eCommerce",
@@ -301,6 +310,11 @@
           "height": 56
         }
       ]
+    },
+    "seo": {
+      "title": "Hệ sinh thái | Xipat",
+      "description": "Khám phá hệ sinh thái ứng dụng OmegaTheme giúp doanh nghiệp eCommerce vận hành tinh gọn, tối ưu hiệu quả và mở rộng toàn cầu.",
+      "imageAlt": "Hệ sinh thái ứng dụng Xipat"
     }
   },
   "culturePage": {
@@ -389,36 +403,36 @@
       }
     },
     "cultureGuidedShowcase": {
-      "heading": "M\u1ed9t m\u00f4i tr\u01b0\u1eddng \u0111\u01b0\u1ee3c d\u1eabn d\u1eaft b\u1edfi v\u0103n h\u00f3a r\u00f5 r\u00e0ng",
+      "heading": "Một môi trường được dẫn dắt bởi văn hóa rõ ràng",
       "items": [
         {
-          "title": "T\u01b0\u01a1i kh\u1ecfe",
-          "description": "T\u1ea1i XIPAT, ch\u00fang t\u00f4i l\u00e0m vi\u1ec7c v\u1edbi tinh th\u1ea7n l\u1ea1c quan v\u00e0 ch\u1ee7 \u0111\u1ed9ng, t\u1ea1o n\u00ean m\u1ed9t m\u00f4i tr\u01b0\u1eddng nh\u1eb9 nh\u00e0ng nh\u01b0ng hi\u1ec7u qu\u1ea3. S\u1ef1 t\u01b0\u01a1i kh\u1ecfe gi\u00fap \u0111\u1ed9i ng\u0169 gi\u1eef nh\u1ecbp b\u1ec1n v\u1eefng v\u00e0 lan t\u1ecfa n\u0103ng l\u01b0\u1ee3ng t\u1ed1t \u0111\u1ebfn nhau.",
+          "title": "Tươi khỏe",
+          "description": "Tại XIPAT, chúng tôi làm việc với tinh thần lạc quan và chủ động, tạo nên một môi trường nhẹ nhàng nhưng hiệu quả. Sự tươi khỏe giúp đội ngũ giữ nhịp bền vững và lan tỏa năng lượng tốt đến nhau.",
           "imageSrc": "/images/culture/image.png",
-          "imageAlt": "\u0110\u1ed9i b\u00f3ng \u0111\u00e1 Xipat"
+          "imageAlt": "Đội bóng đá Xipat"
         },
         {
-          "title": "Th\u1ea5u c\u1ea3m",
-          "description": "Ch\u00fang t\u00f4i l\u1eafng nghe \u0111\u1ec3 hi\u1ec3u nhau v\u00e0 hi\u1ec3u kh\u00e1ch h\u00e0ng, t\u1eeb \u0111\u00f3 ph\u1ed1i h\u1ee3p m\u1ec1m d\u1ebbo h\u01a1n, h\u00e0nh \u0111\u1ed9ng \u0111\u00fang tr\u00e1ch nhi\u1ec7m h\u01a1n.",
+          "title": "Thấu cảm",
+          "description": "Chúng tôi lắng nghe để hiểu nhau và hiểu khách hàng, từ đó phối hợp mềm dẻo hơn, hành động đúng trách nhiệm hơn.",
           "imageSrc": "/images/culture/image.png",
-          "imageAlt": "\u0110\u1ed9i b\u00f3ng \u0111\u00e1 Xipat"
+          "imageAlt": "Đội bóng đá Xipat"
         },
         {
-          "title": "Ham h\u1ecdc",
-          "description": "M\u1ed7i ng\u01b0\u1eddi ch\u1ee7 \u0111\u1ed9ng h\u1ecdc t\u1eeb th\u1ef1c t\u1ebf, th\u1eed nghi\u1ec7m nhanh v\u00e0 c\u1eadp nh\u1eadt li\u00ean t\u1ee5c \u0111\u1ec3 c\u00f4ng vi\u1ec7c m\u1ed7i ng\u00e0y t\u1ed1t h\u01a1n.",
+          "title": "Ham học",
+          "description": "Mỗi người chủ động học từ thực tế, thử nghiệm nhanh và cập nhật liên tục để công việc mỗi ngày tốt hơn.",
           "imageSrc": "/images/culture/image.png",
-          "imageAlt": "\u0110\u1ed9i b\u00f3ng \u0111\u00e1 Xipat"
+          "imageAlt": "Đội bóng đá Xipat"
         },
         {
-          "title": "C\u1ea7u ti\u1ebfn",
-          "description": "Tinh th\u1ea7n c\u1ea7u ti\u1ebfn gi\u00fap ch\u00fang t\u00f4i kh\u00f4ng th\u1ecfa hi\u1ec7p v\u1edbi phi\u00ean b\u1ea3n tr\u01b0\u1edbc, lu\u00f4n n\u00e2ng chu\u1ea9n ch\u1ea5t l\u01b0\u1ee3ng cho s\u1ea3n ph\u1ea9m v\u00e0 tr\u1ea3i nghi\u1ec7m.",
+          "title": "Cầu tiến",
+          "description": "Tinh thần cầu tiến giúp chúng tôi không thỏa hiệp với phiên bản trước, luôn nâng chuẩn chất lượng cho sản phẩm và trải nghiệm.",
           "imageSrc": "/images/culture/image.png",
-          "imageAlt": "\u0110\u1ed9i b\u00f3ng \u0111\u00e1 Xipat"
+          "imageAlt": "Đội bóng đá Xipat"
         }
       ]
     },
     "programs": {
-      "title": "C\u00e1c ch\u01b0\u01a1ng tr\u00ecnh <accent>n\u1ed5i b\u1eadt</accent>",
+      "title": "Các chương trình <accent>nổi bật</accent>",
       "highlights": [
         {
           "title": "Lorem ipsum dolor",
@@ -440,25 +454,25 @@
       "accordion": [
         {
           "id": "01",
-          "title": "Ho\u1ea1t \u0111\u1ed9ng n\u1ed9i b\u1ed9",
+          "title": "Hoạt động nội bộ",
           "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
           "imageSrc": "/images/home/culture.png"
         },
         {
           "id": "02",
-          "title": "\u0110\u00e0o t\u1ea1o n\u1ed9i b\u1ed9",
+          "title": "Đào tạo nội bộ",
           "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
           "imageSrc": "/images/home/culture.png"
         },
         {
           "id": "03",
-          "title": "C\u00e1c ch\u01b0\u01a1ng tr\u00ecnh CSR",
+          "title": "Các chương trình CSR",
           "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
           "imageSrc": "/images/home/culture.png"
         },
         {
           "id": "04",
-          "title": "C\u00e2u l\u1ea1c b\u1ed9",
+          "title": "Câu lạc bộ",
           "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
           "imageSrc": "/images/home/culture.png"
         }
@@ -466,7 +480,7 @@
     },
     "news": {
       "badge": "Blog",
-      "title": "Kh\u00e1m ph\u00e1 tin t\u1ee9c m\u1edbi nh\u1ea5t t\u1eeb Xipat",
+      "title": "Khám phá tin tức mới nhất từ Xipat",
       "cards": [
         {
           "meta": "Lorem ipsum dolor sit amet",
@@ -486,52 +500,57 @@
       ]
     },
     "recruitment": {
-      "badge": "Tuy\u1ec3n d\u1ee5ng",
-      "titlePrefix": "C\u00e1c v\u1ecb tr\u00ed",
-      "titleAccent": "\u0111ang tuy\u1ec3n",
-      "titleSuffix": "t\u1ea1i Xipat",
-      "description": "Gia nh\u1eadp Xipat, \u0111\u01b0\u1ee3c l\u00e0m vi\u1ec7c t\u1eed t\u1ebf v\u00e0 t\u1ea1o n\u00ean nh\u1eefng gi\u00e1 tr\u1ecb th\u1eadt qua t\u1eebng s\u1ea3n ph\u1ea9m.",
-      "contactButton": "Li\u00ean h\u1ec7 ngay",
-      "viewAllButton": "Xem t\u1ea5t c\u1ea3",
+      "badge": "Tuyển dụng",
+      "titlePrefix": "Các vị trí",
+      "titleAccent": "đang tuyển",
+      "titleSuffix": "tại Xipat",
+      "description": "Gia nhập Xipat, được làm việc tử tế và tạo nên những giá trị thật qua từng sản phẩm.",
+      "contactButton": "Liên hệ ngay",
+      "viewAllButton": "Xem tất cả",
       "cards": [
         {
           "title": "Senior Software Engineer | Frontend",
-          "salary": "L\u01b0\u01a1ng th\u1ecfa thu\u1eadn",
+          "salary": "Lương thỏa thuận",
           "description": "Collect authentic product reviews via email auto-flows, reward buyers with coupons when they leave reviews, and invite UGC via share-links or QR codes.",
           "employment": "Full time",
-          "location": "H\u00e0 N\u1ed9i",
-          "experience": "T\u1eeb 3 n\u0103m kinh nghi\u1ec7m"
+          "location": "Hà Nội",
+          "experience": "Từ 3 năm kinh nghiệm"
         },
         {
           "title": "Junior Marketing | Partnership & Crossell",
-          "salary": "L\u01b0\u01a1ng th\u1ecfa thu\u1eadn",
+          "salary": "Lương thỏa thuận",
           "description": "Collect authentic product reviews via email auto-flows, reward buyers with coupons when they leave reviews, and invite UGC via share-links or QR codes.",
           "employment": "Full time",
-          "location": "H\u00e0 N\u1ed9i",
-          "experience": "T\u1eeb 3 n\u0103m kinh nghi\u1ec7m"
+          "location": "Hà Nội",
+          "experience": "Từ 3 năm kinh nghiệm"
         },
         {
           "title": "Junior Marketing | Partnership & Crossell",
-          "salary": "L\u01b0\u01a1ng th\u1ecfa thu\u1eadn",
+          "salary": "Lương thỏa thuận",
           "description": "Collect authentic product reviews via email auto-flows, reward buyers with coupons when they leave reviews, and invite UGC via share-links or QR codes.",
           "employment": "Full time",
-          "location": "H\u00e0 N\u1ed9i",
-          "experience": "T\u1eeb 3 n\u0103m kinh nghi\u1ec7m"
+          "location": "Hà Nội",
+          "experience": "Từ 3 năm kinh nghiệm"
         }
       ]
     },
     "library": {
-      "title": "Th\u01b0 vi\u1ec7n h\u00ecnh \u1ea3nh",
+      "title": "Thư viện hình ảnh",
       "images": {
-        "image1Alt": "Kho\u1ea3nh kh\u1eafc th\u1ef1c h\u00e0nh n\u1ed9i b\u1ed9",
-        "image2Alt": "Ho\u1ea1t \u0111\u1ed9ng b\u00f3ng \u0111\u00e1 t\u1ea1i Xipat",
-        "image3Alt": "\u0110\u1ed9i ng\u0169 trong bu\u1ed5i \u0111\u00e0o t\u1ea1o",
-        "image4Alt": "Ho\u1ea1t \u0111\u1ed9ng c\u00e2u l\u1ea1c b\u1ed9 trong nh\u00e0",
-        "image5Alt": "Th\u1ef1c h\u00e0nh workshop \u0111\u1ed9i nh\u00f3m",
-        "image6Alt": "Kho\u1ea3nh kh\u1eafc team building",
-        "image7Alt": "Ch\u01b0\u01a1ng tr\u00ecnh hi\u1ebfn m\u00e1u nh\u00e2n \u0111\u1ea1o",
-        "image8Alt": "Di\u1ec5n gi\u1ea3 chia s\u1ebb trong s\u1ef1 ki\u1ec7n n\u1ed9i b\u1ed9"
+        "image1Alt": "Khoảnh khắc thực hành nội bộ",
+        "image2Alt": "Hoạt động bóng đá tại Xipat",
+        "image3Alt": "Đội ngũ trong buổi đào tạo",
+        "image4Alt": "Hoạt động câu lạc bộ trong nhà",
+        "image5Alt": "Thực hành workshop đội nhóm",
+        "image6Alt": "Khoảnh khắc team building",
+        "image7Alt": "Chương trình hiến máu nhân đạo",
+        "image8Alt": "Diễn giả chia sẻ trong sự kiện nội bộ"
       }
+    },
+    "seo": {
+      "title": "Văn hóa | Xipat",
+      "description": "Khám phá văn hóa Xipat với đội ngũ thấu cảm, cầu tiến và tươi khỏe, cùng các hoạt động nội bộ và cơ hội phát triển nghề nghiệp.",
+      "imageAlt": "Văn hóa tại Xipat"
     }
   },
   "aboutPage": {
@@ -539,6 +558,11 @@
       "title": "Hành trình công nghệ\nđược xây bởi con\nngười và giá trị thật",
       "description": "Trong 17 năm, chúng tôi không ngừng đổi mới và xây dựng những giải pháp mang tính giải phóng, giúp các doanh nghiệp Việt và quốc tế vận hành vững vàng",
       "imageAlt": "Đội ngũ Xipat đang trao đổi báo cáo"
+    },
+    "seo": {
+      "title": "Về chúng tôi | Xipat",
+      "description": "Tìm hiểu hành trình 17 năm của Xipat trong việc xây dựng giải pháp công nghệ tạo giá trị thật cho doanh nghiệp Việt Nam và toàn cầu.",
+      "imageAlt": "Giới thiệu về Xipat"
     }
   }
 }

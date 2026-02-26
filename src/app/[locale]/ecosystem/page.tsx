@@ -1,4 +1,5 @@
-﻿import Image from 'next/image';
+﻿import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
@@ -7,14 +8,47 @@ import { AppsEcosystemSection, type EcosystemApp } from '@/components/ecosystem/
 import { PartnerGrowthSection, type PartnerLogo } from '@/components/ecosystem/partner-growth-section';
 import { SolutionShowcase, type SolutionItem } from '@/components/ecosystem/solution-showcase';
 import { Button } from '@/components/ui/button';
+import { createSeo } from '@/lib/seo';
 
 const heroBg = '/images/ecosystem/bg-image.png';
+
+const ecosystemSeo = createSeo({
+  siteName: 'Xipat',
+  path: '/ecosystem',
+  image: {
+    url: '/images/ecosystem/bg-image.png',
+    width: 1369,
+    height: 800,
+    alt: 'Xipat ecosystem',
+  },
+});
 
 type OperationStat = {
   value: string;
   label: string;
   index: string;
 };
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'ecosystemPage.seo' });
+
+  return ecosystemSeo({
+    locale,
+    title: t('title'),
+    description: t('description'),
+    image: {
+      url: '/images/ecosystem/bg-image.png',
+      width: 1369,
+      height: 800,
+      alt: t('imageAlt'),
+    },
+  });
+}
 
 export default async function EcosystemPage() {
   const t = await getTranslations('ecosystemPage');

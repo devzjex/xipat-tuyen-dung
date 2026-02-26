@@ -1,9 +1,11 @@
-﻿import Image from 'next/image';
+﻿import type { Metadata } from 'next';
+import Image from 'next/image';
 import { getTranslations } from 'next-intl/server';
 import { CultureGuidedShowcase, type CultureGuidedItem } from '@/components/culture/culture-guided-showcase';
 import { RecruitmentSection, type RecruitmentCard } from '@/components/culture/recruitment-section';
 import { ImageLibrarySection, type LibraryImageItem } from '@/components/culture/image-library-section';
 import { CultureAccordion, type CultureAccordionItem } from '@/components/home/culture-accordion';
+import { createSeo } from '@/lib/seo';
 
 type PeopleShowcaseImageId = 'image1' | 'image2' | 'image3' | 'image4';
 
@@ -59,6 +61,38 @@ const peopleShowcaseImages: PeopleShowcaseImage[] = [
 const blog1 = '/images/culture/blog-1.png';
 const blog2 = '/images/culture/blog-2.png';
 const blog3 = '/images/culture/blog-3.png';
+
+const cultureSeo = createSeo({
+  siteName: 'Xipat',
+  path: '/culture',
+  image: {
+    url: '/images/culture/bg.png',
+    width: 883,
+    height: 454,
+    alt: 'Culture at Xipat',
+  },
+});
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'culturePage.seo' });
+
+  return cultureSeo({
+    locale,
+    title: t('title'),
+    description: t('description'),
+    image: {
+      url: '/images/culture/bg.png',
+      width: 883,
+      height: 454,
+      alt: t('imageAlt'),
+    },
+  });
+}
 
 export default async function CulturePage() {
   const t = await getTranslations('culturePage');

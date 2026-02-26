@@ -5,6 +5,7 @@ import { getTranslations } from 'next-intl/server';
 
 import { CultureAccordion, type CultureAccordionItem } from '@/components/home/culture-accordion';
 import { Button } from '@/components/ui/button';
+import { createSeo } from '@/lib/seo';
 
 const heroImage = '/images/home/banner-hero.png';
 const people = '/images/home/people.png';
@@ -13,10 +14,37 @@ const blog1 = '/images/home/blog-1.png';
 const blog2 = '/images/home/blog-2.png';
 const blog3 = '/images/home/blog-3.png';
 
-export const metadata: Metadata = {
-  title: 'Xipat',
-  description: 'Xipat homepage',
-};
+const homeSeo = createSeo({
+  siteName: 'Xipat',
+  path: '/',
+  image: {
+    url: '/images/home/banner-hero.png',
+    width: 1440,
+    height: 983,
+    alt: 'Xipat homepage',
+  },
+});
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'home.seo' });
+
+  return homeSeo({
+    locale,
+    title: t('title'),
+    description: t('description'),
+    image: {
+      url: '/images/home/banner-hero.png',
+      width: 1440,
+      height: 983,
+      alt: t('imageAlt'),
+    },
+  });
+}
 
 const brandLogos = [
   '/images/partner/partner-1.png',
