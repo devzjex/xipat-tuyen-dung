@@ -204,7 +204,7 @@ export default async function CulturePage() {
             {peopleShowcaseImages.map((item) => (
               <article
                 key={item.id}
-                className={`justify-self-center overflow-hidden rounded-3xl shadow-[0_12px_30px_rgba(29,64,140,0.12)] ${item.mobileClass}`}
+                className={`justify-self-center overflow-hidden rounded-xl shadow-[0_12px_30px_rgba(29,64,140,0.12)] ${item.mobileClass}`}
               >
                 <Image
                   src={item.src}
@@ -222,7 +222,7 @@ export default async function CulturePage() {
             {peopleShowcaseImages.map((item) => (
               <article
                 key={item.id}
-                className={`absolute overflow-hidden rounded-3xl shadow-[0_12px_30px_rgba(29,64,140,0.12)] ${item.desktopClass}`}
+                className={`absolute overflow-hidden rounded-xl shadow-[0_12px_30px_rgba(29,64,140,0.12)] ${item.desktopClass}`}
               >
                 <Image
                   src={item.src}

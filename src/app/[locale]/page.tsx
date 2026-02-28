@@ -260,7 +260,7 @@ export default async function LandingPage() {
                   <h3 className="text-xl leading-[1.25] font-semibold tracking-[-0.03em]">
                     <span className="text-[#4B86FF]">{item.highlight}</span> {item.rest}
                   </h3>
-                  <p className="mt-5 text-sm leading-[1.7] text-white/78">{item.body}</p>
+                  <p className="mt-5 text-base leading-[1.7] text-white/78">{item.body}</p>
                 </article>
               ))}
             </div>

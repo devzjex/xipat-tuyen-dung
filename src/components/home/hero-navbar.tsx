@@ -128,14 +128,12 @@ function LanguageSwitcher({
 function DesktopNav({ scrolled }: { scrolled: boolean }) {
   const t = useTranslations('home.nav');
   const locale = useLocale() as AppLocale;
-  const homeHref = locale === 'en' ? '/en' : '/';
-  const aboutHref = locale === 'en' ? '/en/about' : '/about';
   const navItems = [
     { key: 'ecosystem', href: locale === 'en' ? '/en/ecosystem' : '/ecosystem' },
-    { key: 'about', href: aboutHref },
+    { key: 'about', href: locale === 'en' ? '/en/about' : '/about' },
     { key: 'culture', href: locale === 'en' ? '/en/culture' : '/culture' },
-    { key: 'careers', href: `${homeHref}#careers` },
-    { key: 'news', href: `${homeHref}#news` },
+    { key: 'careers', href: locale === 'en' ? '/en/careers' : '/careers' },
+    { key: 'news', href: locale === 'en' ? '/en/news' : '/news' },
   ] as const;
 
   return (

@@ -5,6 +5,7 @@ import { notFound } from 'next/navigation';
 import '../globals.css';
 import { routing } from '@/i18n/routing';
 import { HeroNavbar } from '@/components/home/hero-navbar';
+import { Toaster } from '@/components/ui/toaster';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -35,6 +36,7 @@ export default async function LocaleLayout({
         <NextIntlClientProvider locale={locale} messages={messages}>
           <HeroNavbar />
           {children}
+          <Toaster />
         </NextIntlClientProvider>
       </body>
     </html>

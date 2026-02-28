@@ -514,7 +514,8 @@
           "description": "Collect authentic product reviews via email auto-flows, reward buyers with coupons when they leave reviews, and invite UGC via share-links or QR codes.",
           "employment": "Full time",
           "location": "Hà Nội",
-          "experience": "Từ 3 năm kinh nghiệm"
+          "experience": "Từ 3 năm kinh nghiệm",
+          "slug": "senior-software-engineer-frontend"
         },
         {
           "title": "Junior Marketing | Partnership & Crossell",
@@ -522,7 +523,8 @@
           "description": "Collect authentic product reviews via email auto-flows, reward buyers with coupons when they leave reviews, and invite UGC via share-links or QR codes.",
           "employment": "Full time",
           "location": "Hà Nội",
-          "experience": "Từ 3 năm kinh nghiệm"
+          "experience": "Từ 3 năm kinh nghiệm",
+          "slug": "junior-marketing-partnership-crossell"
         },
         {
           "title": "Junior Marketing | Partnership & Crossell",
@@ -530,7 +532,8 @@
           "description": "Collect authentic product reviews via email auto-flows, reward buyers with coupons when they leave reviews, and invite UGC via share-links or QR codes.",
           "employment": "Full time",
           "location": "Hà Nội",
-          "experience": "Từ 3 năm kinh nghiệm"
+          "experience": "Từ 3 năm kinh nghiệm",
+          "slug": "junior-marketing-performance"
         }
       ]
     },
@@ -559,10 +562,456 @@
       "description": "Trong 17 năm, chúng tôi không ngừng đổi mới và xây dựng những giải pháp mang tính giải phóng, giúp các doanh nghiệp Việt và quốc tế vận hành vững vàng",
       "imageAlt": "Đội ngũ Xipat đang trao đổi báo cáo"
     },
+    "peopleShowcase": {
+      "title": "17 năm bền bỉ, nhất quán, linh hoạt và trách nhiệm",
+      "descriptionLead": "Ngay từ những ngày đầu làm sản phẩm, chúng tôi thấy doanh nghiệp và đội ngũ vận hành luôn phải xoay xở với đủ thứ phức tạp: dữ liệu rối, quy trình chồng chéo, hệ thống không khớp nhau.",
+      "descriptionFollowUp": "Từ đó, mỗi sản phẩm đều được xây dựng với một câu hỏi cốt lõi:",
+      "descriptionEmphasis": "liệu nó có giải phóng được thời gian, giảm bớt phức tạp, và mở thêm không gian sáng tạo cho doanh nghiệp không?",
+      "images": {
+        "image1Alt": "Khoảnh khắc hoạt động văn hóa 1",
+        "image2Alt": "Khoảnh khắc hoạt động văn hóa 2",
+        "image3Alt": "Khoảnh khắc hoạt động văn hóa 3",
+        "image4Alt": "Khoảnh khắc hoạt động văn hóa 4"
+      }
+    },
+    "productJourney": {
+      "titlePrefix": "Hành trình làm sản phẩm tử tế và",
+      "titleAccent": "hướng đến con người",
+      "description": "Chúng tôi phát triển hệ sinh thái sản phẩm phục vụ hàng chục nghìn doanh nghiệp toàn cầu, nhưng điều khiến XIPAT khác biệt không phải số lượng ứng dụng, mà là cách chúng tôi lắng nghe, cách chúng tôi đổi mới, và cách chúng tôi đặt con người làm trung tâm của mọi giải pháp.",
+      "mission": {
+        "title": "Sứ mệnh",
+        "body": "Xipat xây dựng công nghệ mang tầm quốc tế để giúp con người phát triển, doanh nghiệp thịnh vượng và thế giới trở nên tốt đẹp hơn."
+      },
+      "vision": {
+        "title": "Tầm nhìn",
+        "body": "Xây dựng một hệ sinh thái ứng dụng thông minh, giúp doanh nghiệp tự động hóa dễ dàng, khai thác dữ liệu hiệu quả và tăng trưởng bền vững trong kỷ nguyên số."
+      },
+      "imageAlt": "Đội ngũ Xipat làm việc với sản phẩm"
+    },
+    "coreValues": {
+      "titlePrefix": "Những giá trị tạo nên",
+      "titleAccent": "Xipat",
+      "items": [
+        {
+          "title": "Chính trực",
+          "body": "Trong một thị trường công nghệ thay đổi nhanh, XIPAT đặt chính trực làm nền tảng. Chính trực là minh bạch, đạo đức và dám làm điều đúng. Với chúng tôi, “điều đúng quan trọng hơn ai đúng” là cách xây dựng niềm tin với khách hàng, đối tác và đồng đội."
+        },
+        {
+          "title": "Hiệu quả",
+          "body": "XIPAT tạo ra giá trị thực thông qua những sản phẩm và dịch vụ công nghệ hiệu quả. Với chúng tôi, hiệu quả nghĩa là đạt mục tiêu bằng cách tối ưu nguồn lực và tạo ra kết quả bền vững. Điều đó được hình thành từ sự phối hợp liền mạch giữa các team và nỗ lực của từng Xipater."
+        },
+        {
+          "title": "Kỷ luật",
+          "body": "XIPAT tin rằng kỷ luật là sức mạnh của một tổ chức chuyên nghiệp - nhất quán trong hành động, tôn trọng quy trình và chịu trách nhiệm với mục tiêu. Kỷ luật không giới hạn sáng tạo; nó giúp chúng ta vận hành nhanh hơn, chính xác hơn và đổi mới đúng hướng."
+        },
+        {
+          "title": "Sáng tạo",
+          "body": "Là công ty công nghệ, XIPAT luôn đổi mới để nâng cao trải nghiệm và tạo ra giá trị khác biệt. Với chúng tôi, sáng tạo là tìm ra giải pháp tốt hơn - linh hoạt, bền vững và không đánh đổi bằng rủi ro."
+        }
+      ]
+    },
+    "recruitment": {
+      "badge": "Tuyển dụng",
+      "titlePrefix": "Các vị trí",
+      "titleAccent": "đang tuyển",
+      "titleSuffix": "tại Xipat",
+      "description": "Gia nhập Xipat, được làm việc tử tế và tạo nên những giá trị thật qua từng sản phẩm.",
+      "contactButton": "Liên hệ ngay",
+      "viewAllButton": "Xem tất cả",
+      "cards": [
+        {
+          "title": "Senior Software Engineer | Frontend",
+          "salary": "Lương thỏa thuận",
+          "description": "Collect authentic product reviews via email auto-flows, reward buyers with coupons when they leave reviews, and invite UGC via share-links or QR codes.",
+          "employment": "Full time",
+          "location": "Hà Nội",
+          "experience": "Từ 3 năm kinh nghiệm",
+          "slug": "senior-software-engineer-frontend"
+        },
+        {
+          "title": "Junior Marketing | Partnership & Crossell",
+          "salary": "Lương thỏa thuận",
+          "description": "Collect authentic product reviews via email auto-flows, reward buyers with coupons when they leave reviews, and invite UGC via share-links or QR codes.",
+          "employment": "Full time",
+          "location": "Hà Nội",
+          "experience": "Từ 3 năm kinh nghiệm",
+          "slug": "junior-marketing-partnership-crossell"
+        },
+        {
+          "title": "Junior Marketing | Partnership & Crossell",
+          "salary": "Lương thỏa thuận",
+          "description": "Collect authentic product reviews via email auto-flows, reward buyers with coupons when they leave reviews, and invite UGC via share-links or QR codes.",
+          "employment": "Full time",
+          "location": "Hà Nội",
+          "experience": "Từ 3 năm kinh nghiệm",
+          "slug": "junior-marketing-performance"
+        }
+      ]
+    },
+    "milestones": {
+      "heading": "Các cột mốc phát triển của Xipat",
+      "activeIndex": "1",
+      "items": [
+        {
+          "year": "2011",
+          "title": "Chính thức phát triển phần mềm trên nền tảng Shopify",
+          "body": "Đặt nền móng công nghệ đầu tiên, mở ra hành trình xây dựng sản phẩm phục vụ nhà bán hàng toàn cầu.",
+          "imageSrc": "/images/about/image-6.png",
+          "imageAlt": "Cột mốc phát triển năm 2011"
+        },
+        {
+          "year": "2014",
+          "title": "Mở rộng đội ngũ sản phẩm và vận hành",
+          "body": "Xipat tăng tốc năng lực phát triển sản phẩm, chuẩn hóa quy trình và nâng cao chất lượng triển khai.",
+          "imageSrc": "/images/about/image-6.png",
+          "imageAlt": "Cột mốc phát triển năm 2014"
+        },
+        {
+          "year": "2019",
+          "title": "Phát triển hệ sinh thái ứng dụng chuyên sâu",
+          "body": "Tập trung vào các bài toán thực tế của doanh nghiệp để xây dựng giải pháp có tính ứng dụng cao và bền vững.",
+          "imageSrc": "/images/about/image-6.png",
+          "imageAlt": "Cột mốc phát triển năm 2019"
+        },
+        {
+          "year": "2025",
+          "title": "Đồng hành hàng chục nghìn doanh nghiệp toàn cầu",
+          "body": "Tiếp tục đổi mới với định hướng lấy con người làm trung tâm, tạo ra giá trị dài hạn cho khách hàng và cộng đồng.",
+          "imageSrc": "/images/about/image-6.png",
+          "imageAlt": "Cột mốc phát triển năm 2025"
+        }
+      ]
+    },
+    "cultureBanner": {
+      "title": "Văn hoá tại Xipat",
+      "description": "Chúng tôi tạo ra một môi trường nơi mỗi cá nhân được trao quyền để phát triển, được lắng nghe và được đồng hành trên hành trình làm ra những sản phẩm có ý nghĩa.",
+      "ctaLabel": "Xem thêm",
+      "ctaHref": "/culture",
+      "imageAlt": "Văn hóa làm việc tại Xipat"
+    },
     "seo": {
       "title": "Về chúng tôi | Xipat",
       "description": "Tìm hiểu hành trình 17 năm của Xipat trong việc xây dựng giải pháp công nghệ tạo giá trị thật cho doanh nghiệp Việt Nam và toàn cầu.",
       "imageAlt": "Giới thiệu về Xipat"
+    },
+    "careerDetails": {
+      "seoSuffix": "Tuyển dụng Xipat",
+      "fallbackSeoTitle": "Chi tiết công việc | Tuyển dụng Xipat",
+      "fallbackSeoDescription": "Khám phá các vị trí đang tuyển tại Xipat.",
+      "applicationForm": {
+        "title": "Gia nhập đội ngũ Xipat",
+        "fullNameLabel": "Tên",
+        "fullNamePlaceholder": "Name",
+        "emailLabel": "Email",
+        "emailPlaceholder": "example@domain.com",
+        "phoneLabel": "Số điện thoại",
+        "phonePlaceholder": "0987 654 321",
+        "cvLabel": "File CV",
+        "cvButtonLabel": "Choose file",
+        "cvNoFileText": "Không có file nào được chọn",
+        "portfolioLabel": "Portfolio Link (nếu có)",
+        "portfolioPlaceholder": "https://portfolio.example.com",
+        "coverLetterLabel": "Thư tuyển dụng",
+        "coverLetterPlaceholder": "Type your query here.....",
+        "submitLabel": "Ứng tuyển ngay",
+        "submitSuccessTitle": "Ứng Tuyển thành công",
+        "submitSuccessDescription": "Bộ phận tuyển dụng sẽ phản hồi bạn sớm nhất.",
+        "validation": {
+          "fullNameRequired": "Vui lòng nhập họ tên.",
+          "fullNameMin": "Họ tên phải có ít nhất 2 ký tự.",
+          "emailRequired": "Vui lòng nhập email.",
+          "emailInvalid": "Email không đúng định dạng.",
+          "phoneRequired": "Vui lòng nhập số điện thoại.",
+          "phoneInvalid": "Số điện thoại không đúng định dạng.",
+          "cvRequired": "Vui lòng tải lên CV.",
+          "cvInvalidType": "Chỉ chấp nhận file .pdf, .doc hoặc .docx.",
+          "cvMaxSize": "Dung lượng CV phải nhỏ hơn 5MB.",
+          "portfolioInvalid": "Link portfolio không hợp lệ.",
+          "coverLetterRequired": "Vui lòng nhập thư tuyển dụng.",
+          "coverLetterMin": "Thư tuyển dụng cần ít nhất 20 ký tự."
+        }
+      },
+      "careers": {
+        "junior-marketing-partnership-crossell": {
+          "careerLabel": "Xipat Career",
+          "title": "Marketing | Partnership",
+          "salary": "Từ 20tr +",
+          "employment": "Full time",
+          "location": "Hà Nội",
+          "experience": "Từ 3 năm kinh nghiệm",
+          "applyNowLabel": "Ứng tuyển ngay",
+          "overviewTitle": "Tổng quan",
+          "overviewParagraphs": [
+            "Xipat tìm kiếm vị trí Partnership Marketing để phát triển các hợp tác chiến lược và cơ hội cross-sell trong hệ sinh thái sản phẩm.",
+            "Bạn sẽ phối hợp cùng đội ngũ sản phẩm, sales và growth để xây dựng kế hoạch hợp tác, triển khai chiến dịch và tạo ra kết quả kinh doanh rõ ràng."
+          ],
+          "responsibilitiesTitle": "Mô tả vị trí",
+          "responsibilities": [
+            "Xây dựng và mở rộng pipeline đối tác cho các chiến dịch đồng thương hiệu.",
+            "Lập kế hoạch và triển khai chiến dịch hợp tác với KPI cụ thể.",
+            "Phối hợp liên phòng ban để đảm bảo tiến độ và chất lượng triển khai.",
+            "Theo dõi hiệu quả chiến dịch và tối ưu dựa trên dữ liệu.",
+            "Duy trì giao tiếp thường xuyên với đối tác và stakeholders chính."
+          ],
+          "requirementsTitle": "Yêu cầu",
+          "requirements": [
+            "Tối thiểu 3 năm kinh nghiệm ở vị trí marketing/partnership/growth.",
+            "Kỹ năng giao tiếp và xây dựng quan hệ đối tác tốt.",
+            "Có khả năng làm việc với dữ liệu và báo cáo hiệu quả chiến dịch.",
+            "Quản lý tốt nhiều đầu việc với khả năng ưu tiên rõ ràng.",
+            "Tư duy chủ động, phối hợp tốt và hướng đến kết quả."
+          ],
+          "benefitsTitle": "Quyền lợi",
+          "benefits": [
+            "Thu nhập cạnh tranh và lộ trình đánh giá rõ ràng.",
+            "Ngân sách học tập và mentoring từ đội ngũ dày dặn kinh nghiệm.",
+            "Môi trường làm việc tôn trọng, trao quyền và đề cao ownership.",
+            "Cơ hội tham gia sản phẩm công nghệ phục vụ thị trường toàn cầu.",
+            "Không gian làm việc hiện đại và văn hóa đồng đội tích cực."
+          ],
+          "contactTitle": "Liên hệ",
+          "contactHint": "(hoặc ứng tuyển trực tiếp theo form bên dưới)",
+          "phone": "0976.897.999",
+          "email": "loannt@xipat.com"
+        },
+        "senior-software-engineer-frontend": {
+          "careerLabel": "Xipat Career",
+          "title": "Senior Software Engineer | Frontend",
+          "salary": "Lương thỏa thuận",
+          "employment": "Full time",
+          "location": "Hà Nội",
+          "experience": "Từ 3 năm kinh nghiệm",
+          "applyNowLabel": "Ứng tuyển ngay",
+          "overviewTitle": "Tổng quan",
+          "overviewParagraphs": [
+            "Bạn sẽ dẫn dắt kiến trúc frontend và triển khai trải nghiệm sản phẩm có tác động cao cho người dùng toàn cầu.",
+            "Vai trò kết hợp giữa coding thực chiến, mentoring kỹ thuật và phối hợp chặt chẽ với product/design."
+          ],
+          "responsibilitiesTitle": "Mô tả vị trí",
+          "responsibilities": [
+            "Thiết kế kiến trúc frontend mở rộng tốt và dễ bảo trì.",
+            "Phát triển giao diện hiệu năng cao với React/Next.js.",
+            "Review code và hỗ trợ phát triển năng lực cho thành viên junior.",
+            "Phối hợp product/design để tối ưu trải nghiệm người dùng.",
+            "Nâng cao độ tin cậy hệ thống qua testing và observability."
+          ],
+          "requirementsTitle": "Yêu cầu",
+          "requirements": [
+            "Thành thạo TypeScript, React và Next.js.",
+            "Hiểu sâu về tối ưu hiệu năng và accessibility.",
+            "Kinh nghiệm xây dựng UI theo hướng component-driven.",
+            "Khả năng giao hàng chất lượng trong môi trường cross-functional.",
+            "Kỹ năng giao tiếp và ra quyết định kỹ thuật tốt."
+          ],
+          "benefitsTitle": "Quyền lợi",
+          "benefits": [
+            "Gói đãi ngộ cạnh tranh cùng lộ trình phát triển rõ ràng.",
+            "Văn hóa kỹ thuật đề cao chất lượng và ownership.",
+            "Tooling hiện đại cùng hệ thống mentoring nội bộ.",
+            "Cơ hội tạo ảnh hưởng trực tiếp lên sản phẩm toàn cầu.",
+            "Môi trường làm việc tích cực, nhiều hoạt động gắn kết."
+          ],
+          "contactTitle": "Liên hệ",
+          "contactHint": "(hoặc ứng tuyển trực tiếp theo form bên dưới)",
+          "phone": "0976.897.999",
+          "email": "loannt@xipat.com"
+        },
+        "junior-marketing-performance": {
+          "careerLabel": "Xipat Career",
+          "title": "Junior Marketing | Performance",
+          "salary": "Lương thỏa thuận",
+          "employment": "Full time",
+          "location": "Hà Nội",
+          "experience": "Từ 1 năm kinh nghiệm",
+          "applyNowLabel": "Ứng tuyển ngay",
+          "overviewTitle": "Tổng quan",
+          "overviewParagraphs": [
+            "Xipat tuyển Junior Performance Marketing để đồng hành triển khai các chiến dịch quảng cáo số và thử nghiệm tăng trưởng.",
+            "Bạn sẽ phối hợp cùng growth/content để tối ưu hiệu quả thu hút người dùng và chất lượng chuyển đổi."
+          ],
+          "responsibilitiesTitle": "Mô tả vị trí",
+          "responsibilities": [
+            "Hỗ trợ lập kế hoạch và triển khai campaign paid media.",
+            "Theo dõi chỉ số hiệu quả và tổng hợp báo cáo định kỳ.",
+            "Tham gia A/B testing và tối ưu landing page.",
+            "Phối hợp nội dung/creative cho từng nhóm chiến dịch.",
+            "Đề xuất hướng tối ưu dựa trên dữ liệu thực tế."
+          ],
+          "requirementsTitle": "Yêu cầu",
+          "requirements": [
+            "Tối thiểu 1 năm kinh nghiệm digital/performance marketing.",
+            "Nắm cơ bản các nền tảng quảng cáo và công cụ analytics.",
+            "Tư duy học nhanh, chú ý chi tiết và chủ động.",
+            "Kỹ năng giao tiếp, phối hợp nhóm tốt.",
+            "Sẵn sàng làm việc trong môi trường tốc độ cao."
+          ],
+          "benefitsTitle": "Quyền lợi",
+          "benefits": [
+            "Lộ trình đào tạo rõ ràng và cơ hội thăng tiến.",
+            "Mentoring trực tiếp từ đội ngũ giàu kinh nghiệm.",
+            "Môi trường làm việc thân thiện, đề cao hỗ trợ lẫn nhau.",
+            "Cơ hội tham gia vận hành chiến dịch cho sản phẩm toàn cầu.",
+            "Chính sách phúc lợi phù hợp theo hiệu quả công việc."
+          ],
+          "contactTitle": "Liên hệ",
+          "contactHint": "(hoặc ứng tuyển trực tiếp theo form bên dưới)",
+          "phone": "0976.897.999",
+          "email": "loannt@xipat.com"
+        }
+      }
+    }
+  },
+  "careersPage": {
+    "hero": {
+      "title": "Tuyển Dụng",
+      "description": "Khám phá ngay những vị trí đang tuyển dụng tại Xipat với chế độ phúc lợi hấp dẫn",
+      "imageAlt": "Đội ngũ làm việc tại Xipat"
+    },
+    "positions": {
+      "titlePrefix": "Các vị trí",
+      "titleAccent": "đang tuyển",
+      "searchPlaceholder": "Nhập tên vị trí",
+      "searchButton": "Tìm kiếm",
+      "noResult": "Không tìm thấy vị trí phù hợp với từ khóa của bạn."
+    },
+    "seo": {
+      "title": "Tuyển dụng | Xipat",
+      "description": "Khám phá các vị trí đang tuyển dụng tại Xipat và ứng tuyển ngay hôm nay.",
+      "imageAlt": "Trang tuyển dụng Xipat"
+    },
+    "whyChoose": {
+      "title": "Tại sao ứng viên nên chọn Xipat?",
+      "items": [
+        {
+          "title": "Môi trường trẻ, năng động",
+          "description": "Không có khoảng cách hay rào cản - chỉ là một môi trường thoải mái, cởi mở và tràn năng lượng để bạn tự tin thể hiện mình."
+        },
+        {
+          "title": "Cơ hội phát triển nghề nghiệp",
+          "description": "XIPAT tạo điều kiện để bạn phát triển theo hướng bạn chọn - bằng dự án thật, đồng đội giỏi và những cơ hội mới mỗi ngày."
+        },
+        {
+          "title": "Phúc lợi cạnh tranh",
+          "description": "Chúng tôi mang đến mức lương rõ ràng, thưởng theo kết quả và những phúc lợi đủ để bạn yên tâm làm việc và gắn bó lâu dài."
+        }
+      ]
+    },
+    "contact": {
+      "badge": "Liên hệ",
+      "title": "Chúng tôi sẵn sàng lắng nghe bạn",
+      "nameLabel": "Your Name",
+      "emailLabel": "Email Address",
+      "phoneLabel": "Phone Number (optional)",
+      "messageLabel": "Message",
+      "submitLabel": "Để lại lời nhắn",
+      "socials": [
+        {
+          "platform": "facebook",
+          "href": "https://facebook.com",
+          "ariaLabel": "Facebook"
+        },
+        {
+          "platform": "instagram",
+          "href": "https://instagram.com",
+          "ariaLabel": "Instagram"
+        },
+        {
+          "platform": "twitter",
+          "href": "https://twitter.com",
+          "ariaLabel": "Twitter"
+        }
+      ],
+      "validation": {
+        "nameRequired": "Vui lòng nhập họ tên.",
+        "emailRequired": "Vui lòng nhập email.",
+        "emailInvalid": "Email không đúng định dạng.",
+        "phoneInvalid": "Số điện thoại không đúng định dạng.",
+        "messageRequired": "Vui lòng nhập nội dung tin nhắn.",
+        "messageMin": "Tin nhắn cần ít nhất 10 ký tự."
+      },
+      "feedback": {
+        "successTitle": "Gửi liên hệ thành công",
+        "successDescription": "Chúng tôi sẽ phản hồi bạn sớm nhất có thể.",
+        "errorMessage": "Gửi liên hệ thất bại. Vui lòng thử lại."
+      }
+    },
+    "benefits": {
+      "title": "Phúc Lợi Nổi Bật",
+      "imageAlt": "Đội ngũ Xipat hợp tác",
+      "items": [
+        {
+          "prefix": "Quỹ học tập lên tới",
+          "highlight": "30 triệu",
+          "suffix": "/năm/người",
+          "body": "Bạn được hỗ trợ học tập để nâng cấp kỹ năng theo cách phù hợp nhất với mình."
+        },
+        {
+          "prefix": "Bảo hiểm",
+          "highlight": "Bảo Việt",
+          "suffix": "",
+          "body": "Chúng tôi đồng hành cùng bạn bằng chế độ bảo hiểm sức khỏe uy tín và thiết thực."
+        },
+        {
+          "prefix": "Chính sách",
+          "highlight": "thưởng hấp dẫn",
+          "suffix": "",
+          "body": "Thành quả được ghi nhận bằng các khoản thưởng rõ ràng và xứng đáng."
+        }
+      ]
+    }
+  },
+   "contactPage": {
+    "title": "Liên hệ",
+    "description": "Từ chuyển đổi đến vận hành, hệ sinh thái của chúng tôi giúp bạn tăng trưởng mà không rối loạn.",
+    "items": [
+      {
+        "label": "Liên hệ chung",
+        "value": "info@xipat.com"
+      },
+      {
+        "label": "Tuyển dụng",
+        "value": "loannt@xipat.com"
+      },
+      {
+        "label": "Hotline",
+        "value": "0987.290.998"
+      },
+      {
+        "label": "Địa chỉ",
+        "value": "Số 18, ngõ 11 Thái Hà, Hà Nội"
+      }
+    ],
+    "formSection": {
+      "title": "Liên hệ với chúng tôi",
+      "nameLabel": "Tên",
+      "namePlaceholder": "Nguyễn Văn A",
+      "emailLabel": "Email",
+      "emailPlaceholder": "nguyenvana@xipat.com",
+      "phoneLabel": "Số điện thoại (không bắt buộc)",
+      "phonePlaceholder": "0987 654 321",
+      "messageLabel": "Tin nhắn",
+      "messagePlaceholder": "Nhập nội dung của bạn.....",
+      "submitLabel": "Gửi tin nhắn",
+      "submitLoadingLabel": "Đang gửi...",
+      "mapTitle": "Vị trí văn phòng Xipat",
+      "validation": {
+        "nameRequired": "Vui lòng nhập tên của bạn.",
+        "nameMin": "Tên cần ít nhất 2 ký tự.",
+        "emailRequired": "Vui lòng nhập email.",
+        "emailInvalid": "Vui lòng nhập đúng định dạng email.",
+        "phoneInvalid": "Vui lòng nhập đúng định dạng số điện thoại.",
+        "messageRequired": "Vui lòng nhập nội dung tin nhắn.",
+        "messageMin": "Tin nhắn cần ít nhất 10 ký tự."
+      },
+      "feedback": {
+        "successMessage": "Gửi tin nhắn thành công. Chúng tôi sẽ liên hệ bạn sớm.",
+        "errorMessage": "Không thể gửi tin nhắn lúc này. Vui lòng thử lại."
+      }
+    },
+    "seo": {
+      "title": "Liên hệ | Xipat",
+      "description": "Liên hệ với Xipat để được tư vấn về sản phẩm, dịch vụ và cơ hội hợp tác.",
+      "imageAlt": "Liên hệ Xipat"
     }
   }
 }

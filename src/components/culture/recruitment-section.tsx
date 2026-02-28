@@ -1,6 +1,8 @@
 import { Clock3, MapPin, Star } from 'lucide-react';
+import { Link } from '@/i18n/routing';
 
 export type RecruitmentCard = {
+  slug: string;
   title: string;
   salary: string;
   description: string;
@@ -52,40 +54,43 @@ export function RecruitmentSection({
               >
                 {contactButton}
               </button>
-              <button
-                type="button"
+              <Link
+                href="/careers"
                 className="inline-flex min-w-55 cursor-pointer items-center justify-center rounded-full border-2 border-[#113C8D] py-1 text-base font-semibold text-[#113C8D] transition-colors hover:bg-[#EAF0FB]"
               >
                 {viewAllButton}
-              </button>
+              </Link>
             </div>
           </div>
 
           <div className="space-y-5">
             {cards.map((card, index) => (
-              <article
-                key={`${card.title}-${index}`}
-                className="rounded-md bg-white px-7 py-7 shadow-[0_10px_30px_rgba(17,60,141,0.12)] sm:px-8"
+              <Link
+                key={`${card.slug}-${index}`}
+                href={`/careers/${card.slug}`}
+                className="block rounded-md bg-white px-7 py-7 shadow-[0_10px_30px_rgba(17,60,141,0.12)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_16px_34px_rgba(17,60,141,0.16)] sm:px-8"
               >
-                <h3 className="text-xl leading-[1.2] font-bold tracking-[-0.02em] text-[#113C8D]">{card.title}</h3>
-                <p className="mt-2 text-sm font-medium text-[#113C8D]">{card.salary}</p>
-                <p className="mt-4 text-base leading-[1.6] text-[#113C8D]">{card.description}</p>
+                <article>
+                  <h3 className="text-xl leading-[1.2] font-bold tracking-[-0.02em] text-[#113C8D]">{card.title}</h3>
+                  <p className="mt-2 text-sm font-medium text-[#113C8D]">{card.salary}</p>
+                  <p className="mt-4 text-base leading-[1.6] text-[#113C8D]">{card.description}</p>
 
-                <div className="mt-5 flex flex-wrap gap-3">
-                  <span className="inline-flex items-center gap-2 rounded-lg bg-[#E4ECFC] px-4 py-2 text-sm font-semibold text-[#113C8D]">
-                    <Clock3 className="h-4 w-4" />
-                    {card.employment}
-                  </span>
-                  <span className="inline-flex items-center gap-2 rounded-lg bg-[#E4ECFC] px-4 py-2 text-sm font-semibold text-[#113C8D]">
-                    <MapPin className="h-4 w-4" />
-                    {card.location}
-                  </span>
-                  <span className="inline-flex items-center gap-2 rounded-lg bg-[#E4ECFC] px-4 py-2 text-sm font-semibold text-[#113C8D]">
-                    <Star className="h-4 w-4" />
-                    {card.experience}
-                  </span>
-                </div>
-              </article>
+                  <div className="mt-5 flex flex-wrap gap-3">
+                    <span className="inline-flex items-center gap-2 rounded-lg bg-[#E4ECFC] px-4 py-2 text-sm font-semibold text-[#113C8D]">
+                      <Clock3 className="h-4 w-4" />
+                      {card.employment}
+                    </span>
+                    <span className="inline-flex items-center gap-2 rounded-lg bg-[#E4ECFC] px-4 py-2 text-sm font-semibold text-[#113C8D]">
+                      <MapPin className="h-4 w-4" />
+                      {card.location}
+                    </span>
+                    <span className="inline-flex items-center gap-2 rounded-lg bg-[#E4ECFC] px-4 py-2 text-sm font-semibold text-[#113C8D]">
+                      <Star className="h-4 w-4" />
+                      {card.experience}
+                    </span>
+                  </div>
+                </article>
+              </Link>
             ))}
           </div>
         </div>
