@@ -16,6 +16,7 @@ export function AboutHeroSection({ copy }: { copy: AboutHeroCopy }) {
         height={600}
         priority
         className="pointer-events-none absolute -top-8 -right-48 h-auto w-[130vw] max-w-[1244px] object-contain object-right opacity-90 sm:-top-6 sm:-right-36 sm:w-[118vw] md:-right-28 md:w-[100vw] xl:top-0 xl:-right-40 xl:h-[800px] xl:w-auto"
+        fetchPriority="high"
       />
       <div className="absolute inset-0 bg-linear-to-r from-[#0B2F86]/55 via-[#09286F]/35 to-[#041E56]/72" />
 
@@ -47,9 +48,11 @@ export function AboutHeroSection({ copy }: { copy: AboutHeroCopy }) {
             priority
             className="h-auto w-[92vw] max-w-[540px] object-contain sm:max-w-[620px] xl:h-[456px] xl:w-[668px] xl:max-w-[668px]"
             sizes="(max-width: 640px) 92vw, (max-width: 1279px) 76vw, 668px"
+            fetchPriority="high"
           />
         </div>
       </div>
     </section>
   );
 }
+

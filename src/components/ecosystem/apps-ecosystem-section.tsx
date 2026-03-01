@@ -16,10 +16,16 @@ type AppsEcosystemSectionProps = {
 
 function AppCard({ name, description, imageSrc, imageAlt }: EcosystemApp) {
   return (
-    <article className="rounded-2xl bg-white p-4 shadow-[0_14px_30px_rgba(21,56,130,0.07)] ring-1 ring-[#D9E3FF] transition-transform duration-300 hover:-translate-y-1 sm:p-5">
+    <article className="rounded-md bg-white p-4 shadow-[0_14px_30px_rgba(21,56,130,0.07)] ring-1 ring-[#D9E3FF] transition-transform duration-300 hover:-translate-y-1 sm:p-5">
       <div className="flex items-start gap-4">
-        <div className="relative h-18 w-18 shrink-0 overflow-hidden rounded-xl bg-[#D1D1D1] sm:h-20 sm:w-20">
-          <Image src={imageSrc} alt={imageAlt} fill sizes="(max-width: 640px) 72px, 80px" className="object-cover" />
+        <div className="relative h-18 w-18 shrink-0 overflow-hidden rounded-xl sm:h-20 sm:w-20">
+          <Image
+            src={imageSrc}
+            alt={imageAlt}
+            fill
+            sizes="(max-width: 640px) 72px, 80px"
+            className="rounded-xl object-contain p-2"
+          />
         </div>
         <div className="min-w-0">
           <h3 className="text-2xl leading-tight font-semibold tracking-[-0.01em] text-[#0E357E]">{name}</h3>

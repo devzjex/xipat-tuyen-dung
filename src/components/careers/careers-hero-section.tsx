@@ -17,6 +17,7 @@ export function CareersHeroSection({ title, description, imageAlt }: CareersHero
           priority
           className="object-cover object-top"
           sizes="100vw"
+          fetchPriority="high"
         />
       </div>
 

@@ -26,11 +26,7 @@ const homeSeo = createSeo({
   },
 });
 
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'home.seo' });
 
@@ -79,7 +75,16 @@ export default async function LandingPage() {
     <>
       <section className="relative overflow-hidden text-white">
         <div className="relative h-245.75 w-full">
-          <Image src={heroImage} alt="" width={1440} height={983} priority sizes="100vw" className="h-full w-full" />
+          <Image
+            src={heroImage}
+            alt=""
+            width={1440}
+            height={983}
+            priority
+            sizes="100vw"
+            className="h-full w-full"
+            fetchPriority="high"
+          />
           <div className="absolute top-30 left-5 w-[min(92vw,450px)] space-y-10 sm:left-8 sm:space-y-12 lg:top-49.25 lg:left-24 lg:w-125 lg:space-y-16 xl:left-45">
             <div className="space-y-4">
               <h1 className="text-[38px] leading-tight font-semibold tracking-[-0.01em] text-white sm:text-[44px] md:text-[54px] lg:text-[64px]">
@@ -115,6 +120,8 @@ export default async function LandingPage() {
                   width={170}
                   height={75}
                   className="h-auto max-h-18.75 w-auto object-contain"
+                  fetchPriority="high"
+                  priority
                 />
               ))}
             </div>
@@ -342,5 +349,3 @@ export default async function LandingPage() {
     </>
   );
 }
-
-

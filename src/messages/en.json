@@ -179,7 +179,11 @@
       ]
     },
     "solution": {
-      "headingLines": ["Distinct Solutions", "For a World That Is", "Always Changing"],
+      "headingLines": [
+        "Distinct Solutions",
+        "For a World That Is",
+        "Always Changing"
+      ],
       "items": [
         {
           "title": "Deep eCommerce expertise",
@@ -502,49 +506,10 @@
       "titleSuffix": "at Xipat",
       "description": "Join Xipat, work thoughtfully, and create meaningful value through every product.",
       "contactButton": "Contact now",
-      "viewAllButton": "View all",
-      "cards": [
-        {
-          "title": "Senior Software Engineer | Frontend",
-          "salary": "Negotiable salary",
-          "description": "Collect authentic product reviews via email auto-flows, reward buyers with coupons when they leave reviews, and invite UGC via share-links or QR codes.",
-          "employment": "Full time",
-          "location": "Ha Noi",
-          "experience": "3+ years experience",
-          "slug": "senior-software-engineer-frontend"
-        },
-        {
-          "title": "Junior Marketing | Partnership & Crossell",
-          "salary": "Negotiable salary",
-          "description": "Collect authentic product reviews via email auto-flows, reward buyers with coupons when they leave reviews, and invite UGC via share-links or QR codes.",
-          "employment": "Full time",
-          "location": "Ha Noi",
-          "experience": "3+ years experience",
-          "slug": "junior-marketing-partnership-crossell"
-        },
-        {
-          "title": "Junior Marketing | Partnership & Crossell",
-          "salary": "Negotiable salary",
-          "description": "Collect authentic product reviews via email auto-flows, reward buyers with coupons when they leave reviews, and invite UGC via share-links or QR codes.",
-          "employment": "Full time",
-          "location": "Ha Noi",
-          "experience": "3+ years experience",
-          "slug": "junior-marketing-performance"
-        }
-      ]
+      "viewAllButton": "View all"
     },
     "library": {
-      "title": "Image Library",
-      "images": {
-        "image1Alt": "Internal hands-on workshop moment",
-        "image2Alt": "Football activity at Xipat",
-        "image3Alt": "Team members during a training session",
-        "image4Alt": "Indoor club activity",
-        "image5Alt": "Workshop teamwork moment",
-        "image6Alt": "Team building snapshot",
-        "image7Alt": "Blood donation community program",
-        "image8Alt": "Speaker sharing in an internal event"
-      }
+      "title": "Image Library"
     },
     "seo": {
       "title": "Culture | Xipat",
@@ -697,18 +662,18 @@
       "applicationForm": {
         "title": "Join the Xipat team",
         "fullNameLabel": "Full name",
-        "fullNamePlaceholder": "Name",
+        "fullNamePlaceholder": "John Doe",
         "emailLabel": "Email",
-        "emailPlaceholder": "example@domain.com",
+        "emailPlaceholder": "john.doe@example.com",
         "phoneLabel": "Phone number",
-        "phonePlaceholder": "0987 654 321",
+        "phonePlaceholder": "+1 (555) 123 4567",
         "cvLabel": "CV file",
         "cvButtonLabel": "Choose file",
         "cvNoFileText": "No file selected",
         "portfolioLabel": "Portfolio link (optional)",
         "portfolioPlaceholder": "https://portfolio.example.com",
         "coverLetterLabel": "Cover letter",
-        "coverLetterPlaceholder": "Type your message here...",
+        "coverLetterPlaceholder": "Tell us why you are a great fit for this role...",
         "submitLabel": "Apply now",
         "submitSuccessTitle": "Application submitted",
         "submitSuccessDescription": "Our recruitment team will get back to you as soon as possible.",
@@ -725,136 +690,15 @@
           "portfolioInvalid": "Portfolio link must be a valid URL.",
           "coverLetterRequired": "Please enter your cover letter.",
           "coverLetterMin": "Cover letter must be at least 20 characters."
-        }
+        },
+        "submitErrorMessage": "Submit failed. Please try again."
       },
-      "careers": {
-        "junior-marketing-partnership-crossell": {
-          "careerLabel": "Xipat Career",
-          "title": "Marketing | Partnership",
-          "salary": "From 20M+",
-          "employment": "Full time",
-          "location": "Ha Noi",
-          "experience": "3+ years experience",
-          "applyNowLabel": "Apply now",
-          "overviewTitle": "Overview",
-          "overviewParagraphs": [
-            "Xipat is looking for a Partnership Marketing specialist to grow strategic collaborations and cross-sell opportunities across our product ecosystem.",
-            "You will work closely with product, sales, and growth teams to design partnership plans, execute campaigns, and deliver measurable business outcomes."
-          ],
-          "responsibilitiesTitle": "Responsibilities",
-          "responsibilities": [
-            "Build and maintain partner pipeline for co-marketing opportunities.",
-            "Plan and execute partnership campaigns with clear KPI ownership.",
-            "Coordinate internal teams to launch joint initiatives on schedule.",
-            "Track campaign performance and optimize using data-driven insights.",
-            "Own communication cadence with partners and key stakeholders."
-          ],
-          "requirementsTitle": "Requirements",
-          "requirements": [
-            "3+ years in marketing, partnerships, or growth roles.",
-            "Strong communication and relationship management skills.",
-            "Comfortable with campaign analytics and reporting tools.",
-            "Ability to manage multiple projects with clear priorities.",
-            "Proactive, collaborative, and execution-focused mindset."
-          ],
-          "benefitsTitle": "Benefits",
-          "benefits": [
-            "Competitive compensation and performance review cycles.",
-            "Learning budget and mentorship from experienced leaders.",
-            "Friendly, ownership-driven team culture.",
-            "Opportunities to work on global SaaS products.",
-            "Modern workspace and flexible collaboration model."
-          ],
-          "contactTitle": "Contact",
-          "contactHint": "(or apply directly via the form below)",
-          "phone": "0976.897.999",
-          "email": "loannt@xipat.com"
-        },
-        "senior-software-engineer-frontend": {
-          "careerLabel": "Xipat Career",
-          "title": "Senior Software Engineer | Frontend",
-          "salary": "Negotiable salary",
-          "employment": "Full time",
-          "location": "Ha Noi",
-          "experience": "3+ years experience",
-          "applyNowLabel": "Apply now",
-          "overviewTitle": "Overview",
-          "overviewParagraphs": [
-            "You will lead frontend architecture and implementation for high-impact product experiences used by global merchants.",
-            "This role combines hands-on coding, technical mentoring, and close collaboration with product and design teams."
-          ],
-          "responsibilitiesTitle": "Responsibilities",
-          "responsibilities": [
-            "Design scalable frontend architecture and shared UI patterns.",
-            "Build performant, maintainable interfaces in React/Next.js.",
-            "Review code quality and mentor junior engineers.",
-            "Collaborate with product and design to refine user experience.",
-            "Improve reliability through testing and monitoring best practices."
-          ],
-          "requirementsTitle": "Requirements",
-          "requirements": [
-            "Strong experience with TypeScript, React, and Next.js.",
-            "Solid understanding of performance optimization and accessibility.",
-            "Experience in component-driven UI architecture.",
-            "Proven ability to ship quality features in cross-functional teams.",
-            "Good communication and technical decision-making skills."
-          ],
-          "benefitsTitle": "Benefits",
-          "benefits": [
-            "Competitive package with clear growth path.",
-            "Engineering culture focused on quality and ownership.",
-            "Modern tooling and structured technical mentorship.",
-            "Direct impact on products serving global customers.",
-            "Supportive work environment and team activities."
-          ],
-          "contactTitle": "Contact",
-          "contactHint": "(or apply directly via the form below)",
-          "phone": "0976.897.999",
-          "email": "loannt@xipat.com"
-        },
-        "junior-marketing-performance": {
-          "careerLabel": "Xipat Career",
-          "title": "Junior Marketing | Performance",
-          "salary": "Negotiable salary",
-          "employment": "Full time",
-          "location": "Ha Noi",
-          "experience": "1+ year experience",
-          "applyNowLabel": "Apply now",
-          "overviewTitle": "Overview",
-          "overviewParagraphs": [
-            "We are hiring a Junior Performance Marketer to support paid campaigns and growth experiments across digital channels.",
-            "You will partner with growth and content teams to improve acquisition efficiency and campaign quality."
-          ],
-          "responsibilitiesTitle": "Responsibilities",
-          "responsibilities": [
-            "Assist in planning and executing paid media campaigns.",
-            "Monitor campaign metrics and prepare weekly reports.",
-            "Support A/B testing and landing page optimization.",
-            "Coordinate creatives and messaging with content team.",
-            "Identify optimization opportunities from data trends."
-          ],
-          "requirementsTitle": "Requirements",
-          "requirements": [
-            "1+ year in digital marketing or performance marketing.",
-            "Basic understanding of ad platforms and analytics.",
-            "Strong learning agility and detail-oriented mindset.",
-            "Good communication and teamwork skills.",
-            "Comfortable working in a fast-paced environment."
-          ],
-          "benefitsTitle": "Benefits",
-          "benefits": [
-            "Structured training and growth opportunities.",
-            "Clear mentorship and feedback cycles.",
-            "Collaborative and supportive team culture.",
-            "Exposure to global products and campaigns.",
-            "Attractive benefits aligned with performance."
-          ],
-          "contactTitle": "Contact",
-          "contactHint": "(or apply directly via the form below)",
-          "phone": "0976.897.999",
-          "email": "loannt@xipat.com"
-        }
-      }
+      "careerLabel": "Xipat Career",
+      "applyNowLabel": "Apply now",
+      "contactTitle": "Contact",
+      "contactHint": "(or apply directly via the form below)",
+      "contactPhone": "0976.897.999",
+      "contactEmail": "loannt@xipat.com"
     }
   },
   "careersPage": {

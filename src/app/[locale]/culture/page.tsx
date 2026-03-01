@@ -1,11 +1,12 @@
 ﻿import type { Metadata } from 'next';
 import Image from 'next/image';
-import { getTranslations } from 'next-intl/server';
+import { getLocale, getTranslations } from 'next-intl/server';
 import { CultureGuidedShowcase, type CultureGuidedItem } from '@/components/culture/culture-guided-showcase';
-import { RecruitmentSection, type RecruitmentCard } from '@/components/culture/recruitment-section';
+import { RecruitmentSection } from '@/components/culture/recruitment-section';
 import { ImageLibrarySection, type LibraryImageItem } from '@/components/culture/image-library-section';
 import { CultureAccordion, type CultureAccordionItem } from '@/components/home/culture-accordion';
 import { createSeo } from '@/lib/seo';
+import { getRecruitmentCards, getStrapiMediaUrl, getXipatLibraryImages } from '@/lib/strapi/strapi';
 
 type PeopleShowcaseImageId = 'image1' | 'image2' | 'image3' | 'image4';
 
@@ -95,11 +96,15 @@ export async function generateMetadata({
 }
 
 export default async function CulturePage() {
-  const t = await getTranslations('culturePage');
+  const locale = await getLocale();
+  const [t, libraryImagesFromApi, recruitmentCards] = await Promise.all([
+    getTranslations('culturePage'),
+    getXipatLibraryImages(),
+    getRecruitmentCards(locale, 5),
+  ]);
   const getPeopleImageAlt = (id: PeopleShowcaseImageId) => t(`peopleShowcase.images.${id}Alt`);
   const cultureGuidedHeading = t('cultureGuidedShowcase.heading');
   const cultureGuidedItems = t.raw('cultureGuidedShowcase.items') as CultureGuidedItem[];
-  const recruitmentCards = t.raw('recruitment.cards') as RecruitmentCard[];
   const newsCards = t.raw('news.cards') as Array<{ meta: string; headline: string; date: string }>;
   const blogs = [
     {
@@ -123,17 +128,28 @@ export default async function CulturePage() {
   ];
   const cultureHighlights = t.raw('programs.highlights') as Array<{ title: string; body: string }>;
   const cultureAccordionItems = t.raw('programs.accordion') as CultureAccordionItem[];
-  const getLibraryImageAlt = (id: number) => t(`library.images.image${id}Alt`);
-  const libraryImages: LibraryImageItem[] = [
-    { src: '/images/culture/library-1.png', alt: getLibraryImageAlt(1) },
-    { src: '/images/culture/library-2.png', alt: getLibraryImageAlt(2) },
-    { src: '/images/culture/library-3.png', alt: getLibraryImageAlt(3) },
-    { src: '/images/culture/library-4.png', alt: getLibraryImageAlt(4) },
-    { src: '/images/culture/library-5.png', alt: getLibraryImageAlt(5) },
-    { src: '/images/culture/library-6.png', alt: getLibraryImageAlt(6) },
-    { src: '/images/culture/library-7.png', alt: getLibraryImageAlt(7) },
-    { src: '/images/culture/library-8.png', alt: getLibraryImageAlt(8) },
+  const fallbackLibraryImages: LibraryImageItem[] = [
+    { src: '/images/culture/library-1.png', alt: 'Library image 1' },
+    { src: '/images/culture/library-2.png', alt: 'Library image 2' },
+    { src: '/images/culture/library-3.png', alt: 'Library image 3' },
+    { src: '/images/culture/library-4.png', alt: 'Library image 4' },
+    { src: '/images/culture/library-5.png', alt: 'Library image 5' },
+    { src: '/images/culture/library-6.png', alt: 'Library image 6' },
+    { src: '/images/culture/library-7.png', alt: 'Library image 7' },
+    { src: '/images/culture/library-8.png', alt: 'Library image 8' },
   ];
+  const libraryImages: LibraryImageItem[] =
+    libraryImagesFromApi.length > 0
+      ? libraryImagesFromApi.map((image, index) => {
+          const imageUrl = getStrapiMediaUrl(image.url);
+          const imageIndex = index + 1;
+          const fallbackAlt = `Library image ${imageIndex}`;
+          return {
+            src: imageUrl,
+            alt: image.alternativeText || fallbackAlt,
+          };
+        })
+      : fallbackLibraryImages;
 
   return (
     <div className="overflow-x-clip">

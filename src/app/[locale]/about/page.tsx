@@ -5,9 +5,10 @@ import { AboutCoreValuesSection } from '@/components/about/about-core-values-sec
 import { AboutMilestonesSection } from '@/components/about/about-milestones-section';
 import { AboutPeopleShowcaseSection } from '@/components/about/about-people-showcase-section';
 import { AboutProductJourneySection } from '@/components/about/about-product-journey-section';
-import { RecruitmentSection, type RecruitmentCard } from '@/components/culture/recruitment-section';
-import { getTranslations } from 'next-intl/server';
+import { RecruitmentSection } from '@/components/culture/recruitment-section';
+import { getLocale, getTranslations } from 'next-intl/server';
 import { createSeo } from '@/lib/seo';
+import { getRecruitmentCards } from '@/lib/strapi/strapi';
 
 type PeopleShowcaseImageId = 'image1' | 'image2' | 'image3' | 'image4';
 
@@ -85,7 +86,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 }
 
 export default async function AboutPage() {
-  const [heroT, peopleT, productT, coreValuesT, milestonesT, cultureBannerT, recruitmentT] = await Promise.all([
+  const locale = await getLocale();
+  const [heroT, peopleT, productT, coreValuesT, milestonesT, cultureBannerT, recruitmentT, recruitmentCards] = await Promise.all([
     getTranslations('aboutPage.hero'),
     getTranslations('aboutPage.peopleShowcase'),
     getTranslations('aboutPage.productJourney'),
@@ -93,6 +95,7 @@ export default async function AboutPage() {
     getTranslations('aboutPage.milestones'),
     getTranslations('aboutPage.cultureBanner'),
     getTranslations('aboutPage.recruitment'),
+    getRecruitmentCards(locale, 5),
   ]);
   const getPeopleImageAlt = (id: PeopleShowcaseImageId) => peopleT(`images.${id}Alt`);
   const peopleShowcaseItems = peopleShowcaseImages.map((item) => ({
@@ -100,7 +103,6 @@ export default async function AboutPage() {
     alt: getPeopleImageAlt(item.id),
   }));
   const coreValueItems = coreValuesT.raw('items') as Array<{ title: string; body: string }>;
-  const recruitmentCards = recruitmentT.raw('cards') as RecruitmentCard[];
   const milestoneItems = milestonesT.raw('items') as Array<{
     year: string;
     title: string;

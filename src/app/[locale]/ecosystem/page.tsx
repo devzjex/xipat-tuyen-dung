@@ -2,13 +2,14 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
-import { getTranslations } from 'next-intl/server';
+import { getLocale, getTranslations } from 'next-intl/server';
 
 import { AppsEcosystemSection, type EcosystemApp } from '@/components/ecosystem/apps-ecosystem-section';
 import { PartnerGrowthSection, type PartnerLogo } from '@/components/ecosystem/partner-growth-section';
 import { SolutionShowcase, type SolutionItem } from '@/components/ecosystem/solution-showcase';
 import { Button } from '@/components/ui/button';
 import { createSeo } from '@/lib/seo';
+import { getStrapiMediaUrl, getXipatPartners } from '@/lib/strapi/strapi';
 
 const heroBg = '/images/ecosystem/bg-image.png';
 
@@ -51,12 +52,27 @@ export async function generateMetadata({
 }
 
 export default async function EcosystemPage() {
-  const t = await getTranslations('ecosystemPage');
+  const locale = await getLocale();
+  const [t, partners] = await Promise.all([getTranslations('ecosystemPage'), getXipatPartners(locale)]);
 
   const operationStats = t.raw('operation.stats') as OperationStat[];
   const solutionHeadingLines = t.raw('solution.headingLines') as string[];
   const solutionItems = t.raw('solution.items') as SolutionItem[];
-  const apps = t.raw('apps.items') as EcosystemApp[];
+  const fallbackApps = t.raw('apps.items') as EcosystemApp[];
+  const apps: EcosystemApp[] =
+    partners.length > 0
+      ? partners.map((partner) => {
+          const iconUrl = partner.app_icon?.url ?? '';
+          const imageSrc = getStrapiMediaUrl(iconUrl);
+
+          return {
+            name: partner.name_app,
+            description: partner.description,
+            imageSrc: imageSrc || '/images/ecosystem/image-1.png',
+            imageAlt: partner.app_icon?.alternativeText || partner.name_app,
+          };
+        })
+      : fallbackApps;
   const partnerLogos = t.raw('partner.logos') as PartnerLogo[];
 
   return (
@@ -70,6 +86,7 @@ export default async function EcosystemPage() {
           priority
           sizes="100vw"
           className="absolute inset-0 h-full w-full object-cover object-center"
+          fetchPriority='high'
         />
         <div className="relative mx-auto flex w-full items-center px-6 pt-50 pb-12 sm:px-10 sm:pt-44 lg:px-20 xl:px-40">
           <div className="w-full max-w-120 sm:ml-6 lg:ml-12 xl:ml-20">

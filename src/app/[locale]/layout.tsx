@@ -2,6 +2,7 @@ import { hasLocale, NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { Geist, Geist_Mono } from 'next/font/google';
 import { notFound } from 'next/navigation';
+import Script from 'next/script';
 import '../globals.css';
 import { routing } from '@/i18n/routing';
 import { HeroNavbar } from '@/components/home/hero-navbar';
@@ -25,6 +26,7 @@ export default async function LocaleLayout({
   params: Promise<{ locale: string }>;
 }>) {
   const [{ locale }, messages] = await Promise.all([params, getMessages()]);
+  const recaptchaSiteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
 
   if (!hasLocale(routing.locales, locale)) {
     notFound();
@@ -33,6 +35,12 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} className="scroll-smooth" suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable} bg-white text-[#002A6A] antialiased`}>
+        {recaptchaSiteKey ? (
+          <Script
+            src={`https://www.google.com/recaptcha/api.js?render=${recaptchaSiteKey}`}
+            strategy="afterInteractive"
+          />
+        ) : null}
         <NextIntlClientProvider locale={locale} messages={messages}>
           <HeroNavbar />
           {children}

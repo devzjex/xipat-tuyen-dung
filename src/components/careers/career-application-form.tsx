@@ -10,6 +10,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/components/ui/use-toast';
+import { executeRecaptchaV3 } from '@/lib/recaptcha-client';
 import { cn } from '@/lib/utils';
 
 type CareerApplicationFormCopy = {
@@ -28,6 +29,7 @@ type CareerApplicationFormCopy = {
   coverLetterLabel: string;
   coverLetterPlaceholder: string;
   submitLabel: string;
+  submitErrorMessage: string;
   submitSuccessTitle: string;
   submitSuccessDescription: string;
   validation: {
@@ -49,13 +51,12 @@ type CareerApplicationFormCopy = {
 type CareerApplicationFormProps = {
   copy: CareerApplicationFormCopy;
   careerTitle: string;
-  careerEmail: string;
 };
 
 const allowedCvExtensions = ['pdf', 'doc', 'docx'];
 const maxCvSizeInBytes = 5 * 1024 * 1024;
 
-export function CareerApplicationForm({ copy, careerTitle, careerEmail }: CareerApplicationFormProps) {
+export function CareerApplicationForm({ copy, careerTitle }: CareerApplicationFormProps) {
   const [submitMessage, setSubmitMessage] = useState('');
   const { toast } = useToast();
 
@@ -142,40 +143,38 @@ export function CareerApplicationForm({ copy, careerTitle, careerEmail }: Career
     }
 
     const validValues = parsed.data;
-    const payload = {
-      careerTitle,
-      careerEmail,
-      fullName: validValues.fullName,
-      email: validValues.email,
-      phone: validValues.phone,
-      portfolioUrl: validValues.portfolioUrl || null,
-      coverLetter: validValues.coverLetter,
-      cvFile: validValues.cvFile
-        ? {
-            name: validValues.cvFile.name,
-            size: validValues.cvFile.size,
-            type: validValues.cvFile.type,
-          }
-        : null,
-      submittedAt: new Date().toISOString(),
-    };
+
+    const cvFile = validValues.cvFile;
+    if (!cvFile) {
+      setSubmitMessage(copy.submitErrorMessage);
+      return;
+    }
+
+    const formData = new FormData();
+    formData.append('name', validValues.fullName);
+    formData.append('email', validValues.email);
+    formData.append('phone', validValues.phone);
+    formData.append('portfolio', validValues.portfolioUrl || '');
+    formData.append('job_letter', careerTitle);
+    formData.append('message', validValues.coverLetter);
+    formData.append('cv', cvFile);
 
     try {
-      console.log('[CareerApplicationForm] Submit payload:', payload);
-
+      const recaptchaToken = await executeRecaptchaV3('career_applications');
+      formData.append('recaptchaToken', recaptchaToken);
       const response = await fetch('/api/career-applications', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(payload),
+        body: formData,
       });
 
-      const result = await response.json();
-      console.log('[CareerApplicationForm] Submit response:', result);
+      let result: { message?: string } = {};
+      const contentType = response.headers.get('content-type') ?? '';
+      if (contentType.includes('application/json')) {
+        result = await response.json();
+      }
 
       if (!response.ok) {
-        setSubmitMessage(result?.message || 'Submit failed. Please try again.');
+        setSubmitMessage(result?.message || copy.submitErrorMessage);
         return;
       }
 
@@ -192,7 +191,7 @@ export function CareerApplicationForm({ copy, careerTitle, careerEmail }: Career
       form.reset();
     } catch (error) {
       console.error('[CareerApplicationForm] Submit error:', error);
-      setSubmitMessage('Submit failed. Please try again.');
+      setSubmitMessage(copy.submitErrorMessage);
     }
   };
 
@@ -351,3 +350,4 @@ export function CareerApplicationForm({ copy, careerTitle, careerEmail }: Career
     </section>
   );
 }
+

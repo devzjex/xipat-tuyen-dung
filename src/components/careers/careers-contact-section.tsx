@@ -9,6 +9,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/components/ui/use-toast';
+import { executeRecaptchaV3 } from '@/lib/recaptcha-client';
 import { cn } from '@/lib/utils';
 
 type ContactSocial = {
@@ -108,14 +109,19 @@ export function CareersContactSection({
     }
 
     try {
-      console.log('[CareersContactSection] Contact payload:', parsed.data);
+      const recaptchaToken = await executeRecaptchaV3('career_contacts');
+      const formData = new FormData();
+      formData.append('name', parsed.data.name);
+      formData.append('email', parsed.data.email);
+      formData.append('phone', parsed.data.phone || '');
+      formData.append('message', parsed.data.message);
+      formData.append('recaptchaToken', recaptchaToken);
+
+      console.log('[CareersContactSection] Contact payload:', Object.fromEntries(formData.entries()));
 
       const response = await fetch('/api/career-contacts', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(parsed.data),
+        body: formData,
       });
 
       const result = await response.json();
@@ -250,7 +256,7 @@ export function CareersContactSection({
 
           <Button
             type="submit"
-            className="mt-9 inline-flex h-14 cursor-pointer items-center justify-center rounded-full bg-[#0E3A84] px-8 px-10 text-xl font-semibold text-white transition-colors hover:bg-[#0B3274] sm:h-16"
+            className="mt-9 inline-flex h-14 min-w-64 cursor-pointer items-center justify-center rounded-full bg-[#0E3A84] px-10 text-xl font-semibold text-white transition-colors hover:bg-[#0B3274] sm:h-16 sm:min-w-72"
           >
             {submitLabel}
             <ArrowRight className="ml-2 h-5 w-5" />

@@ -73,7 +73,6 @@ export function RecruitmentSection({
                 <article>
                   <h3 className="text-xl leading-[1.2] font-bold tracking-[-0.02em] text-[#113C8D]">{card.title}</h3>
                   <p className="mt-2 text-sm font-medium text-[#113C8D]">{card.salary}</p>
-                  <p className="mt-4 text-base leading-[1.6] text-[#113C8D]">{card.description}</p>
 
                   <div className="mt-5 flex flex-wrap gap-3">
                     <span className="inline-flex items-center gap-2 rounded-lg bg-[#E4ECFC] px-4 py-2 text-sm font-semibold text-[#113C8D]">

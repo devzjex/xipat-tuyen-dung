@@ -1,11 +1,12 @@
 import type { Metadata } from 'next';
 import { CareersBenefitsSection } from '@/components/careers/careers-benefits-section';
 import { CareersContactSection } from '@/components/careers/careers-contact-section';
-import { getTranslations } from 'next-intl/server';
+import { getLocale, getTranslations } from 'next-intl/server';
 import { CareersHeroSection } from '@/components/careers/careers-hero-section';
 import { CareersOpenPositionsSection, type CareerCard } from '@/components/careers/careers-open-positions-section';
 import { CareersWhyChooseSection } from '@/components/careers/careers-why-choose-section';
 import { createSeo } from '@/lib/seo';
+import { getXipatJobs } from '@/lib/strapi/strapi';
 
 const careersPageSeo = createSeo({
   siteName: 'Xipat',
@@ -31,12 +32,35 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   });
 }
 
-export default async function CareersPage() {
-  const [careersT, recruitmentT] = await Promise.all([
+export default async function CareersPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ page?: string; q?: string }>;
+}) {
+  const locale = await getLocale();
+  const { page: rawPage, q: rawQuery } = await searchParams;
+  const currentPage = Number.parseInt(rawPage ?? '1', 10);
+  const safeCurrentPage = Number.isNaN(currentPage) || currentPage < 1 ? 1 : currentPage;
+  const searchQuery = (rawQuery ?? '').trim();
+  const pageSize = 10;
+
+  const [careersT, jobsResponse] = await Promise.all([
     getTranslations('careersPage'),
-    getTranslations('aboutPage.recruitment'),
+    getXipatJobs(locale, {
+      page: safeCurrentPage,
+      pageSize,
+      query: searchQuery,
+    }),
   ]);
-  const cards = recruitmentT.raw('cards') as CareerCard[];
+  const cards: CareerCard[] = jobsResponse.jobs.map((job) => ({
+    slug: job.slug,
+    title: job.title,
+    salary: job.salary,
+    description: job.description,
+    employment: job.time,
+    location: job.location,
+    experience: job.experience,
+  }));
   const whyChooseItems = careersT.raw('whyChoose.items') as Array<{ title: string; description: string }>;
   const benefitItems = careersT.raw('benefits.items') as Array<{
     prefix: string;
@@ -77,6 +101,9 @@ export default async function CareersPage() {
         searchPlaceholder={careersT('positions.searchPlaceholder')}
         searchButtonLabel={careersT('positions.searchButton')}
         noResultLabel={careersT('positions.noResult')}
+        initialQuery={searchQuery}
+        currentPage={jobsResponse.pagination.page}
+        pageCount={jobsResponse.pagination.pageCount}
         cards={cards}
       />
 

@@ -4,29 +4,8 @@ import { getTranslations } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { CareerApplicationForm } from '@/components/careers/career-application-form';
 import { createSeo } from '@/lib/seo';
+import { getXipatJobDetail } from '@/lib/strapi/strapi';
 import Link from 'next/link';
-
-type CareerDetail = {
-  careerLabel: string;
-  title: string;
-  salary: string;
-  employment: string;
-  location: string;
-  experience: string;
-  applyNowLabel: string;
-  overviewTitle: string;
-  overviewParagraphs: string[];
-  responsibilitiesTitle: string;
-  responsibilities: string[];
-  requirementsTitle: string;
-  requirements: string[];
-  benefitsTitle: string;
-  benefits: string[];
-  contactTitle: string;
-  contactHint: string;
-  phone: string;
-  email: string;
-};
 
 type CareerApplicationFormCopy = {
   title: string;
@@ -44,6 +23,7 @@ type CareerApplicationFormCopy = {
   coverLetterLabel: string;
   coverLetterPlaceholder: string;
   submitLabel: string;
+  submitErrorMessage: string;
   submitSuccessTitle: string;
   submitSuccessDescription: string;
   validation: {
@@ -62,6 +42,15 @@ type CareerApplicationFormCopy = {
   };
 };
 
+type CareerDetailCopy = {
+  careerLabel: string;
+  applyNowLabel: string;
+  contactTitle: string;
+  contactHint: string;
+  phone: string;
+  email: string;
+};
+
 const careersSeo = createSeo({
   siteName: 'Xipat',
   path: '/careers',
@@ -77,10 +66,12 @@ export async function generateMetadata({
   params: Promise<{ locale: string; slug: string }>;
 }): Promise<Metadata> {
   const { locale, slug } = await params;
-  const t = await getTranslations({ locale, namespace: 'aboutPage.careerDetails' });
-  const careers = t.raw('careers') as Record<string, CareerDetail>;
-  const career = careers[slug];
-  if (!career) {
+  const [t, job] = await Promise.all([
+    getTranslations({ locale, namespace: 'aboutPage.careerDetails' }),
+    getXipatJobDetail(locale, slug),
+  ]);
+
+  if (!job) {
     return careersSeo({
       locale,
       title: t('fallbackSeoTitle'),
@@ -90,39 +81,49 @@ export async function generateMetadata({
 
   return careersSeo({
     locale,
-    title: `${career.title} | ${t('seoSuffix')}`,
-    description: `${career.title} - ${career.salary}`,
+    title: `${job.title} | ${t('seoSuffix')}`,
+    description: `${job.title} - ${job.salary}`,
     image: {
       url: '/images/about/image-6.png',
-      alt: career.title,
+      alt: job.title,
     },
   });
 }
 
-export default async function CareerDetailPage({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params;
-  const t = await getTranslations('aboutPage.careerDetails');
-  const careers = t.raw('careers') as Record<string, CareerDetail>;
+export default async function CareerDetailPage({ params }: { params: Promise<{ locale: string; slug: string }> }) {
+  const { locale, slug } = await params;
+  const [t, career] = await Promise.all([
+    getTranslations({ locale, namespace: 'aboutPage.careerDetails' }),
+    getXipatJobDetail(locale, slug),
+  ]);
   const formCopy = t.raw('applicationForm') as CareerApplicationFormCopy;
-  const career = careers[slug];
 
   if (!career) {
     notFound();
   }
+
+  const detailCopy: CareerDetailCopy = {
+    careerLabel: t('careerLabel'),
+    applyNowLabel: t('applyNowLabel'),
+    contactTitle: t('contactTitle'),
+    contactHint: t('contactHint'),
+    phone: t('contactPhone'),
+    email: t('contactEmail'),
+  };
 
   return (
     <main className="bg-[#F5F7FC] text-[#113C8D]">
       <section className="mx-auto max-w-[1500px] px-6 pt-28 pb-16 sm:px-8 lg:px-12 lg:pt-34 lg:pb-20">
         <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between">
           <div>
-            <p className="text-xl leading-tight font-medium">{career.careerLabel}</p>
+            <p className="text-xl leading-tight font-medium">{detailCopy.careerLabel}</p>
             <h1 className="mt-2 text-4xl leading-[1.12] font-semibold tracking-[-0.02em] lg:text-5xl">{career.title}</h1>
             <p className="mt-4 text-xl leading-tight">{career.salary}</p>
 
             <div className="mt-5 flex flex-wrap gap-3">
               <span className="inline-flex items-center gap-2 rounded-lg bg-[#DCE8FF] px-4 py-2 text-sm font-semibold">
                 <Clock3 className="h-4 w-4" />
-                {career.employment}
+                {career.time}
               </span>
               <span className="inline-flex items-center gap-2 rounded-lg bg-[#DCE8FF] px-4 py-2 text-sm font-semibold">
                 <MapPin className="h-4 w-4" />
@@ -139,60 +140,29 @@ export default async function CareerDetailPage({ params }: { params: Promise<{ s
             href="#career-application-form"
             className="inline-flex h-14 min-w-62 items-center justify-center rounded-full bg-[#113C8D] px-8 text-xl font-semibold text-white transition-colors hover:bg-[#0E3278]"
           >
-            {career.applyNowLabel}
+            {detailCopy.applyNowLabel}
           </Link>
         </div>
 
         <div className="mt-12 border-t border-[#113C8D]/30 pt-10 sm:pt-12">
           <div className="mx-auto max-w-[1500px] space-y-10 text-base leading-[1.65]">
-            <section>
-              <h2 className="text-xl leading-tight font-semibold sm:text-2xl">{career.overviewTitle}</h2>
-              <div className="mt-4 space-y-4">
-                {career.overviewParagraphs.map((paragraph, index) => (
-                  <p key={`overview-${index}`}>{paragraph}</p>
-                ))}
-              </div>
-            </section>
-
-            <section>
-              <h2 className="text-xl leading-tight font-semibold sm:text-2xl">{career.responsibilitiesTitle}</h2>
-              <ul className="mt-4 list-disc space-y-2 pl-5">
-                {career.responsibilities.map((item, index) => (
-                  <li key={`res-${index}`}>{item}</li>
-                ))}
-              </ul>
-            </section>
-
-            <section>
-              <h2 className="text-xl leading-tight font-semibold sm:text-2xl">{career.requirementsTitle}</h2>
-              <ul className="mt-4 list-disc space-y-2 pl-5">
-                {career.requirements.map((item, index) => (
-                  <li key={`req-${index}`}>{item}</li>
-                ))}
-              </ul>
-            </section>
-
-            <section>
-              <h2 className="text-xl leading-tight font-semibold sm:text-2xl">{career.benefitsTitle}</h2>
-              <ul className="mt-4 list-disc space-y-2 pl-5">
-                {career.benefits.map((item, index) => (
-                  <li key={`benefit-${index}`}>{item}</li>
-                ))}
-              </ul>
-            </section>
+            <section
+              className="[&_h1]:text-2xl [&_h1]:font-semibold [&_h1]:text-[#113C8D] [&_h2]:mt-6 [&_h2]:text-xl [&_h2]:font-bold [&_h2]:text-[#113C8D] [&_li]:ml-5 [&_li]:list-disc [&_p]:mt-3 [&_ul]:mt-3 [&_ul]:space-y-2"
+              dangerouslySetInnerHTML={{ __html: career.description }}
+            />
 
             <section>
               <h2 className="text-xl leading-tight font-semibold sm:text-2xl">
-                {career.contactTitle}{' '}
-                <span className="text-base font-normal text-[#113C8D]/85 italic">{career.contactHint}</span>
+                {detailCopy.contactTitle}{' '}
+                <span className="text-base font-normal text-[#113C8D]/85 italic">{detailCopy.contactHint}</span>
               </h2>
-              <p className="mt-4 text-xl">{career.phone}</p>
-              <p className="mt-2 text-xl font-semibold">{career.email}</p>
+              <p className="mt-4 text-xl">{detailCopy.phone}</p>
+              <p className="mt-2 text-xl font-semibold">{detailCopy.email}</p>
             </section>
           </div>
         </div>
 
-        <CareerApplicationForm copy={formCopy} careerTitle={career.title} careerEmail={career.email} />
+        <CareerApplicationForm copy={formCopy} careerTitle={career.title} />
       </section>
     </main>
   );
