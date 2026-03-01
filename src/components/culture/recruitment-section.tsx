@@ -48,12 +48,12 @@ export function RecruitmentSection({
             <p className="mt-5 max-w-125 text-base leading-[1.6] text-[#666E7D] sm:text-lg">{description}</p>
 
             <div className="mt-8 flex flex-wrap gap-3">
-              <button
-                type="button"
+              <Link
+                href="/contact"
                 className="inline-flex min-w-55 cursor-pointer items-center justify-center rounded-full bg-[#113C8D] py-1 text-base font-semibold text-white transition-colors hover:bg-[#0F3478]"
               >
                 {contactButton}
-              </button>
+              </Link>
               <Link
                 href="/careers"
                 className="inline-flex min-w-55 cursor-pointer items-center justify-center rounded-full border-2 border-[#113C8D] py-1 text-base font-semibold text-[#113C8D] transition-colors hover:bg-[#EAF0FB]"
@@ -98,3 +98,4 @@ export function RecruitmentSection({
     </section>
   );
 }
+

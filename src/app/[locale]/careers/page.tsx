@@ -45,7 +45,7 @@ export default async function CareersPage() {
     body: string;
   }>;
   const contactSocials = careersT.raw('contact.socials') as Array<{
-    platform: 'facebook' | 'instagram' | 'twitter';
+    platform: 'facebook' | 'linkedin';
     href: string;
     ariaLabel: string;
   }>;

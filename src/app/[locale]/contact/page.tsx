@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { ContactOverviewSection } from '@/components/contact/contact-overview-section';
-import { ContactFormMapSection } from '@/components/contact/contact-form-map-section';
+import { CareersContactSection } from '@/components/careers/careers-contact-section';
 import { getTranslations } from 'next-intl/server';
 import { createSeo } from '@/lib/seo';
 
@@ -29,34 +29,29 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 }
 
 export default async function ContactPage() {
-  const t = await getTranslations('contactPage');
+  const [t, careersT] = await Promise.all([
+    getTranslations('contactPage'),
+    getTranslations('careersPage'),
+  ]);
+
   const items = t.raw('items') as Array<{ label: string; value: string }>;
-  const formSection = t.raw('formSection') as {
-    title: string;
-    nameLabel: string;
-    namePlaceholder: string;
-    emailLabel: string;
-    emailPlaceholder: string;
-    phoneLabel: string;
-    phonePlaceholder: string;
-    messageLabel: string;
-    messagePlaceholder: string;
-    submitLabel: string;
-    submitLoadingLabel: string;
-    mapTitle: string;
-    validation: {
-      nameRequired: string;
-      nameMin: string;
-      emailRequired: string;
-      emailInvalid: string;
-      phoneInvalid: string;
-      messageRequired: string;
-      messageMin: string;
-    };
-    feedback: {
-      successMessage: string;
-      errorMessage: string;
-    };
+  const contactSocials = careersT.raw('contact.socials') as Array<{
+    platform: 'facebook' | 'linkedin';
+    href: string;
+    ariaLabel: string;
+  }>;
+  const contactValidation = careersT.raw('contact.validation') as {
+    nameRequired: string;
+    emailRequired: string;
+    emailInvalid: string;
+    phoneInvalid: string;
+    messageRequired: string;
+    messageMin: string;
+  };
+  const contactFeedback = careersT.raw('contact.feedback') as {
+    successTitle: string;
+    successDescription: string;
+    errorMessage: string;
   };
 
   return (
@@ -66,7 +61,20 @@ export default async function ContactPage() {
         description={t('description')}
         items={items}
       />
-      <ContactFormMapSection copy={formSection} />
+      <CareersContactSection
+        badge={careersT('contact.badge')}
+        title={careersT('contact.title')}
+        nameLabel={careersT('contact.nameLabel')}
+        emailLabel={careersT('contact.emailLabel')}
+        phoneLabel={careersT('contact.phoneLabel')}
+        messageLabel={careersT('contact.messageLabel')}
+        submitLabel={careersT('contact.submitLabel')}
+        submitSuccessTitle={contactFeedback.successTitle}
+        submitSuccessDescription={contactFeedback.successDescription}
+        submitErrorMessage={contactFeedback.errorMessage}
+        socials={contactSocials}
+        validation={contactValidation}
+      />
     </main>
   );
 }

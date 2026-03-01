@@ -1,6 +1,6 @@
 'use client';
 
-import { ArrowRight, CheckCircle2, Facebook, Instagram, Twitter } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Facebook, Linkedin } from 'lucide-react';
 import Link from 'next/link';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
@@ -12,7 +12,7 @@ import { useToast } from '@/components/ui/use-toast';
 import { cn } from '@/lib/utils';
 
 type ContactSocial = {
-  platform: 'facebook' | 'instagram' | 'twitter';
+  platform: 'facebook' | 'linkedin';
   href: string;
   ariaLabel: string;
 };
@@ -43,8 +43,7 @@ type CareersContactSectionProps = {
 
 const iconMap = {
   facebook: Facebook,
-  instagram: Instagram,
-  twitter: Twitter,
+  linkedin: Linkedin,
 } as const;
 
 export function CareersContactSection({

@@ -1,7 +1,8 @@
 ﻿import type { Metadata } from 'next';
 import Image from 'next/image';
+import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
-import { getTranslations } from 'next-intl/server';
+import { getLocale, getTranslations } from 'next-intl/server';
 
 import { CultureAccordion, type CultureAccordionItem } from '@/components/home/culture-accordion';
 import { Button } from '@/components/ui/button';
@@ -60,6 +61,8 @@ const brandLogos = [
 ];
 
 export default async function LandingPage() {
+  const locale = await getLocale();
+  const contactHref = locale === 'en' ? '/en/contact' : '/contact';
   const t = await getTranslations('home');
   const cultures = t.raw('culture.values') as Array<{ title: string; body: string }>;
   const ecosystemCards = t.raw('ecosystem.cards') as Array<{ title: string; body: string }>;
@@ -89,11 +92,16 @@ export default async function LandingPage() {
               </p>
             </div>
 
-            <Button className="group h-auto cursor-pointer rounded-full border-[6px] border-white/5 bg-white py-1.5 pr-1.5 pl-7 text-[15px] font-semibold tracking-[-0.03em] text-[#002A6A] transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-white hover:shadow-[0_12px_32px_rgba(0,42,106,0.22)] active:translate-y-0 sm:pl-8 sm:text-[16px]">
-              {t('hero.cta')}
-              <span className="ml-4 inline-flex rounded-full bg-[#DB1721] p-3.5 text-white transition-all duration-300 ease-out group-hover:scale-105 group-hover:bg-[#C8141D]">
-                <ArrowRight className="h-4 w-4" aria-hidden="true" />
-              </span>
+            <Button
+              asChild
+              className="group h-auto cursor-pointer rounded-full border-[6px] border-white/5 bg-white py-1.5 pr-1.5 pl-7 text-[15px] font-semibold tracking-[-0.03em] text-[#002A6A] transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-white hover:shadow-[0_12px_32px_rgba(0,42,106,0.22)] active:translate-y-0 sm:pl-8 sm:text-[16px]"
+            >
+              <Link href={contactHref}>
+                {t('hero.cta')}
+                <span className="ml-4 inline-flex rounded-full bg-[#DB1721] p-3.5 text-white transition-all duration-300 ease-out group-hover:scale-105 group-hover:bg-[#C8141D]">
+                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                </span>
+              </Link>
             </Button>
           </div>
 

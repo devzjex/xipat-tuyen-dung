@@ -904,23 +904,18 @@
       "phoneLabel": "Phone Number (optional)",
       "messageLabel": "Message",
       "submitLabel": "Để lại lời nhắn",
-      "socials": [
-        {
-          "platform": "facebook",
-          "href": "https://facebook.com",
-          "ariaLabel": "Facebook"
-        },
-        {
-          "platform": "instagram",
-          "href": "https://instagram.com",
-          "ariaLabel": "Instagram"
-        },
-        {
-          "platform": "twitter",
-          "href": "https://twitter.com",
-          "ariaLabel": "Twitter"
-        }
-      ],
+        "socials": [
+          {
+            "platform": "facebook",
+            "href": "https://www.facebook.com/xipat.ltd",
+            "ariaLabel": "Facebook"
+          },
+          {
+            "platform": "linkedin",
+            "href": "https://www.linkedin.com/company/xipat-flexible-solutions",
+            "ariaLabel": "LinkedIn"
+          }
+        ],
       "validation": {
         "nameRequired": "Vui lòng nhập họ tên.",
         "emailRequired": "Vui lòng nhập email.",

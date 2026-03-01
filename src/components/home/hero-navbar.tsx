@@ -128,6 +128,7 @@ function LanguageSwitcher({
 function DesktopNav({ scrolled }: { scrolled: boolean }) {
   const t = useTranslations('home.nav');
   const locale = useLocale() as AppLocale;
+  const contactHref = locale === 'en' ? '/en/contact' : '/contact';
   const navItems = [
     { key: 'ecosystem', href: locale === 'en' ? '/en/ecosystem' : '/ecosystem' },
     { key: 'about', href: locale === 'en' ? '/en/about' : '/about' },
@@ -143,6 +144,7 @@ function DesktopNav({ scrolled }: { scrolled: boolean }) {
       ))}
 
       <Button
+        asChild
         variant="outline"
         className={cn(
           'cursor-pointer rounded-full px-6 py-2 text-[14px] font-semibold tracking-[-0.03em] transition-all duration-300 ease-out hover:-translate-y-0.5 active:translate-y-0',
@@ -151,7 +153,7 @@ function DesktopNav({ scrolled }: { scrolled: boolean }) {
             : 'border-white/90 bg-transparent text-white hover:border-white hover:bg-white hover:text-[#002A6A] hover:shadow-[0_0_0_4px_rgba(255,255,255,0.14)]',
         )}
       >
-        {t('contact')}
+        <Link href={contactHref}>{t('contact')}</Link>
       </Button>
       <LanguageSwitcher scrolled={scrolled} />
     </nav>
@@ -169,14 +171,13 @@ function MobileTabletMenu({
 }) {
   const t = useTranslations('home.nav');
   const locale = useLocale() as AppLocale;
-  const homeHref = locale === 'en' ? '/en' : '/';
-  const aboutHref = locale === 'en' ? '/en/about' : '/about';
+  const contactHref = locale === 'en' ? '/en/contact' : '/contact';
   const navItems = [
     { key: 'ecosystem', href: locale === 'en' ? '/en/ecosystem' : '/ecosystem' },
-    { key: 'about', href: aboutHref },
-    { key: 'culture', href: `${homeHref}#culture` },
-    { key: 'careers', href: `${homeHref}#careers` },
-    { key: 'news', href: `${homeHref}#news` },
+    { key: 'about', href:  locale === 'en' ? '/en/about' : '/about' },
+    { key: 'culture', href: locale === 'en' ? '/en/culture' : '/culture' },
+    { key: 'careers', href: locale === 'en' ? '/en/careers' : '/careers' },
+    { key: 'news', href: locale === 'en' ? '/en/news' : '/news' },
   ] as const;
 
   return (
@@ -220,6 +221,7 @@ function MobileTabletMenu({
         </nav>
 
         <Button
+          asChild
           variant="outline"
           className={cn(
             'mt-8 w-full rounded-full px-6 py-2 text-[14px] font-semibold tracking-[-0.03em]',
@@ -227,9 +229,10 @@ function MobileTabletMenu({
               ? 'border-[#002A6A]/25 bg-[#002A6A] text-white hover:bg-[#002A6A]'
               : 'border-[#002A6A]/20 bg-white text-[#002A6A] hover:bg-[#002A6A] hover:text-white',
           )}
-          onClick={() => onOpenChange(false)}
         >
-          {t('contact')}
+          <Link href={contactHref} onClick={() => onOpenChange(false)}>
+            {t('contact')}
+          </Link>
         </Button>
         <div className="mt-6">
           <LanguageSwitcher scrolled={scrolled} onSelect={() => onOpenChange(false)} mobile />
@@ -243,8 +246,11 @@ export function HeroNavbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const locale = useLocale() as AppLocale;
+  const pathname = usePathname() ?? '/';
+  const isHomeOrEcosystem = pathname === '/' || pathname === '/ecosystem';
+  const visualScrolled = isHomeOrEcosystem ? scrolled : true;
   const homeHref = locale === 'en' ? '/en' : '/';
-  const activeLogo = scrolled ? '/images/logo-1.png' : '/images/logo.png';
+  const activeLogo = visualScrolled ? '/images/logo-1.png' : '/images/logo.png';
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -264,23 +270,27 @@ export function HeroNavbar() {
     <div
       className={cn(
         'fixed top-0 left-0 z-50 flex w-full items-center justify-between px-5 py-4 transition-all duration-300 sm:px-8 lg:px-12 xl:px-45',
-        scrolled
-          ? 'border-b border-[#e7ebf3] bg-white/95 shadow-[0_8px_30px_rgba(0,42,106,0.08)] backdrop-blur-sm'
-          : 'border-b border-transparent bg-transparent shadow-none',
+        isHomeOrEcosystem
+          ? scrolled
+            ? 'border-b border-[#e7ebf3] bg-white/95 shadow-[0_8px_30px_rgba(0,42,106,0.08)] backdrop-blur-sm'
+            : 'border-b border-transparent bg-transparent shadow-none'
+          : scrolled
+            ? 'border-b border-[#e7ebf3] bg-[#F3F5F8] shadow-[0_8px_30px_rgba(0,42,106,0.08)]'
+            : 'border-b border-[#e7ebf3] bg-[#F3F5F8] shadow-none',
       )}
     >
       <Link href={homeHref}>
         <Image src={activeLogo} alt="Xipat" width={98} height={32} className="h-8 w-auto transition duration-300" />
       </Link>
 
-      <DesktopNav scrolled={scrolled} />
+      <DesktopNav scrolled={visualScrolled} />
 
       <Button
         variant="outline"
         size="icon"
         className={cn(
           'h-10 w-10 rounded-full xl:hidden',
-          scrolled
+          visualScrolled
             ? 'border-[#002A6A]/20 bg-white text-[#002A6A] hover:bg-[#f2f6ff]'
             : 'border-white/80 bg-transparent text-white hover:bg-white hover:text-[#002A6A]',
         )}
@@ -290,7 +300,7 @@ export function HeroNavbar() {
         <Menu className="h-5 w-5" aria-hidden="true" />
       </Button>
 
-      <MobileTabletMenu open={menuOpen} scrolled={scrolled} onOpenChange={setMenuOpen} />
+      <MobileTabletMenu open={menuOpen} scrolled={visualScrolled} onOpenChange={setMenuOpen} />
     </div>
   );
 }
