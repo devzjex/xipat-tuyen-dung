@@ -79,7 +79,9 @@ export function PartnerGrowthSection({
       />
 
       <div className="relative mx-auto flex max-w-330 flex-col items-center px-5 text-center sm:px-8 lg:px-12 xl:px-16">
-        <h2 className="text-4xl font-semibold tracking-[-0.02em] text-[#0D387F] sm:text-5xl lg:leading-[1.08]">{title}</h2>
+        <h2 className="text-4xl font-semibold tracking-[-0.02em] text-[#0D387F] sm:text-5xl lg:leading-[1.08]">
+          {title}
+        </h2>
         <p className="mt-4 max-w-190 text-base leading-[1.55] text-[#123B82] sm:text-xl lg:leading-[1.35]">
           {descriptionLine1}
           <br className="hidden sm:block" /> {descriptionLine2}
@@ -110,9 +112,7 @@ export function PartnerGrowthSection({
             asChild
             className="mt-9 h-auto rounded-full bg-[#0B3A89] px-10 py-2 text-xl font-semibold text-white hover:bg-[#0A3277] focus-visible:ring-2 focus-visible:ring-[#0F3C93] focus-visible:ring-offset-2 lg:mt-11"
           >
-            <Link href="https://www.omegatheme.com/" target="_blank" rel="noreferrer">
-              {ctaButton}
-            </Link>
+            <Link href="/contact">{ctaButton}</Link>
           </Button>
         </div>
       </div>

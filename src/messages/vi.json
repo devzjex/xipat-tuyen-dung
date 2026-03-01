@@ -179,11 +179,7 @@
       ]
     },
     "solution": {
-      "headingLines": [
-        "Giải Pháp Khác Biệt",
-        "Cho Một Thế Giới Luôn",
-        "Thay Đổi"
-      ],
+      "headingLines": ["Giải Pháp Khác Biệt", "Cho Một Thế Giới Luôn", "Thay Đổi"],
       "items": [
         {
           "title": "Kinh nghiệm sâu về eCommerce",
@@ -219,43 +215,43 @@
         {
           "name": "Synctrack",
           "description": "Hệ sinh thái 4 app tối ưu trải nghiệm sau mua cho người dùng",
-          "imageSrc": "/images/logo.png",
+          "imageSrc": "/images/app-icon/synctrack.avif",
           "imageAlt": "Synctrack logo"
         },
         {
           "name": "Blockify",
           "description": "Nâng cao bảo mật giúp vận hành không bị gián đoạn",
-          "imageSrc": "/images/logo.png",
+          "imageSrc": "/images/app-icon/blockify.avif",
           "imageAlt": "Blockify logo"
         },
         {
           "name": "Quotesnap",
           "description": "Phục vụ vận hành B2B với các chức năng báo giá dễ dàng, chuyển đổi nhanh",
-          "imageSrc": "/images/logo.png",
+          "imageSrc": "/images/app-icon/quotesnap.avif",
           "imageAlt": "Quotesnap logo"
         },
         {
           "name": "Consentik",
           "description": "Giúp nhà bán hàng tuân thủ quy định dữ liệu toàn cầu",
-          "imageSrc": "/images/logo.png",
+          "imageSrc": "/images/app-icon/consentik.avif",
           "imageAlt": "Consentik logo"
         },
         {
           "name": "Pareto",
           "description": "Tối ưu chiến lược bán hàng và vận hành thông minh",
-          "imageSrc": "/images/logo.png",
+          "imageSrc": "/images/app-icon/pareto.avif",
           "imageAlt": "Pareto logo"
         },
         {
           "name": "TagFly",
           "description": "Thiết lập theo dõi đa kênh, nhanh gọn và chính xác",
-          "imageSrc": "/images/logo.png",
+          "imageSrc": "/images/app-icon/tagfly.webp",
           "imageAlt": "TagFly logo"
         },
         {
           "name": "Trustify",
           "description": "Quản lý đánh giá của khách hàng, tăng chuyển đổi bền vững",
-          "imageSrc": "/images/logo.png",
+          "imageSrc": "/images/app-icon/trustify.avif",
           "imageAlt": "Trustify logo"
         }
       ]
@@ -904,18 +900,18 @@
       "phoneLabel": "Phone Number (optional)",
       "messageLabel": "Message",
       "submitLabel": "Để lại lời nhắn",
-        "socials": [
-          {
-            "platform": "facebook",
-            "href": "https://www.facebook.com/xipat.ltd",
-            "ariaLabel": "Facebook"
-          },
-          {
-            "platform": "linkedin",
-            "href": "https://www.linkedin.com/company/xipat-flexible-solutions",
-            "ariaLabel": "LinkedIn"
-          }
-        ],
+      "socials": [
+        {
+          "platform": "facebook",
+          "href": "https://www.facebook.com/xipat.ltd",
+          "ariaLabel": "Facebook"
+        },
+        {
+          "platform": "linkedin",
+          "href": "https://www.linkedin.com/company/xipat-flexible-solutions",
+          "ariaLabel": "LinkedIn"
+        }
+      ],
       "validation": {
         "nameRequired": "Vui lòng nhập họ tên.",
         "emailRequired": "Vui lòng nhập email.",
@@ -955,7 +951,7 @@
       ]
     }
   },
-   "contactPage": {
+  "contactPage": {
     "title": "Liên hệ",
     "description": "Từ chuyển đổi đến vận hành, hệ sinh thái của chúng tôi giúp bạn tăng trưởng mà không rối loạn.",
     "items": [

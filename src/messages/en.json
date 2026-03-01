@@ -179,11 +179,7 @@
       ]
     },
     "solution": {
-      "headingLines": [
-        "Distinct Solutions",
-        "For a World That Is",
-        "Always Changing"
-      ],
+      "headingLines": ["Distinct Solutions", "For a World That Is", "Always Changing"],
       "items": [
         {
           "title": "Deep eCommerce expertise",
@@ -219,43 +215,43 @@
         {
           "name": "Synctrack",
           "description": "A 4-app ecosystem that optimizes the post-purchase experience",
-          "imageSrc": "/images/logo.png",
+          "imageSrc": "/images/app-icon/synctrack.avif",
           "imageAlt": "Synctrack logo"
         },
         {
           "name": "Blockify",
           "description": "Enhances security to keep operations uninterrupted",
-          "imageSrc": "/images/logo.png",
+          "imageSrc": "/images/app-icon/blockify.avif",
           "imageAlt": "Blockify logo"
         },
         {
           "name": "Quotesnap",
           "description": "Supports B2B operations with easier quoting and faster conversion",
-          "imageSrc": "/images/logo.png",
+          "imageSrc": "/images/app-icon/quotesnap.avif",
           "imageAlt": "Quotesnap logo"
         },
         {
           "name": "Consentik",
           "description": "Helps merchants comply with global data regulations",
-          "imageSrc": "/images/logo.png",
+          "imageSrc": "/images/app-icon/consentik.avif",
           "imageAlt": "Consentik logo"
         },
         {
           "name": "Pareto",
           "description": "Optimizes sales strategy and smart operations",
-          "imageSrc": "/images/logo.png",
+          "imageSrc": "/images/app-icon/pareto.avif",
           "imageAlt": "Pareto logo"
         },
         {
           "name": "TagFly",
           "description": "Set up multi-channel tracking quickly and accurately",
-          "imageSrc": "/images/logo.png",
+          "imageSrc": "/images/app-icon/tagfly.webp",
           "imageAlt": "TagFly logo"
         },
         {
           "name": "Trustify",
           "description": "Manage customer reviews and improve conversion sustainably",
-          "imageSrc": "/images/logo.png",
+          "imageSrc": "/images/app-icon/trustify.avif",
           "imageAlt": "Trustify logo"
         }
       ]
@@ -904,18 +900,18 @@
       "phoneLabel": "Phone Number (optional)",
       "messageLabel": "Message",
       "submitLabel": "Leave a message",
-        "socials": [
-          {
-            "platform": "facebook",
-            "href": "https://www.facebook.com/xipat.ltd",
-            "ariaLabel": "Facebook"
-          },
-          {
-            "platform": "linkedin",
-            "href": "https://www.linkedin.com/company/xipat-flexible-solutions",
-            "ariaLabel": "LinkedIn"
-          }
-        ],
+      "socials": [
+        {
+          "platform": "facebook",
+          "href": "https://www.facebook.com/xipat.ltd",
+          "ariaLabel": "Facebook"
+        },
+        {
+          "platform": "linkedin",
+          "href": "https://www.linkedin.com/company/xipat-flexible-solutions",
+          "ariaLabel": "LinkedIn"
+        }
+      ],
       "validation": {
         "nameRequired": "Please enter your name.",
         "emailRequired": "Please enter your email.",
