@@ -65,6 +65,7 @@ export default async function LandingPage() {
   const solutionItems = t.raw('solutions.items') as Array<{ highlight: string; rest: string; body: string }>;
   const cultureAccordionItems = t.raw('culture.accordion') as CultureAccordionItem[];
   const newsCards = t.raw('news.cards') as Array<{ title: string; date: string }>;
+  const heroDescription = t('hero.descriptionLines');
   const blogs = [
     { image: blog1, title: newsCards[0]?.title ?? '', date: newsCards[0]?.date ?? '' },
     { image: blog2, title: newsCards[1]?.title ?? '', date: newsCards[1]?.date ?? '' },
@@ -85,15 +86,16 @@ export default async function LandingPage() {
             className="h-full w-full"
             fetchPriority="high"
           />
-          <div className="absolute top-30 left-5 w-[min(92vw,450px)] space-y-10 sm:left-8 sm:space-y-12 lg:top-49.25 lg:left-24 lg:w-125 lg:space-y-16 xl:left-45">
+          <div className="absolute top-30 left-5 w-[min(92vw,560px)] space-y-10 sm:left-8 sm:space-y-12 lg:top-49.25 lg:left-24 lg:w-[min(46vw,640px)] lg:space-y-16 xl:left-45 xl:w-[min(42vw,700px)]">
             <div className="space-y-4">
-              <h1 className="text-[38px] leading-tight font-semibold tracking-[-0.01em] text-white sm:text-[44px] md:text-[54px] lg:text-[64px]">
+              <h1 className="max-w-[13ch] text-[38px] leading-[1.08] font-semibold tracking-[-0.01em] text-white sm:max-w-[14ch] sm:text-[44px] md:max-w-[15ch] md:text-[54px] lg:max-w-[16ch] lg:text-[64px]">
                 {t.rich('hero.title', {
-                  accent: (chunks) => <span className="text-[#528FFE]">{chunks}</span>,
+                  accent: (chunks) => <span className="inline-block text-[#528FFE]">{chunks}</span>,
+                  keep: (chunks) => <span className="inline-block whitespace-nowrap">{chunks}</span>,
                 })}
               </h1>
-              <p className="text-[16px] leading-normal font-normal tracking-[-0.02em] text-white sm:text-[18px]">
-                {t('hero.description')}
+              <p className="max-w-[50ch] text-[16px] leading-normal font-normal tracking-[-0.02em] text-white sm:text-[18px]">
+                {heroDescription}
               </p>
             </div>
 
@@ -135,12 +137,8 @@ export default async function LandingPage() {
         </div>
 
         <div className="relative mx-auto flex w-full max-w-280 flex-col items-center gap-8">
-          <h2 className="max-w-280 text-4xl leading-[1.3] font-semibold text-[#002A6A] md:text-5xl xl:text-[64px]">
-            {t('intro.titleLine1')}
-            <br />
-            {t('intro.titleLine2')}
-            <br />
-            {t('intro.titleLine3')}
+          <h2 className="max-w-280 whitespace-pre-line text-4xl leading-[1.3] font-semibold text-[#002A6A] md:text-5xl xl:text-[64px]">
+            {t('intro.title')}
           </h2>
           <p className="max-w-181.75 text-lg leading-normal text-[#002A6A] md:text-xl xl:text-2xl">
             {t.rich('intro.description', {
@@ -281,12 +279,12 @@ export default async function LandingPage() {
             </div>
           </div>
 
-          <div className="relative mx-auto w-full max-w-[540px]">
+          <div className="relative mx-auto w-full max-w-[506px]">
             <Image
               src="/images/home/group-user.png"
               alt="Xipat team"
-              width={540}
-              height={640}
+              width={506}
+              height={593}
               className="h-auto w-full"
             />
           </div>

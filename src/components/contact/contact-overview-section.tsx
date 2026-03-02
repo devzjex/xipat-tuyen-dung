@@ -35,7 +35,7 @@ export function ContactOverviewSection({ title, description, items }: ContactOve
         <div className="mt-12 overflow-hidden rounded-none border border-[#D3D7DF] bg-[#D6D6D8] sm:mt-14 lg:mt-16">
           <iframe
             title="Xipat Office"
-            src="https://www.google.com/maps?q=T%C3%B2a%20nh%C3%A0%20Hoa%20C%C6%B0%C6%A1ng%2C%20ng%C3%B5%2011%20Th%C3%A1i%20H%C3%A0%2C%20%C4%90%E1%BB%91ng%20%C4%90a%2C%20H%C3%A0%20N%E1%BB%99i&output=embed"
+            src="https://www.google.com/maps?q=XIPAT%20Flexible%20Solutions%20Company%20Limited%2C%2018%20Ng.%2011%20P.%20Th%C3%A1i%20H%C3%A0%2C%20Trung%20Li%E1%BB%87t%2C%20%C4%90%E1%BB%91ng%20%C4%90a%2C%20H%C3%A0%20N%E1%BB%99i%2C%20Vietnam&output=embed"
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
             className="h-[320px] w-full border-0 sm:h-[380px] lg:h-[430px]"

@@ -77,7 +77,7 @@ export default async function EcosystemPage() {
 
   return (
     <>
-      <section className="relative h-200 overflow-hidden bg-[#041E56]">
+      <section className="relative overflow-hidden bg-[#041E56] text-white">
         <Image
           src={heroBg}
           alt=""
@@ -86,18 +86,22 @@ export default async function EcosystemPage() {
           priority
           sizes="100vw"
           className="absolute inset-0 h-full w-full object-cover object-center"
-          fetchPriority='high'
+          fetchPriority="high"
         />
-        <div className="relative mx-auto flex w-full items-center px-6 pt-50 pb-12 sm:px-10 sm:pt-44 lg:px-20 xl:px-40">
-          <div className="w-full max-w-120 sm:ml-6 lg:ml-12 xl:ml-20">
-            <h1 className="text-[38px] leading-tight font-semibold tracking-[-0.03em] text-white sm:text-[44px] md:text-[54px] lg:text-[64px]">
-              {t('hero.title')}
+        {/* <div className="absolute inset-0 bg-linear-to-r from-[#041E56]/90 via-[#0A2B78]/75 to-[#041E56]/40" /> */}
+
+        <div className="relative z-10 mx-auto grid min-h-[620px] max-w-[1560px] items-center px-6 py-24 sm:min-h-[680px] sm:px-10 sm:py-28 md:min-h-[720px] md:py-32 lg:min-h-[760px] lg:grid-cols-12 lg:px-16 xl:min-h-[800px] xl:px-24">
+          <div className="w-full max-w-[700px] lg:col-span-6 xl:col-span-5">
+            <h1 className="max-w-[18ch] text-[38px] leading-[1.16] font-semibold tracking-[-0.03em] text-white sm:text-[44px] md:text-[54px] lg:text-[64px]">
+              {t.rich('hero.title', {
+                line: (chunks) => <span className="block whitespace-nowrap">{chunks}</span>,
+              })}
             </h1>
-            <p className="mt-6 max-w-160 text-base leading-[1.6] text-white/90 sm:text-lg">{t('hero.description')}</p>
+            <p className="mt-6 max-w-[60ch] text-base leading-[1.65] text-white/90 sm:text-lg">{t('hero.description')}</p>
 
             <Button
               asChild
-              className="group mt-10 h-auto rounded-full bg-white py-1.5 pr-1.5 pl-7 text-base font-semibold text-[#113C8D] shadow-[0_16px_36px_rgba(0,0,0,0.22)] transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-white hover:shadow-[0_22px_44px_rgba(0,0,0,0.28)] active:translate-y-0"
+              className="group mt-10 h-auto rounded-full bg-white py-1.5 pr-1.5 pl-7 text-base font-semibold text-[#113C8D] shadow-[0_16px_36px_rgba(0,0,0,0.22)] transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-white hover:shadow-[0_22px_44px_rgba(0,0,0,0.28)] active:translate-y-0 sm:mt-11"
             >
               <Link href="https://www.omegatheme.com/" target="_blank" rel="noreferrer">
                 {t('hero.cta')}

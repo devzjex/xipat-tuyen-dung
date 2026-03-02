@@ -10,14 +10,13 @@
       "contact": "Contact"
     },
     "hero": {
-      "title": "Build <accent>freedom</accent> so businesses can <accent>break through</accent>",
+      "title": "Build <accent>freedom</accent> <keep>so businesses can</keep> <accent>break through</accent>",
       "description": "We create flexible, intelligent platforms that reduce complexity, empower teams, and open more room for businesses to grow.",
+      "descriptionLines": "We create flexible, intelligent platforms that reduce complexity, empower teams, and open more room for businesses to grow.",
       "cta": "Contact now"
     },
     "intro": {
-      "titleLine1": "Remove complexity, give time back,",
-      "titleLine2": "that is how technology",
-      "titleLine3": "serves prosperity.",
+      "title": "Remove Complexity, Give Time Back,\nThat Is How Technology\nServes Prosperity.",
       "description": "From a small journey 17 years ago, <brand>XIPAT</brand> has grown with thousands of merchants and become a trusted global e-commerce technology builder."
     },
     "about": {
@@ -145,7 +144,7 @@
   },
   "ecosystemPage": {
     "hero": {
-      "title": "Application ecosystem for global eCommerce.",
+      "title": "<line>Application ecosystem</line><line>for global</line><line>eCommerce.</line>",
       "description": "OmegaTheme delivers a compact solution suite that helps sellers run operations more smoothly, optimize performance, and scale confidently across leading eCommerce platforms.",
       "cta": "Omegatheme"
     },
@@ -519,7 +518,7 @@
   },
   "aboutPage": {
     "hero": {
-      "title": "A technology journey\nbuilt by people and\nreal values.",
+      "title": "<line>A technology journey</line><line>built by people and</line><line>real values.</line>",
       "description": "For 17 years, we have continuously innovated to build enabling solutions that help Vietnamese and global businesses operate with confidence.",
       "imageAlt": "Xipat team reviewing reports"
     },

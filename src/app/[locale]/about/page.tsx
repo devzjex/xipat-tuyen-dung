@@ -115,7 +115,9 @@ export default async function AboutPage() {
     <main className="overflow-x-clip bg-white">
       <AboutHeroSection
         copy={{
-          title: heroT('title'),
+          title: heroT.rich('title', {
+            line: (chunks) => <span className="block whitespace-nowrap">{chunks}</span>,
+          }),
           description: heroT('description'),
           imageAlt: heroT('imageAlt'),
         }}
@@ -185,4 +187,3 @@ export default async function AboutPage() {
     </main>
   );
 }
-

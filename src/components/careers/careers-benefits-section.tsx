@@ -46,8 +46,8 @@ export function CareersBenefitsSection({ title, imageAlt, items }: CareersBenefi
           </div>
         </div>
 
-        <div className="relative mx-auto w-full max-w-[520px] lg:max-w-[540px]">
-          <Image src="/images/home/group-user.png" alt={imageAlt} width={540} height={640} className="h-auto w-full" />
+        <div className="relative mx-auto w-full max-w-[506px]">
+          <Image src="/images/home/group-user.png" alt={imageAlt} width={506} height={593} className="h-auto w-full" />
         </div>
       </div>
     </section>

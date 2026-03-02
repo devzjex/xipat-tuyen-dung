@@ -10,14 +10,13 @@
       "contact": "Liên hệ"
     },
     "hero": {
-      "title": "Kiến tạo <accent>tự do</accent> để doanh nghiệp <accent>bứt phá</accent>",
+      "title": "Kiến tạo <accent>tự do</accent> <keep>để doanh nghiệp</keep> <accent>bứt phá</accent>",
       "description": "Chúng tôi tạo ra những nền tảng linh hoạt và thông minh để giảm tải phức tạp, giải phóng đội ngũ và mở không gian cho doanh nghiệp phát triển.",
+      "descriptionLines": "Chúng tôi tạo ra những nền tảng linh hoạt và thông minh để giảm tải phức tạp, giải phóng đội ngũ và mở không gian cho doanh nghiệp phát triển.",
       "cta": "Liên hệ ngay"
     },
     "intro": {
-      "titleLine1": "Giải phóng phức tạp, trao lại",
-      "titleLine2": "thời gian đó là cách công nghệ",
-      "titleLine3": "phục vụ sự thịnh vượng.",
+      "title": "Giải Phóng Phức Tạp, Trao Lại\nThời Gian Đó Là Cách Công Nghệ\nPhục Vụ Sự Thịnh Vượng.",
       "description": "Từ một hành trình nhỏ 17 năm trước, <brand>XIPAT</brand> đã lớn lên cùng hàng nghìn nhà bán hàng và trở thành đơn vị tạo ra những sản phẩm thương mại điện tử được tin cậy toàn cầu."
     },
     "about": {
@@ -145,7 +144,7 @@
   },
   "ecosystemPage": {
     "hero": {
-      "title": "Hệ sinh thái ứng dụng cho thương mại điện tử toàn cầu.",
+      "title": "<line>Hệ sinh thái ứng</line><line>dụng cho thương mại</line><line>điện tử toàn cầu.</line>",
       "description": "OmegaTheme cung cấp bộ giải pháp tinh gọn giúp nhà bán hàng vận hành nhẹ nhàng hơn, tối ưu hiệu quả và tự tin mở rộng trên các nền tảng eCommerce hàng đầu.",
       "cta": "OmegaTheme"
     },
@@ -519,7 +518,7 @@
   },
   "aboutPage": {
     "hero": {
-      "title": "Hành trình công nghệ\nđược xây bởi con\nngười và giá trị thật",
+      "title": "<line>Hành trình công nghệ</line><line>được xây bởi con</line><line>người và giá trị thật</line>",
       "description": "Trong 17 năm, chúng tôi không ngừng đổi mới và xây dựng những giải pháp mang tính giải phóng, giúp các doanh nghiệp Việt và quốc tế vận hành vững vàng",
       "imageAlt": "Đội ngũ Xipat đang trao đổi báo cáo"
     },
