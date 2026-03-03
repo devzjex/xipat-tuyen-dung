@@ -6,6 +6,7 @@ import { getLocale, getTranslations } from 'next-intl/server';
 
 import { CultureAccordion, type CultureAccordionItem } from '@/components/home/culture-accordion';
 import { Button } from '@/components/ui/button';
+import { MotionReveal, MotionStagger, MotionStaggerItem } from '@/components/ui/viewport-motion';
 import { createSeo } from '@/lib/seo';
 
 const heroImage = '/images/home/banner-hero.png';
@@ -74,8 +75,8 @@ export default async function LandingPage() {
 
   return (
     <>
-      <section className="relative overflow-hidden text-white">
-        <div className="relative h-245.75 w-full">
+      <section className="relative isolate overflow-hidden text-white">
+        <div className="relative min-h-[620px] w-full sm:min-h-[700px] md:min-h-[760px] lg:min-h-[880px] xl:min-h-[983px]">
           <Image
             src={heroImage}
             alt=""
@@ -83,37 +84,45 @@ export default async function LandingPage() {
             height={983}
             priority
             sizes="100vw"
-            className="h-full w-full"
+            className="absolute inset-0 h-full w-full object-cover object-center"
             fetchPriority="high"
           />
-          <div className="absolute top-30 left-5 w-[min(92vw,560px)] space-y-10 sm:left-8 sm:space-y-12 lg:top-49.25 lg:left-24 lg:w-[min(46vw,640px)] lg:space-y-16 xl:left-45 xl:w-[min(42vw,700px)]">
-            <div className="space-y-4">
-              <h1 className="max-w-[13ch] text-[38px] leading-[1.08] font-semibold tracking-[-0.01em] text-white sm:max-w-[14ch] sm:text-[44px] md:max-w-[15ch] md:text-[54px] lg:max-w-[16ch] lg:text-[64px]">
-                {t.rich('hero.title', {
-                  accent: (chunks) => <span className="inline-block text-[#528FFE]">{chunks}</span>,
-                  keep: (chunks) => <span className="inline-block whitespace-nowrap">{chunks}</span>,
-                })}
-              </h1>
-              <p className="max-w-[50ch] text-[16px] leading-normal font-normal tracking-[-0.02em] text-white sm:text-[18px]">
-                {heroDescription}
-              </p>
-            </div>
+          <div className="absolute inset-0 bg-gradient-to-b from-[#002A6A]/78 via-[#002A6A]/40 to-[#002A6A]/70 lg:bg-gradient-to-r lg:from-[#002A6A]/78 lg:via-[#002A6A]/32 lg:to-transparent" />
 
-            <Button
-              asChild
-              className="group h-auto cursor-pointer rounded-full border-[6px] border-white/5 bg-white py-1.5 pr-1.5 pl-7 text-[15px] font-semibold tracking-[-0.03em] text-[#002A6A] transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-white hover:shadow-[0_12px_32px_rgba(0,42,106,0.22)] active:translate-y-0 sm:pl-8 sm:text-[16px]"
-            >
-              <Link href={contactHref}>
-                {t('hero.cta')}
-                <span className="ml-4 inline-flex rounded-full bg-[#DB1721] p-3.5 text-white transition-all duration-300 ease-out group-hover:scale-105 group-hover:bg-[#C8141D]">
-                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
-                </span>
-              </Link>
-            </Button>
+          <div className="absolute inset-x-0 top-0 z-10 flex h-full w-full items-start px-5 pt-24 pb-16 sm:px-8 sm:pt-28 md:pt-32 lg:px-24 lg:pt-44 xl:px-45 xl:pt-49.25">
+            <MotionStagger className="w-full max-w-[620px] space-y-8 sm:space-y-10 lg:space-y-14" staggerChildren={0.12}>
+              <MotionStaggerItem y={28}>
+                <div className="space-y-4 sm:space-y-5">
+                  <h1 className="max-w-[16ch] text-[34px] leading-[1.08] font-semibold tracking-[-0.01em] text-white sm:text-[44px] md:text-[54px] lg:max-w-[15ch] lg:text-[64px]">
+                    {t.rich('hero.title', {
+                      accent: (chunks) => <span className="inline-block text-[#528FFE]">{chunks}</span>,
+                      keep: (chunks) => <span className="inline-block whitespace-nowrap">{chunks}</span>,
+                    })}
+                  </h1>
+                  <p className="max-w-[58ch] text-[15px] leading-relaxed font-normal tracking-[-0.02em] text-white/95 sm:text-[17px] md:text-[18px]">
+                    {heroDescription}
+                  </p>
+                </div>
+              </MotionStaggerItem>
+
+              <MotionStaggerItem y={20}>
+                <Button
+                  asChild
+                  className="group h-auto w-fit max-w-full cursor-pointer rounded-full border-[6px] border-white/5 bg-white py-1.5 pr-1.5 pl-5 text-[14px] font-semibold tracking-[-0.03em] text-[#002A6A] transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-white hover:shadow-[0_12px_32px_rgba(0,42,106,0.22)] active:translate-y-0 sm:pl-8 sm:text-[16px]"
+                >
+                  <Link href={contactHref} className="inline-flex items-center gap-3 sm:gap-4">
+                    <span className="truncate">{t('hero.cta')}</span>
+                    <span className="inline-flex shrink-0 rounded-full bg-[#DB1721] p-3 text-white transition-all duration-300 ease-out group-hover:scale-105 group-hover:bg-[#C8141D] sm:p-3.5">
+                      <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                    </span>
+                  </Link>
+                </Button>
+              </MotionStaggerItem>
+            </MotionStagger>
           </div>
 
-          <div className="absolute right-8 bottom-28 left-8 hidden overflow-hidden lg:right-24 lg:left-24 lg:flex xl:right-45 xl:left-45">
-            <div className="hero-logo-marquee-track flex min-w-max items-center gap-14">
+          <div className="absolute right-4 bottom-8 left-4 overflow-hidden sm:right-8 sm:bottom-10 sm:left-8 md:bottom-12 lg:right-24 lg:bottom-24 lg:left-24 xl:right-45 xl:left-45">
+            <div className="hero-logo-marquee-track flex min-w-max items-center gap-6 sm:gap-8 lg:gap-10 xl:gap-14">
               {[...brandLogos, ...brandLogos].map((src, idx) => (
                 <Image
                   key={`${src}-${idx}`}
@@ -121,9 +130,8 @@ export default async function LandingPage() {
                   alt={`partner-${(idx % brandLogos.length) + 1}`}
                   width={170}
                   height={75}
-                  className="h-auto max-h-18.75 w-auto object-contain"
-                  fetchPriority="high"
-                  priority
+                  className="h-auto max-h-8 w-auto object-contain sm:max-h-10 md:max-h-12 lg:max-h-14 xl:max-h-18.75"
+                  sizes="170px"
                 />
               ))}
             </div>
@@ -136,116 +144,149 @@ export default async function LandingPage() {
           <Image src={introPattern} alt="" fill sizes="100vw" className="object-contain object-center opacity-90" />
         </div>
 
-        <div className="relative mx-auto flex w-full max-w-280 flex-col items-center gap-8">
-          <h2 className="max-w-280 whitespace-pre-line text-4xl leading-[1.3] font-semibold text-[#002A6A] md:text-5xl xl:text-[64px]">
-            {t('intro.title')}
-          </h2>
-          <p className="max-w-181.75 text-lg leading-normal text-[#002A6A] md:text-xl xl:text-2xl">
-            {t.rich('intro.description', {
-              brand: (chunks) => <span className="font-medium text-[#DB1721]">{chunks}</span>,
-            })}
-          </p>
-        </div>
+        <MotionStagger className="relative mx-auto flex w-full max-w-280 flex-col items-center gap-8 text-center" staggerChildren={0.12}>
+          <MotionStaggerItem>
+            <h2 className="max-w-280 text-4xl leading-[1.3] font-semibold whitespace-pre-line text-[#002A6A] md:text-5xl xl:text-[64px]">
+              {t('intro.title')}
+            </h2>
+          </MotionStaggerItem>
+          <MotionStaggerItem>
+            <p className="max-w-181.75 text-lg leading-normal text-[#002A6A] md:text-xl xl:text-2xl">
+              {t.rich('intro.description', {
+                brand: (chunks) => <span className="font-medium text-[#DB1721]">{chunks}</span>,
+              })}
+            </p>
+          </MotionStaggerItem>
+        </MotionStagger>
       </section>
 
       <section className="relative overflow-hidden bg-[#012458] text-white">
         <div className="pointer-events-none absolute -top-28 -left-24 h-[360px] w-[360px] rounded-full bg-[radial-gradient(circle,_rgba(83,129,255,0.42)_0%,_rgba(83,129,255,0.08)_45%,_rgba(1,36,88,0)_75%)] blur-2xl" />
         {/* <div className="pointer-events-none absolute -right-28 -bottom-36 h-[460px] w-[460px] rounded-full bg-[radial-gradient(circle,_rgba(83,129,255,0.35)_0%,_rgba(83,129,255,0.06)_50%,_rgba(1,36,88,0)_78%)] blur-3xl" /> */}
         <div className="relative mx-auto grid max-w-[1640px] items-center gap-12 px-6 py-20 lg:grid-cols-[1.18fr_0.82fr] lg:gap-16 lg:px-20 xl:px-28 xl:py-28">
-          <div className="order-2 lg:order-1">
+          <MotionReveal className="order-2 lg:order-1" y={34}>
             <div className="relative mx-auto w-full max-w-[660px] overflow-hidden p-0">
               <Image src={people} alt="" width={680} height={740} className="h-full w-full object-cover object-top" />
             </div>
-          </div>
+          </MotionReveal>
 
-          <div className="order-1 min-w-0 space-y-6 lg:order-2 lg:max-w-[560px]">
-            <h3 className="text-4xl leading-[1.2] font-semibold tracking-[-0.03em] text-pretty md:text-5xl">
-              {t.rich('about.title', {
-                accent: (chunks) => <span className="text-white">{chunks}</span>,
-              })}
-            </h3>
-            <p className="text-lg leading-relaxed tracking-[-0.03em] text-white/90">
-              {t.rich('about.description1', {
-                brand: (chunks) => <span className="font-medium">{chunks}</span>,
-              })}
-            </p>
-            <p className="text-lg leading-relaxed tracking-[-0.03em] text-white/90">{t('about.description2')}</p>
+          <MotionStagger
+            className="order-1 min-w-0 space-y-6 lg:order-2 lg:max-w-[560px]"
+            staggerChildren={0.1}
+            delayChildren={0.06}
+          >
+            <MotionStaggerItem>
+              <h3 className="text-4xl leading-[1.2] font-semibold tracking-[-0.03em] text-pretty md:text-5xl">
+                {t.rich('about.title', {
+                  accent: (chunks) => <span className="text-white">{chunks}</span>,
+                })}
+              </h3>
+            </MotionStaggerItem>
+            <MotionStaggerItem>
+              <p className="text-lg leading-relaxed tracking-[-0.03em] text-white/90">
+                {t.rich('about.description1', {
+                  brand: (chunks) => <span className="font-medium">{chunks}</span>,
+                })}
+              </p>
+            </MotionStaggerItem>
+            <MotionStaggerItem>
+              <p className="text-lg leading-relaxed tracking-[-0.03em] text-white/90">{t('about.description2')}</p>
+            </MotionStaggerItem>
 
-            <div className="grid grid-cols-3 gap-6 pt-2 md:gap-8">
-              <div>
-                <p className="text-3xl leading-[1.2] font-semibold tracking-[-0.03em]">{t('about.stats.0.value')}</p>
-                <p className="mt-1 text-base text-white/80 md:text-lg">{t('about.stats.0.label')}</p>
+            <MotionStaggerItem>
+              <div className="grid grid-cols-3 gap-6 pt-2 md:gap-8">
+                <div>
+                  <p className="text-3xl leading-[1.2] font-semibold tracking-[-0.03em]">{t('about.stats.0.value')}</p>
+                  <p className="mt-1 text-base text-white/80 md:text-lg">{t('about.stats.0.label')}</p>
+                </div>
+                <div>
+                  <p className="text-3xl leading-[1.2] font-semibold tracking-[-0.03em]">{t('about.stats.1.value')}</p>
+                  <p className="mt-1 text-base text-white/80 md:text-lg">{t('about.stats.1.label')}</p>
+                </div>
+                <div>
+                  <p className="text-3xl leading-[1.2] font-semibold tracking-[-0.03em]">{t('about.stats.2.value')}</p>
+                  <p className="mt-1 text-base text-white/80 md:text-lg">{t('about.stats.2.label')}</p>
+                </div>
               </div>
-              <div>
-                <p className="text-3xl leading-[1.2] font-semibold tracking-[-0.03em]">{t('about.stats.1.value')}</p>
-                <p className="mt-1 text-base text-white/80 md:text-lg">{t('about.stats.1.label')}</p>
-              </div>
-              <div>
-                <p className="text-3xl leading-[1.2] font-semibold tracking-[-0.03em]">{t('about.stats.2.value')}</p>
-                <p className="mt-1 text-base text-white/80 md:text-lg">{t('about.stats.2.label')}</p>
-              </div>
-            </div>
-          </div>
+            </MotionStaggerItem>
+          </MotionStagger>
         </div>
       </section>
 
       <section className="bg-[#012458]">
-        <div className="mx-auto flex w-full max-w-360 flex-col justify-center md:flex-row xl:flex-nowrap">
-          <article className="relative h-[500px] w-full overflow-hidden sm:h-[550px] md:h-[600px] md:w-[360px]">
+        <MotionStagger
+          className="mx-auto flex w-full max-w-360 flex-col justify-center md:flex-row md:flex-wrap xl:flex-nowrap"
+          staggerChildren={0.1}
+        >
+          <MotionStaggerItem
+            as="article"
+            className="relative aspect-[4/5] w-full overflow-hidden md:w-1/2 xl:h-[600px] xl:w-[360px] xl:aspect-auto"
+          >
             <Image
               src="/images/home/image-ome-theme.png"
               alt="Xipat team collaboration"
               fill
               className="object-cover"
-              sizes="(min-width: 768px) 360px, 100vw"
+              sizes="(min-width: 1280px) 360px, (min-width: 768px) 50vw, 100vw"
             />
-          </article>
+          </MotionStaggerItem>
 
-          <article className="relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden bg-gradient-to-b from-[#2F61E5] via-[#1846B8] to-[#032F83] px-6 py-10 text-white sm:h-[550px] sm:px-10 md:h-[600px] md:w-[360px]">
+          <MotionStaggerItem
+            as="article"
+            className="relative flex aspect-[4/5] w-full flex-col overflow-hidden bg-gradient-to-b from-[#2F61E5] via-[#1846B8] to-[#032F83] px-6 py-8 text-white sm:px-10 md:w-1/2 md:py-10 xl:h-[600px] xl:w-[360px] xl:aspect-auto"
+          >
             <Image
               src="/images/home/bg-omegatheme.png"
               alt=""
               width={334}
               height={317}
-              className="pointer-events-none absolute top-9 left-[54%] hidden -translate-x-1/2 md:block"
+              className="pointer-events-none absolute top-8 left-1/2 hidden -translate-x-1/2 opacity-90 md:block"
             />
 
-            <div className="relative flex h-full max-w-70 flex-col items-center justify-end text-center sm:max-w-[320px]">
-              <h3 className="absolute top-25 left-7.5 mb-4 text-5xl leading-[1.02] font-semibold tracking-tight whitespace-pre-line sm:mb-5">
+            <div className="relative flex h-full w-full flex-col justify-between pt-4 text-center sm:pt-8">
+              <h3 className="mx-auto max-w-[320px] text-4xl leading-[1.05] font-semibold tracking-tight whitespace-pre-line sm:text-5xl">
                 {ecosystemCards[0].title}
               </h3>
-              <p className="text-base leading-relaxed text-white/90 sm:text-lg">{ecosystemCards[0].body}</p>
+              <p className="mx-auto max-w-[320px] text-base leading-relaxed text-white/90 sm:text-lg">
+                {ecosystemCards[0].body}
+              </p>
             </div>
-          </article>
+          </MotionStaggerItem>
 
-          <article className="relative h-[500px] w-full overflow-hidden sm:h-[550px] md:h-[600px] md:w-[360px]">
+          <MotionStaggerItem
+            as="article"
+            className="relative aspect-[4/5] w-full overflow-hidden md:w-1/2 xl:h-[600px] xl:w-[360px] xl:aspect-auto"
+          >
             <Image
               src="/images/home/image-gamezoka.png"
               alt="Xipat team at work"
               fill
               className="object-cover"
-              sizes="(min-width: 768px) 360px, 100vw"
+              sizes="(min-width: 1280px) 360px, (min-width: 768px) 50vw, 100vw"
             />
-          </article>
+          </MotionStaggerItem>
 
-          <article className="relative flex h-[500px] w-full flex-col justify-center overflow-hidden bg-[#052A73] px-6 py-10 text-white sm:h-[550px] sm:px-10 md:h-[600px] md:w-[360px] md:px-12">
+          <MotionStaggerItem
+            as="article"
+            className="relative flex aspect-[4/5] w-full flex-col justify-center overflow-hidden bg-[#052A73] px-6 py-8 text-white sm:px-10 md:w-1/2 md:px-12 xl:h-[600px] xl:w-[360px] xl:aspect-auto"
+          >
             <Image
               src="/images/home/bg-gamezoka.png"
               alt=""
               fill
               className="pointer-events-none hidden object-cover md:block"
-              sizes="(min-width: 768px) 360px, 100vw"
+              sizes="(min-width: 1280px) 360px, (min-width: 768px) 50vw, 100vw"
             />
             <div className="relative z-10 flex flex-col justify-center">
-              <h3 className="mb-5 text-3xl font-semibold tracking-tight sm:mb-6 sm:text-4xl md:text-5xl">
+              <h3 className="mb-4 max-w-[320px] text-3xl font-semibold tracking-tight sm:mb-6 sm:text-4xl md:text-[44px] md:leading-[1.1]">
                 {ecosystemCards[1].title}
               </h3>
-              <p className="max-w-[320px] text-base leading-relaxed text-white/90 sm:max-w-[380px] sm:text-lg">
+              <p className="max-w-[340px] text-base leading-relaxed text-white/90 sm:max-w-[380px] sm:text-lg">
                 {ecosystemCards[1].body}
               </p>
             </div>
-          </article>
-        </div>
+          </MotionStaggerItem>
+        </MotionStagger>
       </section>
 
       <section className="relative overflow-hidden bg-[#012458] text-white">
@@ -258,28 +299,35 @@ export default async function LandingPage() {
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[#041937]/90 via-[#012458]/72 to-[#012458]/50" />
 
-        <div className="relative mx-auto grid max-w-360 gap-16 px-6 py-20 lg:grid-cols-[1fr_540px] lg:items-center lg:px-16 xl:px-24 xl:py-28">
+        <div className="relative mx-auto grid max-w-360 gap-12 px-6 py-16 lg:grid-cols-[minmax(0,1fr)_420px] lg:items-center lg:gap-10 lg:px-16 lg:py-20 xl:grid-cols-[1fr_540px] xl:gap-16 xl:px-24 xl:py-28">
           <div>
-            <h2 className="max-w-[640px] text-4xl leading-[1.2] font-semibold tracking-[-0.03em] md:text-[48px]">
-              {t('solutions.title')}
-            </h2>
+            <MotionReveal>
+              <h2 className="max-w-[640px] text-3xl leading-[1.2] font-semibold tracking-[-0.03em] sm:text-4xl md:text-[44px] xl:text-[48px]">
+                {t('solutions.title')}
+              </h2>
+            </MotionReveal>
 
-            <div className="mt-12 grid gap-8 md:grid-cols-3 md:gap-7">
+            <MotionStagger
+              className="mt-8 grid gap-6 sm:mt-10 md:grid-cols-2 md:gap-7 xl:mt-12 xl:grid-cols-3"
+              staggerChildren={0.1}
+              delayChildren={0.1}
+            >
               {solutionItems.map((item, index) => (
-                <article
+                <MotionStaggerItem
                   key={`${item.highlight}-${item.rest}`}
-                  className={`${index < 2 ? 'border-white/14 pb-1 md:border-r md:pr-6' : 'md:pl-1'} md:pt-0 ${index === 1 ? 'md:pt-20' : ''} ${index === 2 ? 'md:pt-30' : ''}`}
+                  as="article"
+                  className={`${index < 2 ? 'border-b border-white/14 pb-5 md:border-b-0 md:pb-1 xl:border-r xl:pr-6' : ''} ${index === 2 ? 'md:col-span-2 xl:col-span-1 xl:pl-1' : ''} xl:pt-0 ${index === 1 ? 'xl:pt-20' : ''} ${index === 2 ? 'xl:pt-30' : ''}`}
                 >
                   <h3 className="text-xl leading-[1.25] font-semibold tracking-[-0.03em]">
                     <span className="text-[#4B86FF]">{item.highlight}</span> {item.rest}
                   </h3>
                   <p className="mt-5 text-base leading-[1.7] text-white/78">{item.body}</p>
-                </article>
+                </MotionStaggerItem>
               ))}
-            </div>
+            </MotionStagger>
           </div>
 
-          <div className="relative mx-auto w-full max-w-[506px]">
+          <MotionReveal className="relative mx-auto w-full max-w-[360px] md:max-w-[460px] xl:max-w-[506px]" delay={0.08}>
             <Image
               src="/images/home/group-user.png"
               alt="Xipat team"
@@ -287,7 +335,7 @@ export default async function LandingPage() {
               height={593}
               className="h-auto w-full"
             />
-          </div>
+          </MotionReveal>
         </div>
       </section>
 
@@ -295,38 +343,46 @@ export default async function LandingPage() {
         id="culture"
         className="relative mx-auto max-w-360 overflow-hidden px-6 py-20 lg:px-20 xl:px-40 xl:py-[130px]"
       >
-        <h2 className="text-center text-4xl leading-[1.3] font-semibold text-[#002A6A] md:text-6xl">
-          {t.rich('culture.title', {
-            accent: (chunks) => <span className="text-[#DB1721]">{chunks}</span>,
-          })}
-        </h2>
-        <div className="mt-14 grid gap-6 lg:grid-cols-4 lg:gap-10">
+        <MotionReveal>
+          <h2 className="text-center text-4xl leading-[1.3] font-semibold text-[#002A6A] md:text-6xl">
+            {t.rich('culture.title', {
+              accent: (chunks) => <span className="text-[#DB1721]">{chunks}</span>,
+            })}
+          </h2>
+        </MotionReveal>
+        <MotionStagger className="mt-14 grid gap-6 lg:grid-cols-4 lg:gap-10" staggerChildren={0.1} delayChildren={0.08}>
           {cultures.map((item) => (
-            <div key={item.title}>
+            <MotionStaggerItem key={item.title}>
               <div className="mb-4 h-8 w-8 rounded-full bg-[#D9D9D9]" />
               <p className="text-2xl font-semibold">{item.title}</p>
               <p className="mt-4 text-base leading-relaxed text-[#002A6A]/80">{item.body}</p>
-            </div>
+            </MotionStaggerItem>
           ))}
-        </div>
-        <CultureAccordion items={cultureAccordionItems} />
+        </MotionStagger>
+        <MotionReveal delay={0.12}>
+          <CultureAccordion items={cultureAccordionItems} />
+        </MotionReveal>
       </section>
 
       <section id="news" className="bg-[#F8F8F8]">
         <div className="mx-auto max-w-360 px-6 py-20 lg:px-20 xl:px-40 xl:py-28">
-          <div className="mx-auto max-w-[662px] text-center">
-            <span className="inline-flex rounded-full border border-[#777E90] px-6 py-3 text-sm font-semibold text-[#777E90]">
-              {t('news.badge')}
-            </span>
-            <h2 className="mt-4 text-4xl leading-[1.3] font-semibold md:text-6xl">
-              {t.rich('news.title', {
-                accent: (chunks) => <span className="text-[#DB1721]">{chunks}</span>,
-              })}
-            </h2>
-          </div>
-          <div className="mt-14 grid gap-8 md:grid-cols-3">
+          <MotionStagger className="mx-auto max-w-[662px] text-center" staggerChildren={0.1}>
+            <MotionStaggerItem>
+              <span className="inline-flex rounded-full border border-[#777E90] px-6 py-3 text-sm font-semibold text-[#777E90]">
+                {t('news.badge')}
+              </span>
+            </MotionStaggerItem>
+            <MotionStaggerItem>
+              <h2 className="mt-4 text-4xl leading-[1.3] font-semibold md:text-6xl">
+                {t.rich('news.title', {
+                  accent: (chunks) => <span className="text-[#DB1721]">{chunks}</span>,
+                })}
+              </h2>
+            </MotionStaggerItem>
+          </MotionStagger>
+          <MotionStagger className="mt-14 grid gap-8 md:grid-cols-3" staggerChildren={0.1} delayChildren={0.08}>
             {blogs.map((blog, idx) => (
-              <article key={`${blog.title}-${idx}`} className="space-y-3">
+              <MotionStaggerItem key={`${blog.title}-${idx}`} as="article" className="space-y-3">
                 <Image
                   src={blog.image}
                   alt=""
@@ -339,9 +395,9 @@ export default async function LandingPage() {
                   <p className="ml-auto">{blog.date}</p>
                 </div>
                 <h3 className="text-lg font-bold text-[#686868]">{t('news.cardFallback')}</h3>
-              </article>
+              </MotionStaggerItem>
             ))}
-          </div>
+          </MotionStagger>
         </div>
       </section>
     </>

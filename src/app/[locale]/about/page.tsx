@@ -9,6 +9,7 @@ import { RecruitmentSection } from '@/components/culture/recruitment-section';
 import { getLocale, getTranslations } from 'next-intl/server';
 import { createSeo } from '@/lib/seo';
 import { getRecruitmentCards } from '@/lib/strapi/strapi';
+import { MotionReveal } from '@/components/ui/viewport-motion';
 
 type PeopleShowcaseImageId = 'image1' | 'image2' | 'image3' | 'image4';
 
@@ -113,48 +114,56 @@ export default async function AboutPage() {
 
   return (
     <main className="overflow-x-clip bg-white">
-      <AboutHeroSection
-        copy={{
-          title: heroT.rich('title', {
-            line: (chunks) => <span className="block whitespace-nowrap">{chunks}</span>,
-          }),
-          description: heroT('description'),
-          imageAlt: heroT('imageAlt'),
-        }}
-      />
+      <MotionReveal as="section">
+        <AboutHeroSection
+          copy={{
+            title: heroT.rich('title', {
+              line: (chunks) => <span className="block whitespace-nowrap">{chunks}</span>,
+            }),
+            description: heroT('description'),
+            imageAlt: heroT('imageAlt'),
+          }}
+        />
+      </MotionReveal>
 
-      <AboutPeopleShowcaseSection
-        copy={{
-          title: peopleT('title'),
-          descriptionLead: peopleT('descriptionLead'),
-          descriptionFollowUp: peopleT('descriptionFollowUp'),
-          descriptionEmphasis: peopleT('descriptionEmphasis'),
-          items: peopleShowcaseItems,
-        }}
-      />
+      <MotionReveal as="section">
+        <AboutPeopleShowcaseSection
+          copy={{
+            title: peopleT('title'),
+            descriptionLead: peopleT('descriptionLead'),
+            descriptionFollowUp: peopleT('descriptionFollowUp'),
+            descriptionEmphasis: peopleT('descriptionEmphasis'),
+            items: peopleShowcaseItems,
+          }}
+        />
+      </MotionReveal>
 
-      <AboutProductJourneySection
-        copy={{
-          titlePrefix: productT('titlePrefix'),
-          titleAccent: productT('titleAccent'),
-          description: productT('description'),
-          missionTitle: productT('mission.title'),
-          missionBody: productT('mission.body'),
-          visionTitle: productT('vision.title'),
-          visionBody: productT('vision.body'),
-          imageAlt: productT('imageAlt'),
-        }}
-      />
+      <MotionReveal as="section">
+        <AboutProductJourneySection
+          copy={{
+            titlePrefix: productT('titlePrefix'),
+            titleAccent: productT('titleAccent'),
+            description: productT('description'),
+            missionTitle: productT('mission.title'),
+            missionBody: productT('mission.body'),
+            visionTitle: productT('vision.title'),
+            visionBody: productT('vision.body'),
+            imageAlt: productT('imageAlt'),
+          }}
+        />
+      </MotionReveal>
 
-      <AboutCoreValuesSection
-        copy={{
-          titlePrefix: coreValuesT('titlePrefix'),
-          titleAccent: coreValuesT('titleAccent'),
-          items: coreValueItems,
-        }}
-      />
+      <MotionReveal as="section">
+        <AboutCoreValuesSection
+          copy={{
+            titlePrefix: coreValuesT('titlePrefix'),
+            titleAccent: coreValuesT('titleAccent'),
+            items: coreValueItems,
+          }}
+        />
+      </MotionReveal>
 
-      <section className="bg-[#1F49B8]">
+      <MotionReveal as="section" className="bg-[#1F49B8]">
         <AboutMilestonesSection
           copy={{
             heading: milestonesT('heading'),
@@ -172,18 +181,20 @@ export default async function AboutPage() {
             imageAlt: cultureBannerT('imageAlt'),
           }}
         />
-      </section>
+      </MotionReveal>
 
-      <RecruitmentSection
-        badge={recruitmentT('badge')}
-        titlePrefix={recruitmentT('titlePrefix')}
-        titleAccent={recruitmentT('titleAccent')}
-        titleSuffix={recruitmentT('titleSuffix')}
-        description={recruitmentT('description')}
-        contactButton={recruitmentT('contactButton')}
-        viewAllButton={recruitmentT('viewAllButton')}
-        cards={recruitmentCards}
-      />
+      <MotionReveal as="section">
+        <RecruitmentSection
+          badge={recruitmentT('badge')}
+          titlePrefix={recruitmentT('titlePrefix')}
+          titleAccent={recruitmentT('titleAccent')}
+          titleSuffix={recruitmentT('titleSuffix')}
+          description={recruitmentT('description')}
+          contactButton={recruitmentT('contactButton')}
+          viewAllButton={recruitmentT('viewAllButton')}
+          cards={recruitmentCards}
+        />
+      </MotionReveal>
     </main>
   );
 }

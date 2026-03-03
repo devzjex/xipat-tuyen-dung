@@ -8,6 +8,7 @@ import { AppsEcosystemSection, type EcosystemApp } from '@/components/ecosystem/
 import { PartnerGrowthSection, type PartnerLogo } from '@/components/ecosystem/partner-growth-section';
 import { SolutionShowcase, type SolutionItem } from '@/components/ecosystem/solution-showcase';
 import { Button } from '@/components/ui/button';
+import { MotionReveal, MotionStagger, MotionStaggerItem } from '@/components/ui/viewport-motion';
 import { createSeo } from '@/lib/seo';
 import { getStrapiMediaUrl, getXipatPartners } from '@/lib/strapi/strapi';
 
@@ -91,26 +92,31 @@ export default async function EcosystemPage() {
         {/* <div className="absolute inset-0 bg-linear-to-r from-[#041E56]/90 via-[#0A2B78]/75 to-[#041E56]/40" /> */}
 
         <div className="relative z-10 mx-auto grid min-h-[620px] max-w-[1560px] items-center px-6 py-24 sm:min-h-[680px] sm:px-10 sm:py-28 md:min-h-[720px] md:py-32 lg:min-h-[760px] lg:grid-cols-12 lg:px-16 xl:min-h-[800px] xl:px-24">
-          <div className="w-full max-w-[700px] lg:col-span-6 xl:col-span-5">
-            <h1 className="max-w-[18ch] text-[38px] leading-[1.16] font-semibold tracking-[-0.03em] text-white sm:text-[44px] md:text-[54px] lg:text-[64px]">
-              {t.rich('hero.title', {
-                line: (chunks) => <span className="block whitespace-nowrap">{chunks}</span>,
-              })}
-            </h1>
-            <p className="mt-6 max-w-[60ch] text-base leading-[1.65] text-white/90 sm:text-lg">{t('hero.description')}</p>
-
-            <Button
-              asChild
-              className="group mt-10 h-auto rounded-full bg-white py-1.5 pr-1.5 pl-7 text-base font-semibold text-[#113C8D] shadow-[0_16px_36px_rgba(0,0,0,0.22)] transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-white hover:shadow-[0_22px_44px_rgba(0,0,0,0.28)] active:translate-y-0 sm:mt-11"
-            >
-              <Link href="https://www.omegatheme.com/" target="_blank" rel="noreferrer">
-                {t('hero.cta')}
-                <span className="ml-4 inline-flex rounded-full bg-[#1A4BB8] p-3 text-white transition-all duration-300 ease-out group-hover:translate-x-0.5 group-hover:bg-[#153E96]">
-                  <ArrowUpRight className="h-6 w-6" />
-                </span>
-              </Link>
-            </Button>
-          </div>
+          <MotionStagger className="w-full max-w-[700px] lg:col-span-6 xl:col-span-5" staggerChildren={0.12}>
+            <MotionStaggerItem>
+              <h1 className="max-w-[18ch] text-[38px] leading-[1.16] font-semibold tracking-[-0.03em] text-white sm:text-[44px] md:text-[54px] lg:text-[64px]">
+                {t.rich('hero.title', {
+                  line: (chunks) => <span className="block whitespace-nowrap">{chunks}</span>,
+                })}
+              </h1>
+            </MotionStaggerItem>
+            <MotionStaggerItem>
+              <p className="mt-6 max-w-[60ch] text-base leading-[1.65] text-white/90 sm:text-lg">{t('hero.description')}</p>
+            </MotionStaggerItem>
+            <MotionStaggerItem>
+              <Button
+                asChild
+                className="group mt-10 h-auto rounded-full bg-white py-1.5 pr-1.5 pl-7 text-base font-semibold text-[#113C8D] shadow-[0_16px_36px_rgba(0,0,0,0.22)] transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-white hover:shadow-[0_22px_44px_rgba(0,0,0,0.28)] active:translate-y-0 sm:mt-11"
+              >
+                <Link href="https://www.omegatheme.com/" target="_blank" rel="noreferrer">
+                  {t('hero.cta')}
+                  <span className="ml-4 inline-flex rounded-full bg-[#1A4BB8] p-3 text-white transition-all duration-300 ease-out group-hover:translate-x-0.5 group-hover:bg-[#153E96]">
+                    <ArrowUpRight className="h-6 w-6" />
+                  </span>
+                </Link>
+              </Button>
+            </MotionStaggerItem>
+          </MotionStagger>
         </div>
       </section>
 
@@ -125,7 +131,7 @@ export default async function EcosystemPage() {
         />
 
         <div className="relative mx-auto flex max-w-7xl flex-col items-center gap-8 px-5 py-14 sm:gap-10 sm:px-8 sm:py-16 md:gap-12 md:px-10 md:py-20 lg:flex-row lg:gap-12 lg:px-12 lg:py-24 xl:gap-20 xl:px-10 xl:py-28">
-          <div className="flex w-full shrink-0 justify-center lg:w-[46%] xl:w-[48%]">
+          <MotionReveal className="flex w-full shrink-0 justify-center lg:w-[46%] xl:w-[48%]">
             <Image
               src="/images/ecosystem/image-1.png"
               alt={t('operation.imageAlt')}
@@ -134,24 +140,32 @@ export default async function EcosystemPage() {
               sizes="(max-width: 640px) 90vw, (max-width: 1024px) 70vw, 46vw"
               className="h-auto w-full max-w-[320px] object-contain sm:max-w-105 md:max-w-125 lg:max-w-none"
             />
-          </div>
+          </MotionReveal>
 
-          <div className="flex w-full flex-col items-center text-center lg:w-[54%] lg:items-start lg:text-left xl:w-[52%]">
-            <h2 className="text-4xl leading-[1.3] font-semibold tracking-[-0.02em] text-[#113C8D] md:text-5xl">
-              {t('operation.titlePrefix')} <span className="text-[#E53935]">{t('operation.titleAccent')}</span>{' '}
-              {t('operation.titleSuffix')}
-            </h2>
+          <MotionStagger
+            className="flex w-full flex-col items-center text-center lg:w-[54%] lg:items-start lg:text-left xl:w-[52%]"
+            staggerChildren={0.1}
+            delayChildren={0.06}
+          >
+            <MotionStaggerItem>
+              <h2 className="text-4xl leading-[1.3] font-semibold tracking-[-0.02em] text-[#113C8D] md:text-5xl">
+                {t('operation.titlePrefix')} <span className="text-[#E53935]">{t('operation.titleAccent')}</span>{' '}
+                {t('operation.titleSuffix')}
+              </h2>
+            </MotionStaggerItem>
 
-            <p className="mt-4 max-w-130 text-[15px] leading-[1.75] text-[#113C8D] sm:mt-5 sm:text-base md:mt-6 md:text-[17px] lg:text-lg">
-              <span className="font-semibold text-[#E53935]">{t('operation.brand')}</span>{' '}
-              {t('operation.descriptionBefore')}{' '}
-              <span className="font-semibold text-[#113C8D]">{t('operation.strongTeam')}</span>,{' '}
-              {t('operation.descriptionMiddle')}{' '}
-              <span className="font-semibold text-[#113C8D]">{t('operation.strongApps')}</span>{' '}
-              {t('operation.descriptionAfter')}
-            </p>
+            <MotionStaggerItem>
+              <p className="mt-4 max-w-130 text-[15px] leading-[1.75] text-[#113C8D] sm:mt-5 sm:text-base md:mt-6 md:text-[17px] lg:text-lg">
+                <span className="font-semibold text-[#E53935]">{t('operation.brand')}</span>{' '}
+                {t('operation.descriptionBefore')}{' '}
+                <span className="font-semibold text-[#113C8D]">{t('operation.strongTeam')}</span>,{' '}
+                {t('operation.descriptionMiddle')}{' '}
+                <span className="font-semibold text-[#113C8D]">{t('operation.strongApps')}</span>{' '}
+                {t('operation.descriptionAfter')}
+              </p>
+            </MotionStaggerItem>
 
-            <div className="mt-8 flex flex-wrap justify-center gap-6 sm:mt-9 sm:gap-8 md:mt-10 md:gap-10 lg:justify-start lg:gap-12">
+            <MotionStaggerItem className="mt-8 flex flex-wrap justify-center gap-6 sm:mt-9 sm:gap-8 md:mt-10 md:gap-10 lg:justify-start lg:gap-12">
               {operationStats.map((stat) => (
                 <div key={`${stat.value}-${stat.index}`} className="flex flex-col items-center lg:items-start">
                   <span className="text-[28px] leading-tight font-bold text-[#113C8D] sm:text-[32px] md:text-4xl lg:text-[38px] xl:text-[42px]">
@@ -161,32 +175,38 @@ export default async function EcosystemPage() {
                   <span className="text-xs text-[#113C8D] sm:text-sm">{stat.index}</span>
                 </div>
               ))}
-            </div>
-          </div>
+            </MotionStaggerItem>
+          </MotionStagger>
         </div>
       </section>
 
-      <SolutionShowcase headingLines={solutionHeadingLines} items={solutionItems} />
-      <AppsEcosystemSection
-        badge={t('apps.badge')}
-        titleLine1={t('apps.titleLine1')}
-        titleAccent={t('apps.titleAccent')}
-        apps={apps}
-      />
-      <PartnerGrowthSection
-        title={t('partner.title')}
-        descriptionLine1={t('partner.descriptionLine1')}
-        descriptionLine2={t('partner.descriptionLine2')}
-        logos={partnerLogos}
-        discoverButton={t('partner.discoverButton')}
-        ctaLine1={t('partner.ctaLine1')}
-        ctaLine2Before={t('partner.ctaLine2Before')}
-        ctaLine2Accent={t('partner.ctaLine2Accent')}
-        ctaLine2After={t('partner.ctaLine2After')}
-        ctaDescriptionLine1={t('partner.ctaDescriptionLine1')}
-        ctaDescriptionLine2={t('partner.ctaDescriptionLine2')}
-        ctaButton={t('partner.ctaButton')}
-      />
+      <MotionReveal as="section">
+        <SolutionShowcase headingLines={solutionHeadingLines} items={solutionItems} />
+      </MotionReveal>
+      <MotionReveal as="section">
+        <AppsEcosystemSection
+          badge={t('apps.badge')}
+          titleLine1={t('apps.titleLine1')}
+          titleAccent={t('apps.titleAccent')}
+          apps={apps}
+        />
+      </MotionReveal>
+      <MotionReveal as="section">
+        <PartnerGrowthSection
+          title={t('partner.title')}
+          descriptionLine1={t('partner.descriptionLine1')}
+          descriptionLine2={t('partner.descriptionLine2')}
+          logos={partnerLogos}
+          discoverButton={t('partner.discoverButton')}
+          ctaLine1={t('partner.ctaLine1')}
+          ctaLine2Before={t('partner.ctaLine2Before')}
+          ctaLine2Accent={t('partner.ctaLine2Accent')}
+          ctaLine2After={t('partner.ctaLine2After')}
+          ctaDescriptionLine1={t('partner.ctaDescriptionLine1')}
+          ctaDescriptionLine2={t('partner.ctaDescriptionLine2')}
+          ctaButton={t('partner.ctaButton')}
+        />
+      </MotionReveal>
     </>
   );
 }

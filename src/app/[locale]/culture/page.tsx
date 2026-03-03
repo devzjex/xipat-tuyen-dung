@@ -5,6 +5,7 @@ import { CultureGuidedShowcase, type CultureGuidedItem } from '@/components/cult
 import { RecruitmentSection } from '@/components/culture/recruitment-section';
 import { ImageLibrarySection, type LibraryImageItem } from '@/components/culture/image-library-section';
 import { CultureAccordion, type CultureAccordionItem } from '@/components/home/culture-accordion';
+import { MotionReveal, MotionStagger, MotionStaggerItem } from '@/components/ui/viewport-motion';
 import { createSeo } from '@/lib/seo';
 import { getRecruitmentCards, getStrapiMediaUrl, getXipatLibraryImages } from '@/lib/strapi/strapi';
 
@@ -167,7 +168,7 @@ export default async function CulturePage() {
         <div className="absolute inset-0 bg-linear-to-br from-[#1F4FC6]/25 via-[#0A2F84]/35 to-[#03183F]/70" />
 
         <div className="relative mr-auto ml-0 grid min-h-140 max-w-7xl grid-cols-1 items-end gap-8 px-4 pt-22 pb-0 sm:min-h-155 sm:px-8 sm:pt-24 md:px-10 md:pt-28 lg:ml-32 lg:min-h-170 lg:grid-cols-[1.1fr_0.9fr] lg:gap-14 lg:px-16 lg:pt-30 lg:pb-0 xl:ml-48">
-          <div className="order-2 -mb-1 flex items-end justify-start self-end md:justify-center lg:order-1 lg:-mb-2 lg:-ml-14 lg:justify-start xl:-ml-22">
+          <MotionReveal className="order-2 -mb-1 flex items-end justify-start self-end md:justify-center lg:order-1 lg:-mb-2 lg:-ml-14 lg:justify-start xl:-ml-22">
             <Image
               src="/images/culture/image-hero.png"
               alt={t('heroShowcase.imageAlt')}
@@ -178,18 +179,26 @@ export default async function CulturePage() {
               priority
               fetchPriority="high"
             />
-          </div>
+          </MotionReveal>
 
-          <div className="order-1 pb-2 text-left sm:pb-4 lg:order-2 lg:mb-14 lg:pb-36">
-            <h1 className="bg-[linear-gradient(180deg,#FFFFFF_20%,#DCE9FF_58%,#86A5DE_100%)] bg-clip-text text-4xl leading-[1.3] font-bold tracking-[-0.02em] text-balance text-transparent md:text-5xl xl:text-[64px]">
-              {t('heroShowcase.titleLine1')}
-            </h1>
-            <p className="mt-5 max-w-130 text-base leading-[1.45] text-white/92 sm:mt-6 sm:max-w-170 sm:text-2xl sm:text-[24px] lg:mt-8 lg:max-w-140 lg:leading-[1.36]">
-              {t('heroShowcase.descriptionLine1')}
-              <br />
-              {t('heroShowcase.descriptionLine2')}
-            </p>
-          </div>
+          <MotionStagger
+            className="order-1 pb-2 text-left sm:pb-4 lg:order-2 lg:mb-14 lg:pb-36"
+            staggerChildren={0.12}
+            delayChildren={0.08}
+          >
+            <MotionStaggerItem>
+              <h1 className="bg-[linear-gradient(180deg,#FFFFFF_20%,#DCE9FF_58%,#86A5DE_100%)] bg-clip-text text-4xl leading-[1.3] font-bold tracking-[-0.02em] text-balance text-transparent md:text-5xl xl:text-[64px]">
+                {t('heroShowcase.titleLine1')}
+              </h1>
+            </MotionStaggerItem>
+            <MotionStaggerItem>
+              <p className="mt-5 max-w-130 text-base leading-[1.45] text-white/92 sm:mt-6 sm:max-w-170 sm:text-2xl sm:text-[24px] lg:mt-8 lg:max-w-140 lg:leading-[1.36]">
+                {t('heroShowcase.descriptionLine1')}
+                <br />
+                {t('heroShowcase.descriptionLine2')}
+              </p>
+            </MotionStaggerItem>
+          </MotionStagger>
         </div>
       </section>
 
@@ -203,23 +212,31 @@ export default async function CulturePage() {
         />
 
         <div className="relative mx-auto max-w-7xl px-4 sm:px-8 lg:px-12 xl:px-16">
-          <div className="mx-auto mt-3 max-w-4xl text-center sm:mt-6 lg:absolute lg:top-2 lg:left-1/2 lg:z-10 lg:mt-0 lg:w-full lg:max-w-4xl lg:-translate-x-1/2">
-            <h2 className="text-4xl leading-[1.3] font-semibold tracking-[-0.02em] text-[#0D3D94] md:text-5xl xl:text-[64px]">
-              {t('peopleShowcase.titleLine1')}
-              <br />
-              <span className="text-[#4D83E9]">{t('peopleShowcase.titleLine2')}</span>
-            </h2>
-            <p className="mx-auto mt-6 max-w-3xl text-lg leading-[1.55] text-[#123C86] sm:text-xl lg:text-2xl">
-              {t('peopleShowcase.descriptionLine1')}
-              <br className="hidden sm:block" />
-              {t('peopleShowcase.descriptionLine2')}
-            </p>
-          </div>
+          <MotionStagger
+            className="mx-auto mt-3 max-w-4xl text-center sm:mt-6 lg:absolute lg:top-2 lg:left-1/2 lg:z-10 lg:mt-0 lg:w-full lg:max-w-4xl lg:-translate-x-1/2"
+            staggerChildren={0.12}
+          >
+            <MotionStaggerItem>
+              <h2 className="text-4xl leading-[1.3] font-semibold tracking-[-0.02em] text-[#0D3D94] md:text-5xl xl:text-[64px]">
+                {t('peopleShowcase.titleLine1')}
+                <br />
+                <span className="text-[#4D83E9]">{t('peopleShowcase.titleLine2')}</span>
+              </h2>
+            </MotionStaggerItem>
+            <MotionStaggerItem>
+              <p className="mx-auto mt-6 max-w-3xl text-lg leading-[1.55] text-[#123C86] sm:text-xl lg:text-2xl">
+                {t('peopleShowcase.descriptionLine1')}
+                <br className="hidden sm:block" />
+                {t('peopleShowcase.descriptionLine2')}
+              </p>
+            </MotionStaggerItem>
+          </MotionStagger>
 
-          <div className="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:hidden">
+          <MotionStagger className="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:hidden" staggerChildren={0.08}>
             {peopleShowcaseImages.map((item) => (
-              <article
+              <MotionStaggerItem
                 key={item.id}
+                as="article"
                 className={`justify-self-center overflow-hidden rounded-xl shadow-[0_12px_30px_rgba(29,64,140,0.12)] ${item.mobileClass}`}
               >
                 <Image
@@ -230,14 +247,15 @@ export default async function CulturePage() {
                   sizes={`${item.width}px`}
                   className={`block h-auto ${item.widthClass} object-contain`}
                 />
-              </article>
+              </MotionStaggerItem>
             ))}
-          </div>
+          </MotionStagger>
 
-          <div className="relative mt-10 hidden h-86.25 lg:mt-36 lg:block xl:h-90">
+          <MotionStagger className="relative mt-10 hidden h-86.25 lg:mt-36 lg:block xl:h-90" staggerChildren={0.08}>
             {peopleShowcaseImages.map((item) => (
-              <article
+              <MotionStaggerItem
                 key={item.id}
+                as="article"
                 className={`absolute overflow-hidden rounded-xl shadow-[0_12px_30px_rgba(29,64,140,0.12)] ${item.desktopClass}`}
               >
                 <Image
@@ -248,27 +266,33 @@ export default async function CulturePage() {
                   sizes={`${item.width}px`}
                   className={`block h-auto ${item.widthClass} object-contain`}
                 />
-              </article>
+              </MotionStaggerItem>
             ))}
-          </div>
+          </MotionStagger>
         </div>
       </section>
 
-      <CultureGuidedShowcase heading={cultureGuidedHeading} items={cultureGuidedItems} />
+      <MotionReveal as="section">
+        <CultureGuidedShowcase heading={cultureGuidedHeading} items={cultureGuidedItems} />
+      </MotionReveal>
 
       <section id="news" className="bg-[#F8F8F8]">
         <div className="mx-auto max-w-360 px-6 py-20 lg:px-20 xl:px-40 xl:py-28">
-          <div className="mx-auto max-w-165.5 text-center">
-            <span className="inline-flex rounded-full border border-[#777E90] px-6 py-3 text-sm font-semibold text-[#777E90]">
-              {t('news.badge')}
-            </span>
-            <h2 className="mt-4 text-4xl leading-[1.3] font-semibold text-[#4D7DE9] md:text-5xl xl:text-[64px]">
-              {t('news.title')}
-            </h2>
-          </div>
-          <div className="mt-14 grid gap-8 md:grid-cols-3">
+          <MotionStagger className="mx-auto max-w-165.5 text-center" staggerChildren={0.1}>
+            <MotionStaggerItem>
+              <span className="inline-flex rounded-full border border-[#777E90] px-6 py-3 text-sm font-semibold text-[#777E90]">
+                {t('news.badge')}
+              </span>
+            </MotionStaggerItem>
+            <MotionStaggerItem>
+              <h2 className="mt-4 text-4xl leading-[1.3] font-semibold text-[#4D7DE9] md:text-5xl xl:text-[64px]">
+                {t('news.title')}
+              </h2>
+            </MotionStaggerItem>
+          </MotionStagger>
+          <MotionStagger className="mt-14 grid gap-8 md:grid-cols-3" staggerChildren={0.1} delayChildren={0.06}>
             {blogs.map((blog, idx) => (
-              <article key={`${blog.headline}-${idx}`} className="space-y-3">
+              <MotionStaggerItem key={`${blog.headline}-${idx}`} as="article" className="space-y-3">
                 <Image
                   src={blog.image}
                   alt=""
@@ -281,22 +305,24 @@ export default async function CulturePage() {
                   <p className="ml-auto">{blog.date}</p>
                 </div>
                 <h3 className="text-base leading-[1.3] font-bold text-[#686868]">{blog.headline}</h3>
-              </article>
+              </MotionStaggerItem>
             ))}
-          </div>
+          </MotionStagger>
         </div>
       </section>
 
-      <RecruitmentSection
-        badge={t('recruitment.badge')}
-        titlePrefix={t('recruitment.titlePrefix')}
-        titleAccent={t('recruitment.titleAccent')}
-        titleSuffix={t('recruitment.titleSuffix')}
-        description={t('recruitment.description')}
-        contactButton={t('recruitment.contactButton')}
-        viewAllButton={t('recruitment.viewAllButton')}
-        cards={recruitmentCards}
-      />
+      <MotionReveal as="section">
+        <RecruitmentSection
+          badge={t('recruitment.badge')}
+          titlePrefix={t('recruitment.titlePrefix')}
+          titleAccent={t('recruitment.titleAccent')}
+          titleSuffix={t('recruitment.titleSuffix')}
+          description={t('recruitment.description')}
+          contactButton={t('recruitment.contactButton')}
+          viewAllButton={t('recruitment.viewAllButton')}
+          cards={recruitmentCards}
+        />
+      </MotionReveal>
 
       <section
         id="culture"
@@ -311,24 +337,30 @@ export default async function CulturePage() {
           className="pointer-events-none absolute top-0 right-[calc((100vw-100%)/-2)] h-auto w-[36vw] max-w-92 object-contain object-top-right opacity-90"
         />
 
-        <h2 className="text-center text-4xl leading-[1.3] font-semibold text-[#002A6A] md:text-6xl">
-          {t.rich('programs.title', {
-            accent: (chunks) => <span className="text-[#DB1721]">{chunks}</span>,
-          })}
-        </h2>
-        <div className="mt-14 grid gap-6 lg:grid-cols-4 lg:gap-10">
+        <MotionReveal>
+          <h2 className="text-center text-4xl leading-[1.3] font-semibold text-[#002A6A] md:text-6xl">
+            {t.rich('programs.title', {
+              accent: (chunks) => <span className="text-[#DB1721]">{chunks}</span>,
+            })}
+          </h2>
+        </MotionReveal>
+        <MotionStagger className="mt-14 grid gap-6 lg:grid-cols-4 lg:gap-10" staggerChildren={0.1} delayChildren={0.08}>
           {cultureHighlights.map((item, index) => (
-            <div key={`${item.title}-${index}`}>
+            <MotionStaggerItem key={`${item.title}-${index}`}>
               <div className="mb-4 h-8 w-8 rounded-full bg-[#D9D9D9]" />
               <p className="text-2xl font-semibold">{item.title}</p>
               <p className="mt-4 text-base leading-relaxed text-[#002A6A]/80">{item.body}</p>
-            </div>
+            </MotionStaggerItem>
           ))}
-        </div>
-        <CultureAccordion items={cultureAccordionItems} defaultOpenId="02" />
+        </MotionStagger>
+        <MotionReveal delay={0.1}>
+          <CultureAccordion items={cultureAccordionItems} defaultOpenId="02" />
+        </MotionReveal>
       </section>
 
-      <ImageLibrarySection title={t('library.title')} images={libraryImages} />
+      <MotionReveal as="section">
+        <ImageLibrarySection title={t('library.title')} images={libraryImages} />
+      </MotionReveal>
     </div>
   );
 }

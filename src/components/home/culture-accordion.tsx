@@ -30,28 +30,31 @@ export function CultureAccordion({ items, imageSrc, defaultOpenId, className }: 
   };
 
   return (
-    <div className={cn('mt-16 space-y-5', className)}>
+    <div className={cn('mt-10 space-y-4 md:mt-12 md:space-y-5 lg:mt-16', className)}>
       {items.map((item) => {
         const isOpen = openId === item.id;
         const panelId = `culture-panel-${item.id}`;
         const panelImage = item.imageSrc ?? imageSrc ?? '';
 
         return (
-          <div key={item.id} className="space-y-5">
-            <div className="border-b border-[#efefef] pb-5">
+          <div key={item.id} className="space-y-4 md:space-y-5">
+            <div className="border-b border-[#efefef] pb-4 md:pb-5">
               <Button
                 type="button"
                 variant="ghost"
                 onClick={() => handleToggle(item.id)}
                 aria-expanded={isOpen}
                 aria-controls={panelId}
-                className="h-auto w-full justify-between rounded-none px-0 py-0 hover:bg-transparent"
+                className="h-auto w-full items-start justify-between gap-4 rounded-none px-0 py-0 text-left hover:bg-transparent"
               >
-                <span className="text-left text-2xl font-semibold text-[#002A6A] md:text-[33px]">
+                <span className="pr-2 text-xl leading-[1.3] font-semibold text-[#002A6A] sm:text-2xl md:text-[30px] md:leading-[1.25] lg:text-[33px]">
                   {item.id}. {item.title}
                 </span>
                 <ChevronDown
-                  className={cn('h-8 w-8 text-[#002A6A] transition-transform duration-300', isOpen ? 'rotate-180' : '')}
+                  className={cn(
+                    'mt-0.5 h-6 w-6 shrink-0 text-[#002A6A] transition-transform duration-300 md:h-7 md:w-7 lg:h-8 lg:w-8',
+                    isOpen ? 'rotate-180' : '',
+                  )}
                   aria-hidden="true"
                 />
               </Button>
@@ -65,10 +68,20 @@ export function CultureAccordion({ items, imageSrc, defaultOpenId, className }: 
               )}
             >
               <div className="overflow-hidden">
-                <div className="relative h-[532px] overflow-hidden bg-[#eee]">
-                  {panelImage ? <Image src={panelImage} alt="" fill sizes="100vw" className="object-cover" /> : null}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#02265e]/70 via-[#02265e]/15 to-transparent" />
-                  <p className="absolute bottom-12 left-10 max-w-[602px] text-lg text-white">{item.body}</p>
+                <div className="relative min-h-[300px] overflow-hidden bg-[#eee] sm:min-h-[360px] md:min-h-[440px] lg:min-h-[532px]">
+                  {panelImage ? (
+                    <Image
+                      src={panelImage}
+                      alt=""
+                      fill
+                      sizes="(min-width: 1280px) 1280px, (min-width: 1024px) 100vw, (min-width: 768px) 100vw, 100vw"
+                      className="object-cover"
+                    />
+                  ) : null}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#02265e]/85 via-[#02265e]/28 to-transparent md:from-[#02265e]/72 md:via-[#02265e]/16" />
+                  <p className="absolute right-4 bottom-5 left-4 text-sm leading-relaxed text-white sm:right-8 sm:bottom-8 sm:left-8 sm:text-base md:right-10 md:bottom-10 md:left-10 md:max-w-[620px] md:text-lg">
+                    {item.body}
+                  </p>
                 </div>
               </div>
             </div>

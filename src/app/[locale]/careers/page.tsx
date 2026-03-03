@@ -7,6 +7,7 @@ import { CareersOpenPositionsSection, type CareerCard } from '@/components/caree
 import { CareersWhyChooseSection } from '@/components/careers/careers-why-choose-section';
 import { createSeo } from '@/lib/seo';
 import { getXipatJobs } from '@/lib/strapi/strapi';
+import { MotionReveal } from '@/components/ui/viewport-motion';
 
 const careersPageSeo = createSeo({
   siteName: 'Xipat',
@@ -89,46 +90,55 @@ export default async function CareersPage({
 
   return (
     <main className="bg-[#F3F5F8]">
-      <CareersHeroSection
-        title={careersT('hero.title')}
-        description={careersT('hero.description')}
-        imageAlt={careersT('hero.imageAlt')}
-      />
+      <MotionReveal as="section">
+        <CareersHeroSection
+          title={careersT('hero.title')}
+          description={careersT('hero.description')}
+          imageAlt={careersT('hero.imageAlt')}
+        />
+      </MotionReveal>
 
-      <CareersOpenPositionsSection
-        titlePrefix={careersT('positions.titlePrefix')}
-        titleAccent={careersT('positions.titleAccent')}
-        searchPlaceholder={careersT('positions.searchPlaceholder')}
-        searchButtonLabel={careersT('positions.searchButton')}
-        noResultLabel={careersT('positions.noResult')}
-        initialQuery={searchQuery}
-        currentPage={jobsResponse.pagination.page}
-        pageCount={jobsResponse.pagination.pageCount}
-        cards={cards}
-      />
+      <MotionReveal as="section">
+        <CareersOpenPositionsSection
+          titlePrefix={careersT('positions.titlePrefix')}
+          titleAccent={careersT('positions.titleAccent')}
+          searchPlaceholder={careersT('positions.searchPlaceholder')}
+          searchButtonLabel={careersT('positions.searchButton')}
+          noResultLabel={careersT('positions.noResult')}
+          initialQuery={searchQuery}
+          currentPage={jobsResponse.pagination.page}
+          pageCount={jobsResponse.pagination.pageCount}
+          cards={cards}
+        />
+      </MotionReveal>
 
-      <CareersWhyChooseSection title={careersT('whyChoose.title')} items={whyChooseItems} />
+      <MotionReveal as="section">
+        <CareersWhyChooseSection title={careersT('whyChoose.title')} items={whyChooseItems} />
+      </MotionReveal>
 
-      <CareersContactSection
-        badge={careersT('contact.badge')}
-        title={careersT('contact.title')}
-        nameLabel={careersT('contact.nameLabel')}
-        emailLabel={careersT('contact.emailLabel')}
-        phoneLabel={careersT('contact.phoneLabel')}
-        messageLabel={careersT('contact.messageLabel')}
-        submitLabel={careersT('contact.submitLabel')}
-        submitSuccessTitle={contactFeedback.successTitle}
-        submitSuccessDescription={contactFeedback.successDescription}
-        submitErrorMessage={contactFeedback.errorMessage}
-        socials={contactSocials}
-        validation={contactValidation}
-      />
-      <CareersBenefitsSection
-        title={careersT('benefits.title')}
-        imageAlt={careersT('benefits.imageAlt')}
-        items={benefitItems}
-      />
+      <MotionReveal as="section">
+        <CareersContactSection
+          badge={careersT('contact.badge')}
+          title={careersT('contact.title')}
+          nameLabel={careersT('contact.nameLabel')}
+          emailLabel={careersT('contact.emailLabel')}
+          phoneLabel={careersT('contact.phoneLabel')}
+          messageLabel={careersT('contact.messageLabel')}
+          submitLabel={careersT('contact.submitLabel')}
+          submitSuccessTitle={contactFeedback.successTitle}
+          submitSuccessDescription={contactFeedback.successDescription}
+          submitErrorMessage={contactFeedback.errorMessage}
+          socials={contactSocials}
+          validation={contactValidation}
+        />
+      </MotionReveal>
+      <MotionReveal as="section">
+        <CareersBenefitsSection
+          title={careersT('benefits.title')}
+          imageAlt={careersT('benefits.imageAlt')}
+          items={benefitItems}
+        />
+      </MotionReveal>
     </main>
   );
 }
-
