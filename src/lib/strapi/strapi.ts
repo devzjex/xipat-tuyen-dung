@@ -1,6 +1,8 @@
 import type {
+  GetXipatBlogsResult,
   GetXipatJobsResult,
   RecruitmentJobCard,
+  StrapiBlog,
   StrapiCollectionResponse,
   StrapiJob,
   StrapiLibraryImageEntry,
@@ -19,7 +21,15 @@ type GetXipatJobsOptions = {
   slug?: string;
 };
 
+type GetXipatBlogsOptions = {
+  page?: number;
+  pageSize?: number;
+  limit?: number;
+  slug?: string;
+};
+
 export type {
+  StrapiBlog,
   StrapiCollectionResponse,
   StrapiJob,
   StrapiLibraryImageEntry,
@@ -27,6 +37,7 @@ export type {
   StrapiPagination,
   StrapiPartner,
   GetXipatJobsResult,
+  GetXipatBlogsResult,
   RecruitmentJobCard,
 };
 
@@ -173,4 +184,67 @@ export async function getXipatLibraryImages(): Promise<StrapiMedia[]> {
     console.error('Error fetching xipat library images from Strapi:', error);
     return [];
   }
+}
+
+export async function getXipatBlogs(locale: string, options: GetXipatBlogsOptions = {}): Promise<GetXipatBlogsResult> {
+  const localeParam = locale === 'en' ? 'en' : 'vi';
+  const page = Number.isFinite(options.page) && (options.page ?? 1) > 0 ? (options.page as number) : 1;
+  const pageSize =
+    Number.isFinite(options.pageSize) && (options.pageSize ?? options.limit ?? 3) > 0
+      ? (options.pageSize as number)
+      : Number.isFinite(options.limit) && (options.limit ?? 3) > 0
+        ? (options.limit as number)
+        : 3;
+  const slug = options.slug?.trim() ?? '';
+  const params = new URLSearchParams({
+    populate: '*',
+    locale: localeParam,
+    sort: 'published_date:desc',
+    'pagination[page]': String(page),
+    'pagination[pageSize]': String(pageSize),
+  });
+
+  if (slug) {
+    params.set('filters[slug][$eq]', slug);
+  }
+
+  try {
+    const response = await fetch(`${STRAPI_BASE_URL}/api/xipat-blogs?${params.toString()}`, {
+      headers: {
+        Authorization: `Bearer ${STRAPI_TOKEN}`,
+      },
+      next: { revalidate: 60, tags: ['strapi:xipat-blogs'] },
+    });
+
+    if (!response.ok) {
+      throw new Error(`Failed to fetch xipat blogs: ${response.status} ${response.statusText}`);
+    }
+
+    const json = (await response.json()) as StrapiCollectionResponse<StrapiBlog>;
+    return {
+      blogs: json.data ?? [],
+      pagination: json.meta?.pagination ?? {
+        page,
+        pageSize,
+        pageCount: 1,
+        total: json.data?.length ?? 0,
+      },
+    };
+  } catch (error) {
+    console.error('Error fetching xipat blogs from Strapi:', error);
+    return {
+      blogs: [],
+      pagination: {
+        page,
+        pageSize,
+        pageCount: 1,
+        total: 0,
+      },
+    };
+  }
+}
+
+export async function getXipatBlogDetail(locale: string, slug: string): Promise<StrapiBlog | null> {
+  const result = await getXipatBlogs(locale, { limit: 1, slug });
+  return result.blogs[0] ?? null;
 }

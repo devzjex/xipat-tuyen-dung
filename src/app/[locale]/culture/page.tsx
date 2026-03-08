@@ -5,9 +5,11 @@ import { CultureGuidedShowcase, type CultureGuidedItem } from '@/components/cult
 import { RecruitmentSection } from '@/components/culture/recruitment-section';
 import { ImageLibrarySection, type LibraryImageItem } from '@/components/culture/image-library-section';
 import { CultureAccordion, type CultureAccordionItem } from '@/components/home/culture-accordion';
+import { NewsCard } from '@/components/news/news-card';
+import { mapBlogsToNewsCards } from '@/components/news/news-card.utils';
 import { MotionReveal, MotionStagger, MotionStaggerItem } from '@/components/ui/viewport-motion';
 import { createSeo } from '@/lib/seo';
-import { getRecruitmentCards, getStrapiMediaUrl, getXipatLibraryImages } from '@/lib/strapi/strapi';
+import { getRecruitmentCards, getStrapiMediaUrl, getXipatBlogs, getXipatLibraryImages } from '@/lib/strapi/strapi';
 
 type PeopleShowcaseImageId = 'image1' | 'image2' | 'image3' | 'image4';
 
@@ -60,10 +62,6 @@ const peopleShowcaseImages: PeopleShowcaseImage[] = [
   },
 ];
 
-const blog1 = '/images/culture/blog-1.png';
-const blog2 = '/images/culture/blog-2.png';
-const blog3 = '/images/culture/blog-3.png';
-
 const cultureSeo = createSeo({
   siteName: 'Xipat',
   path: '/culture',
@@ -98,35 +96,19 @@ export async function generateMetadata({
 
 export default async function CulturePage() {
   const locale = await getLocale();
-  const [t, libraryImagesFromApi, recruitmentCards] = await Promise.all([
+  const [t, libraryImagesFromApi, recruitmentCards, blogsResponse] = await Promise.all([
     getTranslations('culturePage'),
     getXipatLibraryImages(),
     getRecruitmentCards(locale, 5),
+    getXipatBlogs(locale, { limit: 3 }),
   ]);
   const getPeopleImageAlt = (id: PeopleShowcaseImageId) => t(`peopleShowcase.images.${id}Alt`);
   const cultureGuidedHeading = t('cultureGuidedShowcase.heading');
   const cultureGuidedItems = t.raw('cultureGuidedShowcase.items') as CultureGuidedItem[];
-  const newsCards = t.raw('news.cards') as Array<{ meta: string; headline: string; date: string }>;
-  const blogs = [
-    {
-      image: blog1,
-      meta: newsCards[0]?.meta ?? '',
-      headline: newsCards[0]?.headline ?? '',
-      date: newsCards[0]?.date ?? '',
-    },
-    {
-      image: blog2,
-      meta: newsCards[1]?.meta ?? '',
-      headline: newsCards[1]?.headline ?? '',
-      date: newsCards[1]?.date ?? '',
-    },
-    {
-      image: blog3,
-      meta: newsCards[2]?.meta ?? '',
-      headline: newsCards[2]?.headline ?? '',
-      date: newsCards[2]?.date ?? '',
-    },
-  ];
+  const blogs = mapBlogsToNewsCards({
+    blogs: blogsResponse.blogs,
+    locale,
+  });
   const cultureHighlights = t.raw('programs.highlights') as Array<{ title: string; body: string }>;
   const cultureAccordionItems = t.raw('programs.accordion') as CultureAccordionItem[];
   const fallbackLibraryImages: LibraryImageItem[] = [
@@ -292,19 +274,14 @@ export default async function CulturePage() {
           </MotionStagger>
           <MotionStagger className="mt-14 grid gap-8 md:grid-cols-3" staggerChildren={0.1} delayChildren={0.06}>
             {blogs.map((blog, idx) => (
-              <MotionStaggerItem key={`${blog.headline}-${idx}`} as="article" className="space-y-3">
-                <Image
-                  src={blog.image}
-                  alt=""
-                  width={360}
-                  height={280}
-                  className="h-70 w-full rounded-[9px] object-cover"
+              <MotionStaggerItem key={`${blog.title}-${idx}`}>
+                <NewsCard
+                  image={blog.image}
+                  title={blog.title}
+                  date={blog.date}
+                  href={blog.href}
+                  titleClassName="text-base leading-[1.3]"
                 />
-                <div className="flex items-center text-sm font-semibold text-[#686868]">
-                  <p>{blog.meta}</p>
-                  <p className="ml-auto">{blog.date}</p>
-                </div>
-                <h3 className="text-base leading-[1.3] font-bold text-[#686868]">{blog.headline}</h3>
               </MotionStaggerItem>
             ))}
           </MotionStagger>

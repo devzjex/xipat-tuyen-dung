@@ -55,11 +55,15 @@ export async function POST(request: NextRequest) {
     if (normalizedModel.includes('xipat-library-image') || normalizedModel.includes('library-images')) {
       tagsToRevalidate.add('strapi:xipat-library-images');
     }
+    if (normalizedModel.includes('xipat-blog') || normalizedModel.includes('blogs')) {
+      tagsToRevalidate.add('strapi:xipat-blogs');
+    }
 
     if ('type' in body && body.type === 'all') {
       tagsToRevalidate.add('strapi:xipat-jobs');
       tagsToRevalidate.add('strapi:xipat-partners');
       tagsToRevalidate.add('strapi:xipat-library-images');
+      tagsToRevalidate.add('strapi:xipat-blogs');
     }
 
     for (const tag of tagsToRevalidate) {
@@ -68,11 +72,13 @@ export async function POST(request: NextRequest) {
 
     const pathsToRevalidate = new Set<string>([
       '/',
+      '/news',
       '/careers',
       '/about',
       '/culture',
       '/ecosystem',
       '/en',
+      '/en/news',
       '/en/careers',
       '/en/about',
       '/en/culture',
@@ -82,6 +88,8 @@ export async function POST(request: NextRequest) {
     if (slug) {
       pathsToRevalidate.add(`/careers/${slug}`);
       pathsToRevalidate.add(`/en/careers/${slug}`);
+      pathsToRevalidate.add(`/news/${slug}`);
+      pathsToRevalidate.add(`/en/news/${slug}`);
     }
 
     for (const path of pathsToRevalidate) {

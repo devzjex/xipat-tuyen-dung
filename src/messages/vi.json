@@ -794,6 +794,16 @@
       ]
     }
   },
+  "newsPage": {
+    "badge": "Nhật ký Xipat",
+    "title": "Tin Tức Mới Nhất Từ Xipat",
+    "description": "Theo dõi các bài viết mới về sản phẩm, văn hóa, đội ngũ và những góc nhìn thực tế từ hành trình phát triển của Xipat.",
+    "noResultLabel": "Hiện chưa có bài viết nào.",
+    "seo": {
+      "title": "Tin Tức Mới Nhất Từ Xipat",
+      "description": "Theo dõi các bài viết mới về sản phẩm, văn hóa, đội ngũ và những góc nhìn thực tế từ hành trình phát triển của Xipat."
+    }
+  },
   "contactPage": {
     "title": "Liên hệ",
     "description": "Từ chuyển đổi đến vận hành, hệ sinh thái của chúng tôi giúp bạn tăng trưởng mà không rối loạn.",

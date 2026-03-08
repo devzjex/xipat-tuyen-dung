@@ -1,6 +1,6 @@
 'use client';
 
-import type { ReactNode } from 'react';
+import { useSyncExternalStore, type ReactNode } from 'react';
 import { motion, useReducedMotion, type Variants } from 'motion/react';
 
 import { cn } from '@/lib/utils';
@@ -79,6 +79,18 @@ const containerVariants: Variants = {
   visible: { opacity: 1 },
 };
 
+function useStableReducedMotion() {
+  const prefersReducedMotion = useReducedMotion();
+  const isHydrated = useSyncExternalStore(
+    () => () => {},
+    () => true,
+    () => false,
+  );
+
+  // Keep the first client render identical to SSR to avoid hydration mismatch.
+  return isHydrated ? !!prefersReducedMotion : false;
+}
+
 export function MotionReveal({
   children,
   className,
@@ -89,10 +101,10 @@ export function MotionReveal({
   amount = 0.24,
   blur = 6,
 }: MotionRevealProps) {
-  const reduce = useReducedMotion();
+  const reduce = useStableReducedMotion();
   const MotionComponent = MOTION_COMPONENTS[as];
 
-  const variants = revealVariants({ reduce: !!reduce, y, blur });
+  const variants = revealVariants({ reduce, y, blur });
 
   return (
     <MotionComponent
@@ -117,7 +129,7 @@ export function MotionStagger({
   staggerChildren = 0.06,
   amount = 0.2,
 }: MotionStaggerProps) {
-  const reduce = useReducedMotion();
+  const reduce = useStableReducedMotion();
 
   return (
     <motion.div
@@ -154,10 +166,10 @@ export function MotionStaggerItem({
   y = 12,
   blur = 6,
 }: MotionStaggerItemProps) {
-  const reduce = useReducedMotion();
+  const reduce = useStableReducedMotion();
   const MotionComponent = MOTION_COMPONENTS[as];
 
-  const variants = revealVariants({ reduce: !!reduce, y, blur });
+  const variants = revealVariants({ reduce, y, blur });
 
   return (
     <MotionComponent

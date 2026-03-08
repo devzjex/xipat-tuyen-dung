@@ -5,16 +5,16 @@ import { ArrowRight } from 'lucide-react';
 import { getLocale, getTranslations } from 'next-intl/server';
 
 import { CultureAccordion, type CultureAccordionItem } from '@/components/home/culture-accordion';
+import { NewsCard } from '@/components/news/news-card';
+import { mapBlogsToNewsCards } from '@/components/news/news-card.utils';
 import { Button } from '@/components/ui/button';
 import { MotionReveal, MotionStagger, MotionStaggerItem } from '@/components/ui/viewport-motion';
 import { createSeo } from '@/lib/seo';
+import { getXipatBlogs } from '@/lib/strapi/strapi';
 
 const heroImage = '/images/home/banner-hero.png';
 const people = '/images/home/people.png';
 const introPattern = '/images/home/pattern.png';
-const blog1 = '/images/home/blog-1.png';
-const blog2 = '/images/home/blog-2.png';
-const blog3 = '/images/home/blog-3.png';
 
 const homeSeo = createSeo({
   siteName: 'Xipat',
@@ -60,18 +60,16 @@ const brandLogos = [
 export default async function LandingPage() {
   const locale = await getLocale();
   const contactHref = locale === 'en' ? '/en/contact' : '/contact';
-  const t = await getTranslations('home');
+  const [t, blogsResponse] = await Promise.all([getTranslations('home'), getXipatBlogs(locale, { limit: 3 })]);
   const cultures = t.raw('culture.values') as Array<{ title: string; body: string }>;
   const ecosystemCards = t.raw('ecosystem.cards') as Array<{ title: string; body: string }>;
   const solutionItems = t.raw('solutions.items') as Array<{ highlight: string; rest: string; body: string }>;
   const cultureAccordionItems = t.raw('culture.accordion') as CultureAccordionItem[];
-  const newsCards = t.raw('news.cards') as Array<{ title: string; date: string }>;
   const heroDescription = t('hero.descriptionLines');
-  const blogs = [
-    { image: blog1, title: newsCards[0]?.title ?? '', date: newsCards[0]?.date ?? '' },
-    { image: blog2, title: newsCards[1]?.title ?? '', date: newsCards[1]?.date ?? '' },
-    { image: blog3, title: newsCards[2]?.title ?? '', date: newsCards[2]?.date ?? '' },
-  ];
+  const blogs = mapBlogsToNewsCards({
+    blogs: blogsResponse.blogs,
+    locale,
+  });
 
   return (
     <>
@@ -382,19 +380,13 @@ export default async function LandingPage() {
           </MotionStagger>
           <MotionStagger className="mt-14 grid gap-8 md:grid-cols-3" staggerChildren={0.1} delayChildren={0.08}>
             {blogs.map((blog, idx) => (
-              <MotionStaggerItem key={`${blog.title}-${idx}`} as="article" className="space-y-3">
-                <Image
-                  src={blog.image}
-                  alt=""
-                  width={360}
-                  height={280}
-                  className="h-70 w-full rounded-[9px] object-cover"
+              <MotionStaggerItem key={`${blog.title}-${idx}`}>
+                <NewsCard
+                  image={blog.image}
+                  title={blog.title || t('news.cardFallback')}
+                  date={blog.date}
+                  href={blog.href}
                 />
-                <div className="flex items-center text-sm font-semibold text-[#686868]">
-                  <p>{blog.title}</p>
-                  <p className="ml-auto">{blog.date}</p>
-                </div>
-                <h3 className="text-lg font-bold text-[#686868]">{t('news.cardFallback')}</h3>
               </MotionStaggerItem>
             ))}
           </MotionStagger>

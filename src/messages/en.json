@@ -794,6 +794,16 @@
       ]
     }
   },
+  "newsPage": {
+    "badge": "Xipat Journal",
+    "title": "Latest Stories From Xipat",
+    "description": "Follow product updates, team moments, company culture, and practical thinking from the people building Xipat.",
+    "noResultLabel": "No articles available right now.",
+    "seo": {
+      "title": "Latest Stories From Xipat",
+      "description": "Follow product updates, team moments, company culture, and practical thinking from the people building Xipat."
+    }
+  },
   "contactPage": {
     "title": "Contact",
     "description": "From conversion to fulfillment, our ecosystem helps you grow without the chaos",

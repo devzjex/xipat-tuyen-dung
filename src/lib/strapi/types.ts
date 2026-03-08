@@ -16,6 +16,18 @@ export type StrapiMedia = {
   id: number;
   url: string;
   alternativeText: string | null;
+  formats?: {
+    thumbnail?: StrapiMediaFormat;
+    small?: StrapiMediaFormat;
+    medium?: StrapiMediaFormat;
+    large?: StrapiMediaFormat;
+  };
+};
+
+export type StrapiMediaFormat = {
+  url: string;
+  width: number;
+  height: number;
 };
 
 export type StrapiJob = {
@@ -56,8 +68,27 @@ export type StrapiLibraryImageEntry = {
   publishedAt: string;
 };
 
+export type StrapiBlog = {
+  id: number;
+  documentId: string;
+  title: string;
+  slug: string;
+  content: string;
+  published_date: string | null;
+  createdAt: string;
+  updatedAt: string;
+  publishedAt: string;
+  locale: string;
+  thumbnail: StrapiMedia | null;
+};
+
 export type GetXipatJobsResult = {
   jobs: StrapiJob[];
+  pagination: StrapiPagination;
+};
+
+export type GetXipatBlogsResult = {
+  blogs: StrapiBlog[];
   pagination: StrapiPagination;
 };
 
