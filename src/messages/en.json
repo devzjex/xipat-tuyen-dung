@@ -857,5 +857,21 @@
       "description": "Get in touch with Xipat for product consultation, services, and partnership opportunities.",
       "imageAlt": "Contact Xipat"
     }
+  },
+  "errors": {
+    "notFound": {
+      "code": "404",
+      "title": "Page Not Found",
+      "description": "The page you are trying to access does not exist or has been moved.",
+      "backHome": "Back to homepage",
+      "viewCareers": "View careers"
+    },
+    "serverError": {
+      "code": "500",
+      "title": "Internal Server Error",
+      "description": "Something went wrong while processing your request. Please try again.",
+      "tryAgain": "Try again",
+      "goHome": "Go to homepage"
+    }
   }
 }

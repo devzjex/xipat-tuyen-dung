@@ -857,5 +857,21 @@
       "description": "Liên hệ với Xipat để được tư vấn về sản phẩm, dịch vụ và cơ hội hợp tác.",
       "imageAlt": "Liên hệ Xipat"
     }
+  },
+  "errors": {
+    "notFound": {
+      "code": "404",
+      "title": "Không tìm thấy trang",
+      "description": "Đường dẫn bạn truy cập không tồn tại hoặc đã được di chuyển.",
+      "backHome": "Về trang chủ",
+      "viewCareers": "Xem tuyển dụng"
+    },
+    "serverError": {
+      "code": "500",
+      "title": "Hệ thống đang gặp sự cố",
+      "description": "Đã có lỗi xảy ra khi xử lý yêu cầu. Vui lòng thử lại trong ít phút nữa.",
+      "tryAgain": "Thử lại",
+      "goHome": "Về trang chủ"
+    }
   }
 }
